@@ -1,5 +1,7 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useLiveQuery } from 'next-sanity/preview'
+import CardSection from '~/components/common/CardSection'
+import Content from '~/components/common/Content'
 import Header from '~/components/common/Header'
 import Hero from '~/components/common/Hero'
 import Section from '~/components/structure/Container'
@@ -31,10 +33,12 @@ export default function IndexPage(
 ) {
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   return (
-    <div className='w-screen h-screen flex-col'>
-      <Header/>
-      <Hero/>
-
+    <div className="w-screen h-screen flex-col">
+      <Header />
+      <Hero />
+      <Content />
+      <CardSection />
+      <Content />
     </div>
   )
 }
