@@ -5,7 +5,7 @@ import Content from '~/components/common/Content'
 import Header from '~/components/common/Header'
 import Hero from '~/components/common/Hero'
 import Section from '~/components/structure/Container'
-// import Container from '~/components/structure/Section'
+import Container from '~/components/structure/Section'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import { getPosts, type Post, postsQuery } from '~/lib/sanity.queries'
@@ -33,12 +33,9 @@ export default function IndexPage(
 ) {
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   return (
-    <div className="w-screen h-screen flex-col">
-      <Header />
-      <Hero />
+    <>
       <Content />
-      <CardSection />
-      <Content />
-    </div>
+    </>
+
   )
 }
