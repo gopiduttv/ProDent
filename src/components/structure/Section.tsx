@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Container(props) {
+export default function Section(props) {
   return (
-    <div className={`w-full flex max-w-7xl ${props.className}`}>
+    <section className={`w-full flex justify-center ${props.className}`}>
       {props.children}
-    </div>
+    </section>
   )
 }

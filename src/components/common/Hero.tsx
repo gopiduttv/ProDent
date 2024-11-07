@@ -1,7 +1,3 @@
-import React from 'react'
-import Section from '../structure/Container'
-import Container from '../structure/Section'
-
 export default function Hero() {
   return (
     <div className="w-full h-3/4 bg-violet-700">
