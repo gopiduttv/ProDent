@@ -3,7 +3,7 @@ import Section from '../structure/Section'
 
 const Footer = () => {
   return (
-    <Section className={'bg-stone-300'}>
+    <Section id="join-waitlist" className={'bg-stone-300'}>
       <Container>
         <div className="bg-slate-600">BANNER</div>
         <div className="flex flex-wrap mb-10 bg">

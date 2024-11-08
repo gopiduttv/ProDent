@@ -5,7 +5,7 @@ import Container from './structure/Container'
 
 const VisionSection = () => {
   return (
-    <Section>
+    <Section id="vision-section">
       <Container>
         <div className="flex justify-center">
           <div className="w-full pt-10 ">

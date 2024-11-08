@@ -54,7 +54,7 @@ export default function App({
           </Layout>
         </PreviewProvider>
       ) : (
-        <Layout>
+        <Layout className={sans.className}>
         <Component {...pageProps} />
         </Layout>
       )}
