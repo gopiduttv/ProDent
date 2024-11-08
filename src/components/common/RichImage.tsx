@@ -1,26 +1,28 @@
 import React from 'react'
+import Image from 'next/image'
+import H3 from '../typography/H3'
 
 const Richness = () => {
   return (
-    <div className="xl:w-1/2 px-4 mt-8">
-      <div className="px-4">
-        <h1 className="font-bold mb-8 text-2xl text-[#0F002D]">
-          No AI Hallucinations
-        </h1>
-        <h6 className="text-lg font-normal leading-[35px]">
+    <div className="md:w-1/2 w-full flex flex-col">
+    
+        <H3>No AI Hallucinations</H3>
+        <p className="text-lg font-normal leading-[35px] text-gray-700">
           <strong>Aeka</strong> provides insights devoid of AI-induced
           illusions. No mirages, No fuzzy interpretations, just concrete results
           that steer your strategies.
-        </h6>
-      </div>
+        </p>
+
     </div>
   )
 }
 
-const Image = () => {
+export const Picture = (props) => {
   return (
-    <div className="xl:w-1/2 hidden xl:block">
-      <div className="rounded-2xl bg-[#277e3a]">IMAGE</div>
+    <div className="md:w-1/2 w-full flex ">
+      <div className="rounded-2xl overflow-hidden bg-stone-300 w-full">
+        <img className={ `object-cover w-full h-[${props.height ? props.height : 300}px]`} src="/edgedummy.png"/>
+      </div>
     </div>
   )
 }
@@ -28,15 +30,15 @@ const Image = () => {
 const RichImage = ({ index }) => {
   if (index % 2 == 0) {
     return (
-      <div className="flex items-center p-4 justify-between bg-blue-500">
+      <div className="flex md:flex-row flex-col-reverse items-center  justify-between  gap-16 w-full">
         <Richness />
-        <Image />
+        <Picture />
       </div>
     )
   }
   return (
-    <div className="flex items-center p-4 justify-between bg-blue-500">
-      <Image />
+    <div className="flex md:flex-row flex-col items-center justify-between gap-16 w-full">
+      <Picture />
       <Richness />
     </div>
   )

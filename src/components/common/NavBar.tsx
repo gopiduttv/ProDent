@@ -1,32 +1,24 @@
 import Link from 'next/link';
+import LoginButton from './Login';
+import JoinwaitList from './JoinwaitList';
 
 function Navbar() {
   return (
     <div className="hidden lg:flex items-center space-x-6">
-      <a href="#about-section" className="text-sm font-semibold text-gray-700 hover:text-primary">
+      <a href="#about-section" className="text-sm font-semibold text-white hover:text-primary hover:text-stone-400">
         About
       </a>
-      <a href="#edge-section" className="text-sm font-semibold text-gray-700 hover:text-primary">
+      <a href="#edge-section" className="text-sm font-semibold text-white hover:text-primary hover:text-stone-400">
         Our Edge
       </a>
-      <a href="#features-section" className="text-sm font-semibold text-gray-700 hover:text-primary">
+      <a href="#features-section" className="text-sm font-semibold text-white hover:text-primary hover:text-stone-400">
         Features
       </a>
-      <a href="#vision-section" className="text-sm font-semibold text-gray-700 hover:text-primary">
+      <a href="#vision-section" className="text-sm font-semibold text-white hover:text-primary hover:text-stone-400">
         Our Vision
       </a>
-      <Link
-        href="/login"
-        className="btn btn-primary text-md rounded px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 shadow-md"
-      >
-        Login
-      </Link>
-      <Link
-        href="#join-waitlist"
-        className="btn btn-primary text-md rounded px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 shadow-md"
-      >
-        Join Waitlist
-      </Link>
+      <LoginButton/>
+      <JoinwaitList/>
     </div>
   );
 }

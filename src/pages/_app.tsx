@@ -1,7 +1,7 @@
 import '~/styles/global.css'
 
 import type { AppProps } from 'next/app'
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
+import { IBM_Plex_Mono, Inter, PT_Serif,Poppins } from 'next/font/google'
 import { lazy } from 'react'
 import Layout from '../components/Layout'
 
@@ -18,11 +18,23 @@ const mono = IBM_Plex_Mono({
   weight: ['500', '700'],
 })
 
-const sans = Inter({
-  variable: '--font-family-sans',
+// const sans = Inter({
+//   variable: '--font-family-sans',
+//   subsets: ['latin'],
+//   weight: ['300', '400', '500', '700', '800'],
+// })
+
+const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['500', '700', '800'],
-})
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
+
+
+console.log({poppins});
+
+
 
 const serif = PT_Serif({
   variable: '--font-family-serif',
@@ -41,7 +53,8 @@ export default function App({
       <style jsx global>
         {`
           :root {
-            --font-family-sans: ${sans.style.fontFamily};
+        
+            --font-family-sans: ${poppins.style.fontFamily};
             --font-family-serif: ${serif.style.fontFamily};
             --font-family-mono: ${mono.style.fontFamily};
           }
@@ -49,14 +62,13 @@ export default function App({
       </style>
       {draftMode ? (
         <PreviewProvider token={token}>
-          <Layout>
-          <Component {...pageProps} />
-          </Layout>
+          <Component {...pageProps} className={poppins.className}/>
         </PreviewProvider>
       ) : (
-        <Layout className={sans.className}>
-        <Component {...pageProps} />
-        </Layout>
+
+        <Component {...pageProps} className={poppins.className}/>
+
+    
       )}
     </>
   )

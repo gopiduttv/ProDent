@@ -5,6 +5,7 @@ import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import { getPosts, type Post, postsQuery } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
+import Layout from '../components/Layout'
 
 export const getStaticProps: GetStaticProps<
   SharedPageProps & {
@@ -29,8 +30,9 @@ export default function IndexPage(
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   return (
     <>
-      <Content />
+      <Layout>
+        <Content />
+      </Layout>
     </>
-
   )
 }

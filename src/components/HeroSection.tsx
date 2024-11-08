@@ -1,46 +1,37 @@
-import FlickerBackground from './common/FlickerBackground'
+import HeroImage from './common/HeroImage'
+import JoinwaitList from './common/JoinwaitList'
 import Container from './structure/Container'
 import Section from './structure/Section'
 import H1 from './typography/H1'
+import Paragraph from './typography/Paragraph'
 
 const HeroSection = () => {
   return (
-    <Section id="about-section">
+    <Section id="about-section" className="bg-[#02024a] py-24">
       <Container>
-        <div className="flex items-center mt-28 p-4">
+        <div className="flex md:flex-row flex-col-reverse items-center w-full gap-12 ">
           {/* Image section for large screens */}
-          <div className="hidden xl:block xl:w-1/2"></div>
 
           {/* Text content section */}
-          <div className="xl:w-1/2">
-            <div className="my-28 xl:my-0">
+          <div className="md:w-2/3 w-full flex flex-col">
+         
               {/* Title and Subtitle */}
-              <span
-                className="flex items-center gap-2 text-xl mb-3"
-            
-              >
-                <img
-                  src="dist/images/rocket.png"
-                  alt=""
-                  style={{ width: '15px' }}
-                />
+              <span className="flex w-full items-center gap-2 text-xl  bg-gradient-to-r from-[#8639F8] to-[#F768D1] text-transparent bg-clip-text">
                 Your AI-powered research partner
               </span>
               <H1>
-                Smart insights <br /> Smarter decisions
+                <span className="text-white">Disrupting</span>{' '}
+                <span className="text-[#f768d1]">dentistry</span> <br />{' '}
+                <span className="text-white">through</span>{' '}
+                <span className="text-[#f768d1]">data.</span>
               </H1>
 
               {/* Description */}
-              <p
-                className="text-lg mb-5 font-normal md:max-w-3xl mt-4"
-
-              >
-                Your partner in AI-powered desktop market research. Gain
-                instant, in-depth insights into <strong>1M+</strong> companies
-                and <strong>1000+</strong> industries. Delve deeper than
-                traditional reports, akin to{' '}
-                <strong>top-tier consulting insights.</strong>
-              </p>
+              <Paragraph className="text-white/80 text-lg mb-5 font-medium md:max-w-3xl mt-4">
+                OS Dental is a custom analytics solution that’s fundamentally
+                built differently, seamlessly connecting and validating all
+                sources of DSO data to yield powerful, reliable insights.
+              </Paragraph>
 
               {/* Buttons */}
               <div
@@ -49,20 +40,12 @@ const HeroSection = () => {
                 data-aos-delay="200"
                 data-aos-duration="1000"
               >
-                <a
-                  className="btn btn-primary px-5 py-3 bg-blue-500 text-white rounded-md mb-3 sm:mb-0 text-lg hover:shadow-md"
-                  href="../main/authentication-login.html"
-                >
-                  Login
-                </a>
-                <a
-                  className="btn btn-outline-primary px-5 py-3 border-2 border-blue-500 text-blue-500 rounded-md mb-3 sm:mb-0  text-lg hover:shadow-md"
-                  href="#join-waitlist"
-                >
-                  Join waitlist
-                </a>
+                <JoinwaitList/>
               </div>
             </div>
+       
+          <div className="md:w-1/3 w-full flex">
+            <HeroImage />
           </div>
         </div>
       </Container>

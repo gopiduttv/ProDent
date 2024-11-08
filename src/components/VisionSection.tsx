@@ -2,16 +2,20 @@ import React from 'react'
 import TestimonialCarousel from './common/TestimonialCarousel'
 import Section from './structure/Section'
 import Container from './structure/Container'
+import H2 from './typography/H2'
+import Subtext from './typography/Subtext'
 
 const VisionSection = () => {
   return (
-    <Section id="vision-section">
-      <Container>
-        <div className="flex justify-center">
-          <div className="w-full pt-10 ">
-            <h2 className="text-2xl text-center font-semibold">
-              Don’t just take our word for it, see what our users are saying...
-            </h2>
+    <Section id="edge-section" className="py-24">
+      <Container className="flex flex-col items-center gap-16 ">
+        <div className="flex flex-col w-full items-center">
+          <Subtext>Testimonials</Subtext>
+
+          <div className="max-w-2xl w-full flex justify-center">
+            <H2 className="text-center">
+              See what our customers say.
+            </H2>
           </div>
         </div>
         <TestimonialCarousel />

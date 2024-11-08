@@ -35,16 +35,16 @@ const TestimonialCarousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
   };
 
   return (
-    <div className="max-w-3xl mx-auto py-8">
+    <div className="max-w-7xl h-[300px]">
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="px-4">
+          <div key={index} className="px-4 h-[250px]">
             <TestimonialCard {...testimonial} />
           </div>
         ))}
