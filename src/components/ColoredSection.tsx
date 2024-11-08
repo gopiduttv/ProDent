@@ -19,7 +19,7 @@ const ColoredSection = () => {
             Clean up. Drill down. Do more with your data.
           </H2>
           <Paragraph>
-            OS Dental is a custom analytics solution that's fundamentally built
+            OS Dental is a custom analytics solution thatquo;s fundamentally built
             differently, seamlessly connecting and validating all sources of DSO
             data to yield powerful, reliable insights.
           </Paragraph>
