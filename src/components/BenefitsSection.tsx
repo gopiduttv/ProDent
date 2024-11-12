@@ -5,7 +5,7 @@ import RichImage from './common/RichImage'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 
-const EdgeSection = () => {
+const BenefitsSection = () => {
   return (
     <Section id="edge-section" className="py-24 bg-purple-50">
       <Container className="flex flex-col items-center gap-16 ">
@@ -29,4 +29,4 @@ const EdgeSection = () => {
   )
 }
 
-export default EdgeSection
+export default BenefitsSection

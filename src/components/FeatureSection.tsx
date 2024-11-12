@@ -1,13 +1,13 @@
 import React from 'react'
-import RichIcon from '../components/common/RichIcon'
+import RichIcon from './common/RichIcon'
 import Section from './structure/Section'
 import Container from './structure/Container'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 
-const Feature = () => {
+const FeatureSection = () => {
   return (
-    <Section id="feature-section" className="py-24">
+    <Section id="features-section" className="py-24">
       <Container className="flex flex-col items-center gap-16 ">
         <div className="flex flex-col w-full items-center">
           <Subtext>Benefits</Subtext>
@@ -61,4 +61,4 @@ const Feature = () => {
   )
 }
 
-export default Feature
+export default FeatureSection
