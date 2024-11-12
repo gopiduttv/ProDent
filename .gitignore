@@ -49,3 +49,5 @@ studio/.env.development
 
 
 package-lock.json
+
+.github
