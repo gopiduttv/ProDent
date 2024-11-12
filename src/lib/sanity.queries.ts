@@ -23,6 +23,33 @@ export async function getPost(
 export const postSlugsQuery = groq`
 *[_type == "post" && defined(slug.current)][].slug.current
 `
+export async function metaDataQuery(client: SanityClient): Promise<SiteSettings> {
+  const query = groq` 
+    *[_type == "siteSettings"][0]{
+      ogTitle,
+      ogFavicon,
+      ogImage,
+      ogUrl,
+      ogDescription
+    }
+  `;
+  return await client.fetch(query);
+}
+
+export async function heroSectionQuery(client: SanityClient): Promise<HomeSettings | null> {
+  const query = groq`
+    *[_type == "siteSettings"][0]{
+      homeSettings[0]
+    }
+  `;
+  return await client.fetch(query);
+}
+
+
+
+
+
+
 
 export interface Post {
   _type: 'post'
@@ -33,4 +60,19 @@ export interface Post {
   excerpt?: string
   mainImage?: ImageAsset
   body: PortableTextBlock[]
+}
+
+export interface SiteSettings {
+  ogTitle: string;
+  ogFavicon: ImageAsset;
+  ogImage: ImageAsset;
+  ogUrl: string;
+  ogDescription: string;
+}
+
+export interface HomeSettings {
+  buttonText?: string;
+  heroSectionHeader?: string;
+  heroDescription?: string;
+  heroSubHeading?: string;
 }
