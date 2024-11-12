@@ -1,6 +1,6 @@
 import HeroSection from './HeroSection'
-import EdgeSection from './EdgeSection'
-import Feature from './FeatureList'
+import BenefitsSection from './BenefitsSection'
+import FeatureSection from './FeatureSection'
 import VisionSection from './VisionSection'
 import ColoredSection from './ColoredSection'
 
@@ -8,8 +8,9 @@ const Content = () => {
   return (
     <div className="flex flex-col overflow-hidden">
       <HeroSection />
-      <EdgeSection />
-      <Feature />
+      <FeatureSection />
+      <div className='bg-yellow-400 text-black'>INTEGRATIONS</div>
+      <BenefitsSection />
       <ColoredSection/>
       <VisionSection/>
     </div>
