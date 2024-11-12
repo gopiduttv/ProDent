@@ -36,7 +36,7 @@ export default defineConfig({
   title: 'Project Name',
   projectId,
   dataset,
-  
+
   //edit schemas in './src/schemas'
   schema,
   form: {
@@ -49,6 +49,15 @@ export default defineConfig({
         }
         return props.renderDefault(props)
       },
+    },
+  },
+  document: {
+    newDocumentOptions: (prev, { currentUser, creationContext }) => {
+      const { type, schemaType } = creationContext
+      if (type === 'structure' && schemaType == 'siteSettings') {
+        return []
+      }
+      return prev
     },
   },
   plugins: [
