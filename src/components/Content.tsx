@@ -5,7 +5,6 @@ import VisionSection from './VisionSection'
 import ColoredSection from './ColoredSection'
 
 const Content = (props: any) => {
-  console.log(props)
   return (
     <div className="flex flex-col overflow-hidden">
       <HeroSection />
