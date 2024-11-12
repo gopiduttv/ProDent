@@ -5,7 +5,7 @@ import faq from './faq'
 import layout from './layout'
 import feature from './feature'
 import subfeature from './subFeature'
-import sponsor from './sponsor'
+import Integration from './Integration'
 import siteSettings from './siteSettings'
 import testimonial from './testimonial'
 import benefit from './benefits'
@@ -15,10 +15,10 @@ export const schemaTypes = [
   layout,
   feature,
   subfeature,
-  sponsor,
   siteSettings,
   testimonial,
   benefit,
+  Integration
 ]
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -28,7 +28,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     layout,
     feature,
     subfeature,
-    sponsor,
+    Integration,
     siteSettings,
     testimonial,
     benefit,
