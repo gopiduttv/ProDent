@@ -36,7 +36,7 @@ const FeatureSection = (props) => {
         </div>
         <div className="w-full flex flex-row justify-center gap-8">
           {features.slice(-3).map((feature, index) => (
-            <FeatureCard index={index} feature={feature} />
+            <FeatureCard key={index} feature={feature} />
           ))}
         </div>
       </Container>
