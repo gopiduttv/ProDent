@@ -5,7 +5,7 @@ import Container from './structure/Container'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 
-const VisionSection = () => {
+const TestimonialSection = () => {
   return (
     <Section id="edge-section" className="py-24">
       <Container className="flex flex-col items-center gap-16 ">
@@ -13,9 +13,7 @@ const VisionSection = () => {
           <Subtext>Testimonials</Subtext>
 
           <div className="max-w-2xl w-full flex justify-center">
-            <H2 className="text-center">
-              See what our customers say.
-            </H2>
+            <H2 className="text-center">See what our customers say.</H2>
           </div>
         </div>
         <TestimonialCarousel />
@@ -24,4 +22,4 @@ const VisionSection = () => {
   )
 }
 
-export default VisionSection
+export default TestimonialSection

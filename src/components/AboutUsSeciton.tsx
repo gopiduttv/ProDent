@@ -6,7 +6,7 @@ import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 import Paragraph from './typography/Paragraph'
 
-const ColoredSection = () => {
+const AboutUsSection = () => {
   return (
     <Section
       id="edge-section"
@@ -31,4 +31,4 @@ const ColoredSection = () => {
   )
 }
 
-export default ColoredSection
+export default AboutUsSection
