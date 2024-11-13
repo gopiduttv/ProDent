@@ -26,6 +26,13 @@ function IntegrationSection() {
         "/opendental.svg",
         "/opendental.svg",
         "/opendental.svg",
+        "/opendental.svg",
+        "/opendental.svg",
+        "/opendental.svg",
+        "/opendental.svg",
+        "/opendental.svg",
+        "/opendental.svg",
+        "/opendental.svg",
       ]
   return (
     <Section id="features-section" className="pt-16 pb-16">
@@ -41,7 +48,8 @@ function IntegrationSection() {
               reporting suites.
             </p>
           </div>
-          <IntegrationCloud className="grid grid-cols-8" images={images}/>
+          <IntegrationCloud className="grid grid-cols-8 gap-2" images={images} imagesCount={16} />
+          <IntegrationCloud className="grid grid-cols-8 gap-4" images={images} imagesCount={6} columnPaddding />          
         </div>
       </Container>
     </Section>
