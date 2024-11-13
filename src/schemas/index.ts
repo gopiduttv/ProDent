@@ -9,6 +9,7 @@ import Integration from './Integration'
 import siteSettings from './siteSettings'
 import testimonial from './testimonial'
 import benefit from './benefits'
+import homeSettings from './homeSettings'
 
 export const schemaTypes = [
   faq,
@@ -18,7 +19,8 @@ export const schemaTypes = [
   siteSettings,
   testimonial,
   benefit,
-  Integration
+  Integration,
+  homeSettings
 ]
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -32,5 +34,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     siteSettings,
     testimonial,
     benefit,
+    homeSettings
   ],
 }

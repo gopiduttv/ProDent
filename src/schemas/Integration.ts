@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'productName',
+      title: 'Product Name',
+      type: 'string',
+    }),
+    defineField({
       name: 'integration',
       title: 'Integration',
       type: 'url',
@@ -16,4 +21,11 @@ export default defineType({
       type: 'image',
     }),
   ],
+  preview: {
+    select: {
+      title: 'productName',
+      media: 'integrationProductImage',
+    },
+  }
 })
+
