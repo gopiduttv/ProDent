@@ -2,7 +2,6 @@ import React from 'react'
 import Section from './structure/Section'
 import Container from './structure/Container'
 import Subtext from './typography/Subtext'
-import H2 from './typography/H2'
 import IntegrationCloud from './IntegrationCloud'
 
 function IntegrationSection() {

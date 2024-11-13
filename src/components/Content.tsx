@@ -5,15 +5,15 @@ import VisionSection from './VisionSection'
 import ColoredSection from './ColoredSection'
 import IntegrationSection from './IntegrationSection'
 
-const Content = () => {
+const Content = (props: any) => {
   return (
     <div className="flex flex-col overflow-hidden">
       <HeroSection />
       <FeatureSection />
       <IntegrationSection />
       <BenefitsSection />
-      <ColoredSection/>
-      <VisionSection/>
+      <ColoredSection />
+      <VisionSection />
     </div>
   )
 }
