@@ -1,18 +1,19 @@
 import HeroSection from './HeroSection'
 import BenefitsSection from './BenefitsSection'
 import FeatureSection from './FeatureSection'
-import VisionSection from './VisionSection'
-import ColoredSection from './ColoredSection'
+import TestimonialSection from './TestimonialSection'
+import IntegrationSection from './IntegrationSection'
+import AboutUsSection from './AboutUsSeciton'
 
 const Content = (props: any) => {
   return (
     <div className="flex flex-col overflow-hidden">
       <HeroSection />
       <FeatureSection />
-      <div className="bg-yellow-400 text-black">INTEGRATIONS</div>
+      <IntegrationSection />
       <BenefitsSection />
-      <ColoredSection />
-      <VisionSection />
+      <TestimonialSection />
+      <AboutUsSection />
     </div>
   )
 }
