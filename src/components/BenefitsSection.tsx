@@ -6,23 +6,50 @@ import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 
 const BenefitsSection = () => {
+  const benefits = [
+    {
+      heading: 'dfgsdfg',
+      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
+      image: "/benefit-image.png"
+    },
+    {
+      heading: 'Multi-Location Portfolio Performance',
+      points: [
+        'Doctor Wages, Payroll Taxes & Benefits',
+        'Merchant Fees, Marketing & Supply Expenses and more',
+        'Margin & EBITDA Analysis',
+      ],
+      image: "/benefit-image.png"
+    },
+    {
+      heading: 'Practice Performance Analysis',
+      points: [
+        'Gross and Net Production - Hygiene and Non-Hygiene',
+        'Aging and Claim Analyses',
+        'Doctor & Hygienist Performance Dashboards',
+      ],
+      image: "/benefit-image.png"
+    },
+    {
+      heading: 'Opportunity Analysis',
+      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
+      image: "/benefit-image.png"
+    },
+  ]
+
   return (
     <Section id="edge-section" className="py-24 bg-purple-50">
-      <Container className="flex flex-col items-center gap-16 ">
-        <div className="flex flex-col w-full items-center">
+      <Container className="flex flex-col items-center gap-16">
+        <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Benefits</Subtext>
-
-          <div className="max-w-2xl w-full flex justify-center">
-            <H2 className="text-center pb-8">
-              Powerful analytics. Approachable experience.
-            </H2>
+          <div className="w-full flex justify-center">
+            <H2>Data for Dentistry. Done Right.</H2>
           </div>
         </div>
         <div className="flex flex-col gap-16">
-          <RichImage index={1} />
-          <RichImage index={2} />
-          <RichImage index={3} />
-          <RichImage index={4} />
+          {benefits.map((benefit, index) => (
+            <RichImage key={index} index={index} item={benefit} />
+          ))}
         </div>
       </Container>
     </Section>

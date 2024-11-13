@@ -32,9 +32,6 @@ const poppins = Poppins({
 });
 
 
-console.log({poppins});
-
-
 
 const serif = PT_Serif({
   variable: '--font-family-serif',
