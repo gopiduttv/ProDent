@@ -34,7 +34,7 @@ function IntegrationSection() {
         "/opendental.svg",
       ]
   return (
-    <Section id="features-section" className="pt-16 pb-16">
+    <Section id="integrations-section" className="pt-16 pb-16">
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-4">
           <Subtext>More than 125 available integrations</Subtext>

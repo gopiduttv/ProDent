@@ -7,7 +7,7 @@ import Subtext from './typography/Subtext'
 
 const TestimonialSection = () => {
   return (
-    <Section id="edge-section" className="py-24">
+    <Section id="testimonials-section" className="py-24">
       <Container className="flex flex-col items-center gap-16 ">
         <div className="flex flex-col w-full items-center">
           <Subtext>Testimonials</Subtext>
