@@ -1,21 +1,22 @@
 import React from 'react'
 import Image from 'next/image'
+import { urlForImage } from '~/lib/sanity.image'
 
 const IntegrationLogoCard = (props) => {
   return (
-    <div
-      className={`h-20 ${props.className}`}
-      id={`integration-logo-card-${props.index}`}
-    >
-      <Image src={props.image} width={200} height={200} alt="location-icon" />
-    </div>
+    <Image
+      src={urlForImage(props.image.images).url()}
+      width={100}
+      height={100}
+      alt="location-icon"
+    />
   )
 }
 const IntegrationCloud = (props) => {
   if (props.columnPaddding)
     return (
       <div className={`${props.className}`}>
-        <div className={`col-start-1`}></div>
+        <div className={`col-start-1 md`}></div>
         {props.images.splice(-props.imagesCount).map((image, index) => (
           <IntegrationLogoCard key={index} image={image} />
         ))}
@@ -25,9 +26,7 @@ const IntegrationCloud = (props) => {
 
   return (
     <div className={`${props.className}`}>
-      {props.images.splice(-props.imagesCount).map((image, index) => (
-        <IntegrationLogoCard key={index} image={image} />
-      ))}
+      <IntegrationLogoCard image={props} />
     </div>
   )
 }
