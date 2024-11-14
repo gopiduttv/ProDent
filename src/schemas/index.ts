@@ -20,7 +20,7 @@ export const schemaTypes = [
   testimonial,
   benefit,
   Integration,
-  homeSettings,
+  homeSettings
 ]
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -34,6 +34,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     siteSettings,
     testimonial,
     benefit,
-    homeSettings,
+    homeSettings
   ],
 }
