@@ -3,6 +3,9 @@ import Navbar from './NavBar'
 import Image from 'next/image'
 
 const Header = () => {
+  const headerContent = {
+    ctaName: "Book Free Demo"
+  }
   return (
     <header
       className="fixed top-0 left-0 w-full h-[75px] py-4 px-4 box-border z-50 bg-[#02024a] shadow-md"
@@ -30,7 +33,7 @@ const Header = () => {
           <i className="text-primary text-2xl ti ti-menu"></i>
         </button>
 
-        <Navbar />
+        <Navbar ctaName={headerContent.ctaName} />
       </nav>
     </header>
   )

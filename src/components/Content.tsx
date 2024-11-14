@@ -1,17 +1,19 @@
 import HeroSection from './HeroSection'
-import EdgeSection from './EdgeSection'
-import Feature from './FeatureList'
-import VisionSection from './VisionSection'
-import ColoredSection from './ColoredSection'
+import BenefitsSection from './BenefitsSection'
+import FeatureSection from './FeatureSection'
+import TestimonialSection from './TestimonialSection'
+import IntegrationSection from './IntegrationSection'
+import AboutUsSection from './AboutUsSeciton'
 
-const Content = () => {
+const Content = (props: any) => {
   return (
     <div className="flex flex-col overflow-hidden">
       <HeroSection />
-      <EdgeSection />
-      <Feature />
-      <ColoredSection/>
-      <VisionSection/>
+      <FeatureSection />
+      <IntegrationSection />
+      <BenefitsSection />
+      <TestimonialSection />
+      <AboutUsSection />
     </div>
   )
 }
