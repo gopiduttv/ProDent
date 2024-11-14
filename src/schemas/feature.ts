@@ -3,6 +3,7 @@ export default defineType({
   name: 'feature',
   title: 'Feature',
   type: 'document',
+
   fields: [
     defineField({
       name: 'featureHeading',
@@ -10,31 +11,18 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-        name: 'featureboldheading',
-        title: 'Feature Bold Heading',
-        type: 'string',
-      }),
-    defineField({
-      name: 'featureImage',
-      title: 'Feature Image',
-      type: 'image',
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: 'featureHeading',
+      },
     }),
     defineField({
-      name: 'featureDescription',
-      title: 'Feature Description',
+      name: 'features',
+      title: 'Add Features',
       type: 'blockContent',
-    }),
-
-    defineField({
-      name: 'subFeatures',
-      title: 'Add Sub Features',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'subfeature' }],
-        },
-      ],
     }),
   ],
 })
