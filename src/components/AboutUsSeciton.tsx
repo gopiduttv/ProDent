@@ -7,25 +7,24 @@ import Subtext from './typography/Subtext'
 import Paragraph from './typography/Paragraph'
 
 const AboutUsSection = () => {
+  const aboutUS = {
+    heading: 'About Us',
+    description: 'OSDental was conceived by a team of CPAs at ProDent Partners. With our decades of experience working with dental offices, we realized that ambitious dental offices struggle to manage growth and efficiency at the same time, due to the lack of a consolidated data platform. OSDental was built to solve this gap, not just for DSOs but also for any dental practice looking to have better monitoring of their dental business as a whole.',
+    image: "/about-us.png"
+  }
+
   return (
     <Section
-      id="edge-section"
-      className="py-24 bg-gradient-to-br from-purple-500 to-violet-800 "
+      id="about-us-section"
+      className="py-24 bg-gradient-to-r from-[#8639F8] to-[#F768D1]"
     >
       <Container className="flex md:flex-row flex-col-reverse items-center gap-16 w-full">
         <div className="flex flex-col md:w-1/2 w-full">
-          <Subtext className="text-white">Benefits</Subtext>
-          <H2 className=" text-white">
-            Clean up. Drill down. Do more with your data.
-          </H2>
-          <Paragraph>
-            OS Dental is a custom analytics solution that&apos;s fundamentally built
-            differently, seamlessly connecting and validating all sources of DSO
-            data to yield powerful, reliable insights.
-          </Paragraph>
+          <H2 className=" text-white">{aboutUS.heading}</H2>
+          <Paragraph>{aboutUS.description}</Paragraph>
         </div>
 
-        <Picture height={450}></Picture>
+        <Picture image={aboutUS.image} height={450}></Picture>
       </Container>
     </Section>
   )
