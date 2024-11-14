@@ -4,7 +4,7 @@ import blockContent from './blockContent'
 import faq from './faq'
 import layout from './layout'
 import feature from './feature'
-import subfeature from './subFeature'
+import featureCategories from './featureCategories'
 import Integration from './Integration'
 import siteSettings from './siteSettings'
 import testimonial from './testimonial'
@@ -15,7 +15,7 @@ export const schemaTypes = [
   faq,
   layout,
   feature,
-  subfeature,
+  featureCategories,
   siteSettings,
   testimonial,
   benefit,
@@ -29,7 +29,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     faq,
     layout,
     feature,
-    subfeature,
+    featureCategories,
     Integration,
     siteSettings,
     testimonial,
