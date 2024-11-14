@@ -6,7 +6,7 @@ const Picture = (props) => {
       <div className="rounded-2xl overflow-hidden bg-stone-300 w-full">
         <img
           className={`object-cover w-full h-[${props.height ? props.height : 300}px]`}
-          src="/edgedummy.png"
+          src={props.image}
         />
       </div>
     </div>

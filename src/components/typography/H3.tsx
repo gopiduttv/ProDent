@@ -2,7 +2,7 @@ import React from 'react'
 import { cn } from '~/lib/utils'
 
 type H3Props = {
-  className?: string,
+  className?: string ,
   children: any
 }
 

@@ -86,7 +86,7 @@ const BottomSection = () => {
 
 const Footer = () => {
   return (
-    <Section id="join-waitlist" className={'bg-[#02024a]'}>
+    <Section id="footer" className={'bg-[#02024a]'}>
       <Container className="flex justify-center py-4 text-white ">
         <div className=" pt-24 pb-8 bg-[#02024a] flex-col justify-center items-start gap-12 inline-flex ">
           <TopSection />
