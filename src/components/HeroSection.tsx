@@ -8,6 +8,9 @@ import Paragraph from './typography/Paragraph'
 import AnimatedShinyText from './ui/animated-shiny-text'
 import { cn } from '~/lib/utils'
 import WordRotate from './ui/word-rotate'
+import Picture from './common/Picture'
+import Image from 'next/image'
+import useMediaQuery from '~/hooks/useMediaQuery'
 
 const AnimatedShinyTextDemo = (props) => {
   return (
@@ -37,11 +40,12 @@ const HeroContent = () => {
       'Ana Staff Performance',
       'Defining Practice Culture',
     ],
-    heroDescription: "OS Dental is a custom analytics solution that’s fundamentally built differently, seamlessly connecting and validating all sources of DSO data to yield powerful, reliable insights.",
-    ctaName: "Book Free Demo",
+    heroDescription:
+      'OS Dental is a custom analytics solution that’s fundamentally built differently, seamlessly connecting and validating all sources of DSO data to yield powerful, reliable insights.',
+    ctaName: 'Book Free Demo',
   }
   return (
-    <div className="flex flex-col-reverse md:flex-row justify-center items-center w-full gap-12 text-center md:text-left">
+    <div className="flex flex-col-reverse md:flex-row justify-center items-center w-full gap-12 text-center md:text-left py-32">
       <div className="md:w-2/3 w-full flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo className="w-1/2" content={heroData.heroSpan} />
@@ -49,12 +53,12 @@ const HeroContent = () => {
           {heroData.heroHeading}
         </H1>
         <WordRotate
-          className="md:text-6xl text-4xl font-semibold text-[#f768d1]"
+          className="md:text-6xl text-4xl font-semibold text-[#f768d1] whitespace-nowrap"
           words={heroData.heroHeadingList}
         />
 
         {/* Description */}
-        <Paragraph className="text-center font-light" >
+        <Paragraph className="text-center font-light">
           {heroData.heroDescription}
         </Paragraph>
 
@@ -65,18 +69,34 @@ const HeroContent = () => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <CTAButton name={heroData.ctaName}/>
+          <CTAButton name={heroData.ctaName} />
         </div>
       </div>
     </div>
   )
 }
 const HeroSection = () => {
+  const isMobile = useMediaQuery(1280)
+
   return (
-    <Section id="hero-section" className="bg-[#02024a] py-32">
-      <Container>
-        <HeroContent />
-      </Container>
+    <Section id="hero-section" className="bg-[#02024a] ">
+      {!isMobile && <div className="rounded-2xl flex items-end justify-right w-1/3 ">
+        <Image
+          width={400}
+          height={600}
+          src={'/hero-left.png'}
+          alt="hero-left"
+        />
+      </div>}
+      <HeroContent />
+      {!isMobile &&<div className="rounded-2xl  flex items-end justify-left w-1/3 ">
+       <Image
+          width={400}
+          height={600}
+          src={'/hero-right.png'}
+          alt="hero-left"
+        />
+      </div>}
     </Section>
   )
 }
