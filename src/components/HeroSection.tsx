@@ -24,7 +24,7 @@ const AnimatedShinyTextDemo = (props) => {
         <span className="items-center text-ellipsis line-clamp-1">
           {props.content}
         </span>
-        <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+        <ArrowRightIcon className="ml-1 size-10 md:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </AnimatedShinyText>
     </div>
   )
