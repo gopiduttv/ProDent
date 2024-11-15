@@ -2,25 +2,25 @@ import { rule } from 'postcss'
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'featureCategories',
-  title: 'Feature Categories',
+  name: 'featureCategory',
+  title: 'Feature Category',
   type: 'document',
   fields: [
     defineField({
-      name: 'featureSubCategoriesHeading',
-      title: 'Feature Subcategories Heading',
+      name: 'categoryHeading',
+      title: 'Category Heading',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'featureSubCategoriesImage',
-      title: 'Feature Subcategories Image',
+      name: 'categoryImage',
+      title: 'Category Image',
       type: 'image',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'features',
-      title: 'Linked Features for this feature Subcategories',
+      title: 'Features',
       type: 'array',
       validation: (Rule) => Rule.unique(),
 

@@ -9,7 +9,7 @@ const Content = (props: any) => {
   return (
     <div className="flex flex-col overflow-hidden">
       <HeroSection />
-      <FeatureSection />
+      <FeatureSection features ={props.featureSectionDetails} />
       <IntegrationSection OsDentalIntegration ={props?.OsDentalIntegration} />
       <BenefitsSection />
       <TestimonialSection />

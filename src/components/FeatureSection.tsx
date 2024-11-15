@@ -5,8 +5,12 @@ import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 import FeatureCard from './common/FeatureCard'
 
-const FeatureSection = (props) => {
-  const features = [
+const FeatureSection = ({features}) => {
+   console.log({features})
+
+
+
+  const features1 = [
     {
       heading: 'dfgsdfg',
       points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
@@ -35,9 +39,15 @@ const FeatureSection = (props) => {
           </div>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center gap-8">
-          {features.slice(-3).map((feature, index) => (
+          {/* {features1.slice(-3).map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
-          ))}
+          ))} */}
+
+          {
+            features?.map((ele:any,i:number)=>{
+              return(<FeatureCard key={i} feature={ele} />)
+            })
+          }
         </div>
       </Container>
     </Section>
