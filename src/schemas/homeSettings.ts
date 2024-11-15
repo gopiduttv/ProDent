@@ -6,10 +6,15 @@ export default defineType({
   fields: [
 
     defineField({
-        name: 'heroSectionImage',
-        title:'Add HeroSection Image',
-        type: 'image'
+        name: 'osDentalSlogan',
+        title:'Add Slogan',
+        type: 'string'
     }),
+    defineField({
+      name: 'aboutSectionImage',
+      title:'About Section Image',
+      type: 'image'
+  }),
 
     defineField({
       name: 'benefits',
@@ -45,5 +50,10 @@ export default defineType({
         ],
       }),
   ],
-  
+  preview: {
+    select: {
+      title:'osDentalSlogan',
+      media: 'aboutSectionImage',
+    },
+  }
 })

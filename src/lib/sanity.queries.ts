@@ -36,6 +36,11 @@ export async function metaDataQuery(client: SanityClient): Promise<SiteSettings>
   return await client.fetch(query);
 }
 
+export async function fetchIntegrationList(client: SanityClient): Promise<any>  {
+  const query = groq`*[_type == "integration" ]{integrationProductImage}`
+  return await client.fetch(query)
+}
+
 export async function heroSectionQuery(client: SanityClient): Promise<HomeSettings | null> {
   const query = groq`
     *[_type == "siteSettings"][0]{
