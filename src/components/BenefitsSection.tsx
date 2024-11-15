@@ -38,7 +38,7 @@ const BenefitsSection = () => {
   ]
 
   return (
-    <Section id="edge-section" className="py-24 bg-purple-50">
+    <Section id="benefits-section" className="py-24 bg-purple-50">
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Benefits</Subtext>

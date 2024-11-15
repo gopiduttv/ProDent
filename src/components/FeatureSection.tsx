@@ -34,7 +34,7 @@ const FeatureSection = (props) => {
             <H2>Data for Dentistry. Done Right.</H2>
           </div>
         </div>
-        <div className="w-full flex flex-row justify-center gap-8">
+        <div className="w-full flex flex-col md:flex-row justify-center gap-8">
           {features.slice(-3).map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
           ))}
