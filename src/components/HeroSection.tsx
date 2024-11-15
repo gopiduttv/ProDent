@@ -16,7 +16,7 @@ const AnimatedShinyTextDemo = (props) => {
   return (
     <div
       className={cn(
-        'group rounded-full border border-indigo-100 bg-indigo-200 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200',
+        'group rounded-full border border-indigo-100 bg-indigo-50 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200',
         props.className,
       )}
     >
@@ -53,7 +53,7 @@ const HeroContent = () => {
           {heroData.heroHeading}
         </H1>
         <WordRotate
-          className="md:text-6xl text-4xl font-semibold text-[#f768d1] whitespace-nowrap"
+          className="md:text-6xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
           words={heroData.heroHeadingList}
         />
 
@@ -79,7 +79,7 @@ const HeroSection = () => {
   const isMobile = useMediaQuery(1280)
 
   return (
-    <Section id="hero-section" className="bg-[#02024a] ">
+    <Section id="hero-section" className="bg-[#02024a] px-4">
       {!isMobile && <div className="rounded-2xl flex items-end justify-right w-1/3 ">
         <Image
           width={400}
