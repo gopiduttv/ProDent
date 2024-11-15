@@ -39,7 +39,7 @@ const FeatureSection = ({features}) => {
           </div>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center gap-8">
-          {features.slice(-requiredFeatureCount).map((feature, index) => (
+          {/* {features1.slice(-3).map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
           ))} */}
 
