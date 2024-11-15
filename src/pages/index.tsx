@@ -4,6 +4,7 @@ import Content from '~/components/Content'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import {
+  featureSection,
   fetchIntegrationList,
   getPosts,
   heroSectionQuery,
@@ -27,6 +28,7 @@ export const getStaticProps: GetStaticProps<
   const siteSettings = await metaDataQuery(client)
   const heroSectionContent = await heroSectionQuery(client)
   const OsDentalIntegration = await fetchIntegrationList(client)
+  const featureSectionDetails = await featureSection(client)
 
   return {
     props: {
@@ -35,7 +37,8 @@ export const getStaticProps: GetStaticProps<
       posts,
       siteSettings,
       heroSectionContent,
-      OsDentalIntegration
+      OsDentalIntegration,
+      featureSectionDetails,
     },
   }
 }
@@ -48,7 +51,7 @@ export default function IndexPage(
   return (
     <div>
       <Layout>
-      <CustomHead siteSettings={siteSettings} />
+        <CustomHead siteSettings={siteSettings} />
         <Content {...props} />
       </Layout>
     </div>
