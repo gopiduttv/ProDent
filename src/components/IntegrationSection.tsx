@@ -22,7 +22,7 @@ function IntegrationSection({ OsDentalIntegration }) {
               reporting suites.
             </p>
           </div>
-          <div className='flex flex-wrap'>
+          <div className='flex flex-wrap items-center justify-center'>
             {OsDentalIntegration?.map((e: any, i: number) => {
               debugger
               return (

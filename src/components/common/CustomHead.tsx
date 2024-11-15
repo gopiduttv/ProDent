@@ -10,7 +10,7 @@ export default function CustomHead({ siteSettings }: { siteSettings: SiteSetting
       <meta property="og:url" content={siteSettings?.ogUrl} />
       <meta property="og:title" content={siteSettings?.ogTitle} />
       <meta property="og:description" content={siteSettings?.ogDescription} />
-      {/* <meta property="og:image" content={urlForImage(siteSettings?.ogImage)?.url()} /> */}
+      <meta property="og:image" content={urlForImage(siteSettings?.ogImage)?.url()} />
     </Head>
   );
 }

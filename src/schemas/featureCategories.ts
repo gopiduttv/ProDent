@@ -28,10 +28,10 @@ export default defineType({
         {
           type: 'reference',
           to: [{ type: 'feature' }],
-          options: {
-            filter:
-              '!(_id in path("drafts.**") || _id in path("**")) && !(_id in *[_type == "feature" && defined(referenceField)].referenceField._ref)',
-          },
+          // options: {
+          //   filter:
+          //     '!(_id in path("drafts.**") || _id in path("**")) && !(_id in *[_type == "feature" && defined(referenceField)].referenceField._ref)',
+          // },
         },
       ],
     }),
