@@ -4,12 +4,10 @@ import Container from './structure/Container'
 import Subtext from './typography/Subtext'
 import IntegrationCloud from './IntegrationCloud'
 import { iIntegrationImage } from './common/interface/commonInterface'
-import ImageLoader from './common/ImageLoader'
 import Image from 'next/image'
 import { urlForImage } from '~/lib/sanity.image'
 
 function IntegrationSection({ OsDentalIntegration }) {
-  console.log(OsDentalIntegration)
   return (
     <Section id="integrations-section" className="pt-16 pb-16">
       <Container className="flex flex-col items-center gap-16">
@@ -24,7 +22,6 @@ function IntegrationSection({ OsDentalIntegration }) {
           </div>
           <div className='flex flex-wrap items-center justify-center'>
             {OsDentalIntegration?.map((e: any, i: number) => {
-              debugger
               return (
                 <IntegrationCloud
                   className="p-3"
