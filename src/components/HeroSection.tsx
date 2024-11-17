@@ -8,6 +8,7 @@ import { cn } from '~/lib/utils'
 import WordRotate from './ui/word-rotate'
 import Image from 'next/image'
 import useMediaQuery from '~/hooks/useMediaQuery'
+import GridPattern from './ui/grid-pattern'
 
 const AnimatedShinyTextDemo = (props) => {
   return (
@@ -42,10 +43,13 @@ const HeroContent = () => {
     ctaName: 'Book Free Demo',
   }
   return (
-    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:py-32">
+    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:py-32 z-10">
       <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
-        <AnimatedShinyTextDemo className="text-xs md:text-base" content={heroData.heroSpan} />
+        <AnimatedShinyTextDemo
+          className="text-xs md:text-base"
+          content={heroData.heroSpan}
+        />
         <H1 className="text-center text-white font-medium">
           {heroData.heroHeading}
         </H1>
@@ -76,9 +80,9 @@ const HeroSection = () => {
   const isMobile = useMediaQuery(1280)
 
   return (
-    <Section id="hero-section" className="bg-[#02024a] px-4">
+    <Section id="hero-section" className="hero-section bg-[#02024a] px-4">
       {!isMobile && (
-        <div className="rounded-2xl flex items-end justify-right ">
+        <div className="rounded-2xl flex items-end justify-right z-10">
           <Image
             width={600}
             height={600}
@@ -89,7 +93,7 @@ const HeroSection = () => {
       )}
       <HeroContent />
       {!isMobile && (
-        <div className="rounded-2xl  flex items-end justify-left ">
+        <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
             width={600}
             height={600}
@@ -98,6 +102,18 @@ const HeroSection = () => {
           />
         </div>
       )}
+      <GridPattern
+        className={cn(
+          '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]',
+          'inset-x-0 inset-y-[-60%] h-[200%]',
+        )}
+      />
+      <div
+        className="absolute inset-0 flex items-center justify-center overflow-hidden z-0"
+        aria-hidden="true"
+      >
+        <div className="w-[500vw] h-[500vw] bg-gradient-to-tl  from-[#4364c1]  via-[#02024a]  to-[#4364c1] animate-spin-sl  rounded-full" />
+      </div>
     </Section>
   )
 }
