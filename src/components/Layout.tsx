@@ -7,7 +7,7 @@ const Layout = (props) => {
     <NavigationContextProvider>
       <div className={`flex flex-col min-h-screen ${props.className}`}>
         <Header />
-        <main className="flex-grow pt-16">{props.children}</main>
+        <main className="flex-grow ">{props.children}</main>
         <Footer />
       </div>
     </NavigationContextProvider>

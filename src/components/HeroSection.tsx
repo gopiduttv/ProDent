@@ -7,8 +7,8 @@ import AnimatedShinyText from './ui/animated-shiny-text'
 import { cn } from '~/lib/utils'
 import WordRotate from './ui/word-rotate'
 import Image from 'next/image'
-import useMediaQuery from '~/hooks/useMediaQuery'
 import GridPattern from './ui/grid-pattern'
+import useWindowSize from '~/hooks/useWindowSize'
 
 const AnimatedShinyTextDemo = (props) => {
   return (
@@ -77,14 +77,15 @@ const HeroContent = () => {
   )
 }
 const HeroSection = () => {
-  const isMobile = useMediaQuery(1280)
+  const { width: windowWidth } = useWindowSize();
+
 
   return (
     <Section id="hero-section" className="hero-section bg-[#02024a] px-4">
-      {!isMobile && (
+      { (windowWidth > 768) && (
         <div className="rounded-2xl flex items-end justify-right z-10">
           <Image
-            width={600}
+            width={windowWidth > 1800 ? 600: 300}
             height={600}
             src={'/hero-left.png'}
             alt="hero-left"
@@ -92,10 +93,10 @@ const HeroSection = () => {
         </div>
       )}
       <HeroContent />
-      {!isMobile && (
+      { windowWidth > 768 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
-            width={600}
+            width={windowWidth > 1800 ? 600: 300}
             height={600}
             src={'/hero-right.png'}
             alt="hero-left"
@@ -104,16 +105,16 @@ const HeroSection = () => {
       )}
       <GridPattern
         className={cn(
-          '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]',
+          '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] ',
           'inset-x-0 inset-y-[-60%] h-[200%]',
         )}
       />
-      <div
+      {/* <div
         className="absolute inset-0 flex items-center justify-center overflow-hidden z-0"
         aria-hidden="true"
       >
         <div className="w-[500vw] h-[500vw] bg-gradient-to-tl  from-[#4364c1]  via-[#02024a]  to-[#4364c1] animate-spin-sl  rounded-full" />
-      </div>
+      </div> */}
     </Section>
   )
 }
