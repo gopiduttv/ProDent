@@ -17,7 +17,6 @@ const Header = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log({ entry })
         if (entry.isIntersecting) {
           header.classList.remove('bg-[#02024a]')
           header.classList.add('backdrop-blur-sm')
