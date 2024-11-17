@@ -1,30 +1,28 @@
 import { ArrowRightIcon } from 'lucide-react'
-import HeroImage from './common/HeroImage'
 import CTAButton from './common/JoinwaitList'
-import Container from './structure/Container'
 import Section from './structure/Section'
 import H1 from './typography/H1'
 import Paragraph from './typography/Paragraph'
 import AnimatedShinyText from './ui/animated-shiny-text'
 import { cn } from '~/lib/utils'
 import WordRotate from './ui/word-rotate'
-import Picture from './common/Picture'
 import Image from 'next/image'
-import useMediaQuery from '~/hooks/useMediaQuery'
+import GridPattern from './ui/grid-pattern'
+import useWindowSize from '~/hooks/useWindowSize'
 
 const AnimatedShinyTextDemo = (props) => {
   return (
     <div
       className={cn(
-        'group rounded-full border border-indigo-100 bg-indigo-50 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200',
+        'group rounded-full backdrop-blur-sm border-[1px] border-gray-500 bg-white/30 text-base  transition-all ease-in hover:cursor-pointer hover:bg-neutral-200',
         props.className,
       )}
     >
-      <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+      <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 text-white transition ease-out  hover:text-gray-500   hover:duration-500 ">
         <span className="items-center text-ellipsis line-clamp-1">
           {props.content}
         </span>
-        <ArrowRightIcon className="ml-1 size-10 md:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+        <ArrowRightIcon className="ml-1 size-3 md:size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </AnimatedShinyText>
     </div>
   )
@@ -45,10 +43,13 @@ const HeroContent = () => {
     ctaName: 'Book Free Demo',
   }
   return (
-    <div className="flex flex-col-reverse md:flex-row justify-center items-center w-full gap-12 text-center md:text-left py-32">
-      <div className="md:w-2/3 w-full flex flex-col items-center md:items-center">
+    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:py-32 z-10">
+      <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
-        <AnimatedShinyTextDemo className="w-1/2" content={heroData.heroSpan} />
+        <AnimatedShinyTextDemo
+          className="text-xs md:text-base"
+          content={heroData.heroSpan}
+        />
         <H1 className="text-center text-white font-medium">
           {heroData.heroHeading}
         </H1>
@@ -76,27 +77,44 @@ const HeroContent = () => {
   )
 }
 const HeroSection = () => {
-  const isMobile = useMediaQuery(1280)
+  const { width: windowWidth } = useWindowSize();
+
 
   return (
-    <Section id="hero-section" className="bg-[#02024a] px-4">
-      {!isMobile && <div className="rounded-2xl flex items-end justify-right w-1/3 ">
-        <Image
-          width={400}
-          height={600}
-          src={'/hero-left.png'}
-          alt="hero-left"
-        />
-      </div>}
+    <Section id="hero-section" className="hero-section bg-[#02024a] px-4">
+      { (windowWidth > 768) && (
+        <div className="rounded-2xl flex items-end justify-right z-10">
+          <Image
+            width={windowWidth > 1800 ? 600: 300}
+            height={600}
+            src={'/hero-left.png'}
+            alt="hero-left"
+          />
+        </div>
+      )}
       <HeroContent />
-      {!isMobile &&<div className="rounded-2xl  flex items-end justify-left w-1/3 ">
-       <Image
-          width={400}
-          height={600}
-          src={'/hero-right.png'}
-          alt="hero-left"
-        />
-      </div>}
+      { windowWidth > 768 && (
+        <div className="rounded-2xl  flex items-end justify-left z-10">
+          <Image
+            width={windowWidth > 1800 ? 600: 300}
+            height={600}
+            src={'/hero-right.png'}
+            alt="hero-left"
+          />
+        </div>
+      )}
+      <GridPattern
+        className={cn(
+          '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] ',
+          'inset-x-0 inset-y-[-60%] h-[200%]',
+        )}
+      />
+      {/* <div
+        className="absolute inset-0 flex items-center justify-center overflow-hidden z-0"
+        aria-hidden="true"
+      >
+        <div className="w-[500vw] h-[500vw] bg-gradient-to-tl  from-[#4364c1]  via-[#02024a]  to-[#4364c1] animate-spin-sl  rounded-full" />
+      </div> */}
     </Section>
   )
 }
