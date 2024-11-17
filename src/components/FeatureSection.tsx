@@ -28,7 +28,7 @@ const FeatureSection = ({features}) => {
       points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
     },
   ]
-
+  const requiredFeatureCount = 3 
   return (
     <Section id="features-section" className="features-section pt-24 pb-16 z-10 bg-white">
       <Container className="flex flex-col items-center gap-16">
@@ -39,7 +39,7 @@ const FeatureSection = ({features}) => {
           </div>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center gap-8">
-          {/* {features1.slice(-3).map((feature, index) => (
+          {features.slice(-requiredFeatureCount).map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
           ))} */}
 
