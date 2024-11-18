@@ -104,9 +104,9 @@ const HeroSection = () => {
         </div>
       )}
       <GridPattern
-        className={cn(
-          '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] ',
-          'inset-x-0 inset-y-[-60%] h-[200%]',
+        className={cn('z-0',
+          '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] ',
+          'inset-x-0 inset-y-[-30%] h-[200%]',
         )}
       />
       {/* <div
