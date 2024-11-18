@@ -9,6 +9,7 @@ import {
   getPosts,
   heroSectionQuery,
   metaDataQuery,
+  fetchTestimonial,
   type Post,
   postsQuery,
   SiteSettings,
@@ -29,6 +30,7 @@ export const getStaticProps: GetStaticProps<
   const heroSectionContent = await heroSectionQuery(client)
   const OsDentalIntegration = await fetchIntegrationList(client)
   const featureSectionDetails = await featureSection(client)
+  const testimonialData = await fetchTestimonial(client)
 
   return {
     props: {
@@ -39,6 +41,7 @@ export const getStaticProps: GetStaticProps<
       heroSectionContent,
       OsDentalIntegration,
       featureSectionDetails,
+      testimonialData
     },
   }
 }

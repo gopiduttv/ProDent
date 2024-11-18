@@ -12,7 +12,7 @@ const Content = (props: any) => {
       <FeatureSection features ={props.featureSectionDetails} />
       <IntegrationSection OsDentalIntegration ={props?.OsDentalIntegration} />
       <BenefitsSection />
-      <TestimonialSection />
+      <TestimonialSection testimonials ={props?.testimonialData} />
       <AboutUsSection />
     </div>
   )

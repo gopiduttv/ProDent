@@ -4,7 +4,7 @@ const RichAvatar = (props) => {
   return (
     <div className="flex flex-row items-center gap-2">
       <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" alt="user-avatar" />
+        <AvatarImage src={props.AuthorImage} alt="user-avatar" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
       <div className="flex flex-col">

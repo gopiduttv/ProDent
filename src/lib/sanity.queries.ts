@@ -48,6 +48,11 @@ export async function featureSection(client: SanityClient): Promise<any> {
   return await client.fetch(query)
 }
 
+export async function fetchTestimonial(client: SanityClient): Promise<any> {
+  const query = groq`*[_type == "testimonial"]{...,"AuthorImage":authorimage.asset->url}`
+  return await client.fetch(query)
+}
+
 export async function heroSectionQuery(
   client: SanityClient,
 ): Promise<HomeSettings | null> {

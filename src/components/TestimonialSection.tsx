@@ -5,7 +5,7 @@ import Container from './structure/Container'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 
-const TestimonialSection = () => {
+const TestimonialSection = ({testimonials}) => {
   return (
     <Section id="testimonials-section" className="py-24">
       <Container className="flex flex-col items-center gap-16 ">
@@ -16,7 +16,7 @@ const TestimonialSection = () => {
             <H2 className="text-center md:whitespace-nowrap">See what our customers say!</H2>
           </div>
         </div>
-        <TestimonialCarousel />
+        <TestimonialCarousel props={testimonials} />
       </Container>
     </Section>
   )

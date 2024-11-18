@@ -5,32 +5,13 @@ import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 import FeatureCard from './common/FeatureCard'
 
-const FeatureSection = ({features}) => {
-   console.log({features})
-
-
-
-  const features1 = [
-    {
-      heading: 'dfgsdfg',
-      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
-    },
-    {
-      heading: 'Multi-Location Portfolio Performance',
-      points: ['Doctor Wages, Payroll Taxes & Benefits', 'Merchant Fees, Marketing & Supply Expenses and more', 'Margin & EBITDA Analysis'],
-    },
-    {
-      heading: 'Practice Performance Analysis',
-      points: ['Gross and Net Production - Hygiene and Non-Hygiene', 'Aging and Claim Analyses', 'Doctor & Hygienist Performance Dashboards'],
-    },
-    {
-      heading: 'Opportunity Analysis',
-      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
-    },
-  ]
-  const requiredFeatureCount = 3 
+const FeatureSection = ({ features }) => {
+  const requiredFeatureCount = 3
   return (
-    <Section id="features-section" className="features-section pt-24 pb-16 z-10 bg-white">
+    <Section
+      id="features-section"
+      className="features-section pt-24 pb-16 z-10 bg-white"
+    >
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Features</Subtext>
@@ -39,15 +20,9 @@ const FeatureSection = ({features}) => {
           </div>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center gap-8">
-          {/* {features1.slice(-3).map((feature, index) => (
-            <FeatureCard key={index} feature={feature} />
-          ))} */}
-
-          {
-            features?.map((ele:any,i:number)=>{
-              return(<FeatureCard key={i} feature={ele} />)
-            })
-          }
+          {features?.map((ele: any, i: number) => {
+            return <FeatureCard key={i} feature={ele} />
+          })}
         </div>
       </Container>
     </Section>
