@@ -1,9 +1,8 @@
 import React from 'react'
 import Section from './structure/Section'
 import Container from './structure/Container'
-import RichImage, { Picture } from './common/RichImage'
+import { Picture } from './common/RichImage'
 import H2 from './typography/H2'
-import Subtext from './typography/Subtext'
 import Paragraph from './typography/Paragraph'
 
 const AboutUsSection = () => {
@@ -18,10 +17,10 @@ const AboutUsSection = () => {
       id="about-us-section"
       className="py-24 bg-gradient-to-r from-[#8639F8] to-[#F768D1]"
     >
-      <Container className="flex md:flex-row flex-col-reverse items-center gap-16 w-full">
+      <Container className="flex md:flex-row flex-col-reverse items-center gap-24 w-full">
         <div className="flex flex-col md:w-1/2 w-full">
           <H2 className=" text-white">{aboutUS.heading}</H2>
-          <Paragraph>{aboutUS.description}</Paragraph>
+          <Paragraph className="font-light">{aboutUS.description}</Paragraph>
         </div>
 
         <Picture image={aboutUS.image} height={450}></Picture>

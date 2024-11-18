@@ -20,7 +20,7 @@ function DesktopNavbar(props) {
         <a
           key={index}
           href={link.href}
-          className="text-sm font-base text-gray-300 hover:text-primary hover:text-stone-400 focus:text-white"
+          className="text-sm font-base text-gray-300 hover:text-primary hover:text-white focus:text-white"
         >
           {link.name}
         </a>

@@ -54,7 +54,7 @@ const TestimonialCarousel = () => {
   }
 
   return (
-    <div className="max-w-7xl h-[350px] ">
+    <div className="max-w-full h-[350px] ">
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
           <div key={index} className="px-4 h-[350px] flex flex-col">

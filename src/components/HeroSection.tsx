@@ -14,11 +14,11 @@ const AnimatedShinyTextDemo = (props) => {
   return (
     <div
       className={cn(
-        'group rounded-full backdrop-blur-sm border-[1px] border-gray-500 bg-white/30 text-base  transition-all ease-in hover:cursor-pointer hover:bg-neutral-200',
+        'group rounded-full backdrop-blur-sm border-[1px] border-white/15 bg-white/10 text-base  transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 ',
         props.className,
       )}
     >
-      <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 text-white transition ease-out  hover:text-gray-500   hover:duration-500 ">
+      <AnimatedShinyText className="inline-flex items-center justify-center px-5 py-2 text-white transition ease-out  hover:text-gray-500   hover:duration-500 ">
         <span className="items-center text-ellipsis line-clamp-1">
           {props.content}
         </span>
@@ -43,11 +43,11 @@ const HeroContent = () => {
     ctaName: 'Book Free Demo',
   }
   return (
-    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:py-32 z-10">
+    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:pt-56 md:pb-32 z-10">
       <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
-          className="text-xs md:text-base"
+          className="text-xs md:text-sm font-light"
           content={heroData.heroSpan}
         />
         <H1 className="text-center text-white font-medium">
@@ -59,7 +59,7 @@ const HeroContent = () => {
         />
 
         {/* Description */}
-        <Paragraph className="text-center font-light">
+        <Paragraph className="text-center">
           {heroData.heroDescription}
         </Paragraph>
 
@@ -77,15 +77,17 @@ const HeroContent = () => {
   )
 }
 const HeroSection = () => {
-  const { width: windowWidth } = useWindowSize();
-
+  const { width: windowWidth } = useWindowSize()
 
   return (
-    <Section id="hero-section" className="hero-section bg-[#02024a] px-4">
-      { (windowWidth > 1280) && (
+    <Section
+      id="hero-section"
+      className="hero-section bg-[#02024a] bg-hero-pattern px-4"
+    >
+      {windowWidth > 1280 && (
         <div className="rounded-2xl flex items-end justify-right z-10">
           <Image
-            width={windowWidth > 1800 ? 600: 300}
+            width={windowWidth > 1800 ? 600 : 300}
             height={600}
             src={'/hero-left.png'}
             alt="hero-left"
@@ -93,28 +95,25 @@ const HeroSection = () => {
         </div>
       )}
       <HeroContent />
-      { windowWidth > 1280 && (
+      {windowWidth > 1280 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
-            width={windowWidth > 1800 ? 600: 300}
+            width={windowWidth > 1800 ? 600 : 300}
             height={600}
             src={'/hero-right.png'}
             alt="hero-left"
           />
         </div>
       )}
-      <GridPattern
-        className={cn('z-0',
-          '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] ',
-          'inset-x-0 inset-y-[-30%] h-[200%]',
-        )}
-      />
-      {/* <div
-        className="absolute inset-0 flex items-center justify-center overflow-hidden z-0"
-        aria-hidden="true"
-      >
-        <div className="w-[500vw] h-[500vw] bg-gradient-to-tl  from-[#4364c1]  via-[#02024a]  to-[#4364c1] animate-spin-sl  rounded-full" />
-      </div> */}
+      <div className="overflow-hidden">
+        <GridPattern
+          className={cn(
+            'z-0',
+            '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] ',
+            'inset-y-[-40%] h-[200%]',
+          )}
+        />
+      </div>
     </Section>
   )
 }
