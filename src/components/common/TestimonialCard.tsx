@@ -1,7 +1,9 @@
+import useWindowSize from '~/hooks/useWindowSize';
 import H3 from '../typography/H3'
 import RichAvatar from './RichAvatar'
 
 const TestimonialCard = (props) => {
+  const { width: windowWidth } = useWindowSize();
   return (
     <div className="rounded-3xl bg-[#f9f6fe] p-10 flex flex-col gap-4 w-[380px] md:w-3/4  ">
       <div className="flex items-center justify-between">
@@ -15,7 +17,7 @@ const TestimonialCard = (props) => {
       <div className="flex flex-row justify-between items-end">
         <RichAvatar user={props.user} tenant={props.tenant} />
         <div>
-          <p className="text-md text-gray-900">{props.infoString}</p>
+          <p style={{ fontSize: windowWidth < 750 ? 11 : undefined }} className=" text-gray-900">{props.infoString}</p>
         </div>
       </div>
     </div>
