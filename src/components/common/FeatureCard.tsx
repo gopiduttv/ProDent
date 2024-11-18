@@ -14,6 +14,7 @@ const FeatureCard = ({ feature }) => {
         alt="location-icon"
       />
       <H3>{feature?.featureSubCategoriesHeading}</H3>
+      <List className="flex flex-col gap-4" items={feature}/>
     </div>
   )
 }
