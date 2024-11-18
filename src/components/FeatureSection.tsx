@@ -3,7 +3,7 @@ import Section from './structure/Section'
 import Container from './structure/Container'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
-import FeatureCategoryCard from './common/FeatureCard' 
+import FeatureCategoryCard from './common/FeatureCategoryCard'
 
 const FeatureSection = ({ features }) => {
   return (
@@ -19,8 +19,15 @@ const FeatureSection = ({ features }) => {
           </div>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center gap-8">
-          {features?.map((ele: any, i: number) => {
-            return <FeatureCategoryCard key={i} feature={ele} />
+          {features?.map((featureCategory: any, index: number) => {
+            return (
+              <FeatureCategoryCard
+                key={index}
+                imageUrl={featureCategory.imageUrl}
+                heading={featureCategory.featureSubCategoriesHeading}
+                features={featureCategory.features}
+              />
+            )
           })}
         </div>
       </Container>

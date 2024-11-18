@@ -76,7 +76,7 @@ const HeroContent = () => {
     </div>
   )
 }
-const HeroSection = () => {
+const HeroSection = ({props}) => {
   const { width: windowWidth } = useWindowSize();
 
 

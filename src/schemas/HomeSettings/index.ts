@@ -4,17 +4,39 @@ export default defineType({
   title: 'Home Settings',
   type: 'document',
   fields: [
+    defineField({
+      name: 'heroStrip',
+      title: 'Hero Strip',
+      type: 'string',
+    }),
 
     defineField({
-        name: 'osDentalSlogan',
-        title:'Add Slogan',
-        type: 'string'
+      name: 'heroTitleStatic',
+      title: 'Hero Title Static',
+      type: 'string',
     }),
     defineField({
+      name: 'heroTitleStaticDynamic',
+      title: 'Hero Title Dynamic',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'multipleString' }],
+        },
+      ],
+    }),
+    defineField({
+      name: 'bookBtnContent',
+      title: 'Book Demo Button Content',
+      type: 'string',
+    }),
+
+    defineField({
       name: 'aboutSectionImage',
-      title:'About Section Image',
-      type: 'image'
-  }),
+      title: 'About Section Image',
+      type: 'image',
+    }),
 
     defineField({
       name: 'benefits',
@@ -28,32 +50,32 @@ export default defineType({
       ],
     }),
     defineField({
-        name: 'testimonials',
-        title: 'Add Testimonials',
-        type: 'array',
-        of: [
-          {
-            type: 'reference',
-            to: [{ type: 'testimonial' }],
-          },
-        ],
-      }),
-      defineField({
-        name: 'integration',
-        title: 'Add Integration',
-        type: 'array',
-        of: [
-          {
-            type: 'reference',
-            to: [{ type: 'integration' }],
-          },
-        ],
-      }),
+      name: 'testimonials',
+      title: 'Add Testimonials',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'testimonial' }],
+        },
+      ],
+    }),
+    defineField({
+      name: 'integration',
+      title: 'Add Integration',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'integration' }],
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
-      title:'osDentalSlogan',
+      title: 'osDentalSlogan',
       media: 'aboutSectionImage',
     },
-  }
+  },
 })

@@ -70,6 +70,17 @@ export async function fetchAboutSection(client: SanityClient): Promise<any> {
   return await client.fetch(query)
 }
 
+export async function fetchHeroSectionData(client: SanityClient): Promise<any> {
+  const query = groq` *[_type == "homeSettings"]{
+    "ctaName":bookBtnContent,
+    "heroStrip":heroStrip,
+     "heroTitleStatic":heroTitleStatic,
+      'heroTitleStaticDynamic':heroTitleStaticDynamic[]->multipleString,
+    "aboutSectionImage":aboutSectionImage.asset->url
+  }`
+  return await client.fetch(query)
+}
+
 export interface Post {
   _type: 'post'
   _id: string
