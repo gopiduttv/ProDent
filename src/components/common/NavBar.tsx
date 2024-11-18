@@ -40,7 +40,12 @@ function MobileNavBar(props) {
   return (
     <div className="md:hidden flex flex-col items-center gap-6 bg-[#02024a] p-4 text-white">
       {navigationLinks.map((link, index) => (
-        <a key={index} href={link.href} onClick={handler}>
+        <a
+          key={index}
+          href={link.href}
+          className="text-sm font-base text-gray-300 hover:text-primary hover:text-stone-400 focus:text-white"
+          onClick={handler}
+        >
           {link.name}
         </a>
       ))}
