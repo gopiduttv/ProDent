@@ -82,7 +82,7 @@ const HeroSection = () => {
   return (
     <Section
       id="hero-section"
-      className="hero-section bg-[#02024a] bg-hero-pattern px-4"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4"
     >
       {windowWidth > 1280 && (
         <div className="rounded-2xl flex items-end justify-right z-10">
