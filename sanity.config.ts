@@ -20,6 +20,7 @@ import {
   projectId,
 } from '~/lib/sanity.api'
 import { schema } from '~/schemas'
+import { media } from 'sanity-plugin-media'
 
 const iframeOptions = {
   url: defineUrlResolver({
@@ -75,6 +76,19 @@ export default defineConfig({
           S.view.component(Iframe).options(iframeOptions).title('Preview'),
         ])
       },
+    }),
+
+    media({
+      creditLine: {
+        enabled: true,
+        // boolean - enables an optional "Credit Line" field in the plugin.
+        // Used to store credits e.g. photographer, licence information
+        excludeSources: ['unsplash'],
+        // string | string[] - when used with 3rd party asset sources, you may
+        // wish to prevent users overwriting the creditLine based on the `source.name`
+      },
+      maximumUploadSize: 10000000
+      // number - maximum file size (in bytes) that can be uploaded through the plugin interface
     }),
     previewUrl({
       base: '/api/draft',

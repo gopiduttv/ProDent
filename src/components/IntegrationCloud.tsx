@@ -1,14 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import { urlForImage } from '~/lib/sanity.image'
+import ImageLoader from './common/imageLoader/imageLoader'
 
 const IntegrationLogoCard = (props) => {
   return (
     <div className="h-20 flex items-center justify-center">
-      <Image
-        src={urlForImage(props.image.images).url()}
-        width={100}
-        height={100}
+      <ImageLoader
+        image={props.image.images}
+
         alt="location-icon"
       />
     </div>
