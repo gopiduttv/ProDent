@@ -82,7 +82,7 @@ const HeroSection = () => {
 
   return (
     <Section id="hero-section" className="hero-section bg-[#02024a] px-4">
-      { (windowWidth > 768) && (
+      { (windowWidth > 1280) && (
         <div className="rounded-2xl flex items-end justify-right z-10">
           <Image
             width={windowWidth > 1800 ? 600: 300}
@@ -93,7 +93,7 @@ const HeroSection = () => {
         </div>
       )}
       <HeroContent />
-      { windowWidth > 768 && (
+      { windowWidth > 1280 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
             width={windowWidth > 1800 ? 600: 300}
