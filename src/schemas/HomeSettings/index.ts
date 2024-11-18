@@ -33,6 +33,12 @@ export default defineType({
     }),
 
     defineField({
+      name: 'heroDescription',
+      title: 'Hero Description',
+      type: 'text',
+    }),
+
+    defineField({
       name: 'aboutSectionImage',
       title: 'About Section Image',
       type: 'image',

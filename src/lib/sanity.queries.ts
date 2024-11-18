@@ -71,11 +71,12 @@ export async function fetchAboutSection(client: SanityClient): Promise<any> {
 }
 
 export async function fetchHeroSectionData(client: SanityClient): Promise<any> {
-  const query = groq` *[_type == "homeSettings"]{
+  const query = groq` *[_type == "homeSettings"][0]{
+    "heroDescription":heroDescription,
     "ctaName":bookBtnContent,
     "heroStrip":heroStrip,
-     "heroTitleStatic":heroTitleStatic,
-      'heroTitleStaticDynamic':heroTitleStaticDynamic[]->multipleString,
+    "heroTitleStatic":heroTitleStatic,
+    "heroTitleDynamic":heroTitleStaticDynamic[]->multipleString,
     "aboutSectionImage":aboutSectionImage.asset->url
   }`
   return await client.fetch(query)

@@ -28,39 +28,26 @@ const AnimatedShinyTextDemo = (props) => {
   )
 }
 
-const HeroContent = () => {
-  const heroData = {
-    heroSpan: 'Data-Driven Dentistry for Growing Practices',
-    heroHeading: 'Aggregate Your Clinical & Non-clinical Data For',
-    heroHeadingList: [
-      'Better Business Decisions',
-      'Identifying Opportunities',
-      'Ana Staff Performance',
-      'Defining Practice Culture',
-    ],
-    heroDescription:
-      'OS Dental is a custom analytics solution that’s fundamentally built differently, seamlessly connecting and validating all sources of DSO data to yield powerful, reliable insights.',
-    ctaName: 'Book Free Demo',
-  }
+const HeroContent = ({ props }) => {
   return (
     <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:py-32 z-10">
       <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
           className="text-xs md:text-base"
-          content={heroData.heroSpan}
+          content={props?.heroStrip}
         />
         <H1 className="text-center text-white font-medium">
-          {heroData.heroHeading}
+          {props?.heroTitleStatic}
         </H1>
         <WordRotate
           className="md:text-6xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
-          words={heroData.heroHeadingList}
+          words={props?.heroTitleDynamic}
         />
 
         {/* Description */}
         <Paragraph className="text-center font-light">
-          {heroData.heroDescription}
+          {props?.heroDescription}
         </Paragraph>
 
         {/* Buttons */}
@@ -70,33 +57,31 @@ const HeroContent = () => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <CTAButton name={heroData.ctaName} />
+          <CTAButton name={props?.ctaName} />
         </div>
       </div>
     </div>
   )
 }
-const HeroSection = ({props}) => {
-  const { width: windowWidth } = useWindowSize();
-
-
+const HeroSection = ({ props }) => {
+  const { width: windowWidth } = useWindowSize()
   return (
     <Section id="hero-section" className="hero-section bg-[#02024a] px-4">
-      { (windowWidth > 768) && (
+      {windowWidth > 768 && (
         <div className="rounded-2xl flex items-end justify-right z-10">
           <Image
-            width={windowWidth > 1800 ? 600: 300}
+            width={windowWidth > 1800 ? 600 : 300}
             height={600}
             src={'/hero-left.png'}
             alt="hero-left"
           />
         </div>
       )}
-      <HeroContent />
-      { windowWidth > 768 && (
+      {props ? <HeroContent props={props} /> : null}
+      {windowWidth > 768 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
-            width={windowWidth > 1800 ? 600: 300}
+            width={windowWidth > 1800 ? 600 : 300}
             height={600}
             src={'/hero-right.png'}
             alt="hero-left"
@@ -104,17 +89,12 @@ const HeroSection = ({props}) => {
         </div>
       )}
       <GridPattern
-        className={cn('z-0',
+        className={cn(
+          'z-0',
           '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] ',
           'inset-x-0 inset-y-[-30%] h-[200%]',
         )}
       />
-      {/* <div
-        className="absolute inset-0 flex items-center justify-center overflow-hidden z-0"
-        aria-hidden="true"
-      >
-        <div className="w-[500vw] h-[500vw] bg-gradient-to-tl  from-[#4364c1]  via-[#02024a]  to-[#4364c1] animate-spin-sl  rounded-full" />
-      </div> */}
     </Section>
   )
 }
