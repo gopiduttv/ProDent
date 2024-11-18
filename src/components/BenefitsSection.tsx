@@ -8,32 +8,27 @@ import Subtext from './typography/Subtext'
 const BenefitsSection = () => {
   const benefits = [
     {
-      heading: 'dfgsdfg',
-      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
-      image: "/benefit-image.png"
-    },
-    {
-      heading: 'Multi-Location Portfolio Performance',
+      heading: 'Consolidate Accurate Data',
       points: [
-        'Doctor Wages, Payroll Taxes & Benefits',
-        'Merchant Fees, Marketing & Supply Expenses and more',
-        'Margin & EBITDA Analysis',
+        'For Unearthing opportunity areas',
+        'For Identifying performance trends',
+        'For Defining the culture of performance',
       ],
-      image: "/benefit-image.png"
+      image: '/con-acc-data.png',
     },
     {
-      heading: 'Practice Performance Analysis',
+      heading: 'Unlock the Full Potential of Your Practice Data',
       points: [
-        'Gross and Net Production - Hygiene and Non-Hygiene',
-        'Aging and Claim Analyses',
-        'Doctor & Hygienist Performance Dashboards',
+        'Conquer de-centralized tech stacks and eliminate data fragmentation.',
+        'Macro and micro-level analysis for faster decision making.',
+        'Calculate staff and provider payroll within minutes.',
       ],
-      image: "/benefit-image.png"
+      image: '/full-potential.png',
     },
     {
-      heading: 'Opportunity Analysis',
-      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
-      image: "/benefit-image.png"
+      heading: 'Align Your Team on Objectives',
+      points: ['Democratize data access for empowering team members.', 'Set performance criteria for continuous improvement.', 'Measure and Monitor Team performance for constant feedback.'],
+      image: '/align-team.png',
     },
   ]
 
