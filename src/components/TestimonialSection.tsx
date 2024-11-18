@@ -13,7 +13,7 @@ const TestimonialSection = ({testimonials}) => {
           <Subtext>Testimonials</Subtext>
 
           <div className="max-w-2xl w-full flex justify-center">
-            <H2 className="text-center md:whitespace-nowrap">See what our customers say!</H2>
+            <H2 className="text-center md:whitespace-nowrap">Our Customers Love Us!</H2>
           </div>
         </div>
         <TestimonialCarousel props={testimonials} />

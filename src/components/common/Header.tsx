@@ -41,7 +41,7 @@ const Header = () => {
       className="sticky top-0 left-0 w-full h-[75px] py-4 md:px-4 box-border z-50 bg-[#02024a] shadow-md transition-colors duration-300"
       style={{ boxSizing: 'border-box' }}
     >
-      <nav className=" flex flex-col md:flex-row md:items-center md:justify-between gap-4 px-4">
+      <nav className=" flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:px-4">
         <div className="flex flex-row justify-between ">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-bold text-lg">
