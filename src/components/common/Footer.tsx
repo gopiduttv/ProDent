@@ -72,7 +72,7 @@ const BottomSection = () => {
   return (
     <div className="w-full flex flex-col-reverse md:flex-row justify-center md:justify-between gap-6">
       <div className="text-white/50 text-center">
-        © 2023 Aeka. All Rights Reserved.
+      © 2024 OS Dental inc. All rights reserved.
       </div>
       <div className="flex flex-col md:flex-row gap-8 md:gap text-center">
         <div className=" text-white/50 ">Terms of use</div>

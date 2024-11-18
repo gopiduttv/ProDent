@@ -42,7 +42,7 @@ const testimonials = [
   },
 ]
 
-const TestimonialCarousel = ({props}) => {
+const TestimonialCarousel = ({ props }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -51,32 +51,19 @@ const TestimonialCarousel = ({props}) => {
     slidesToScroll: 1,
     arrows: false,
   }
-  console.log(props)
 
   return (
     <div className="max-w-7xl h-[350px] ">
       <Slider {...settings}>
-        {/* {testimonials.map((testimonial, index) => (
-          <div key={index} className="px-4 h-[350px] flex flex-col">
-            <div className="w-full flex justify-center">
-              <TestimonialCard {...testimonial} />
+        {props?.map((e, i) => {
+          return (
+            <div key={i} className="px-4 h-[350px] flex flex-col">
+              <div className="w-full flex justify-center">
+                <TestimonialCard props={e} />
+              </div>
             </div>
-          </div>
-        ))} */}
-        {
-          props?.map((e,i)=>{
-            return(
-              <div key={i} className="px-4 h-[350px] flex flex-col">
-            <div className="w-full flex justify-center">
-              <TestimonialCard props={e} />
-            </div>
-          </div>
-            )
-          })
-        }
-
-
-
+          )
+        })}
       </Slider>
     </div>
   )

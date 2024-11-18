@@ -58,9 +58,15 @@ export async function heroSectionQuery(
 ): Promise<HomeSettings | null> {
   const query = groq`
     *[_type == "siteSettings"][0]{
-      homeSettings[0]
+      homeSettings[0],
+      "about":ogDescription
     }
   `
+  return await client.fetch(query)
+}
+
+export async function fetchAboutSection(client: SanityClient): Promise<any> {
+  const query = groq`*[_type == "siteSettings"]{"about":ogDescription}`
   return await client.fetch(query)
 }
 
