@@ -6,13 +6,19 @@ export default defineType({
   fields: [
     defineField({
       name: 'benefitHeading',
-      title: 'Benefits Heading',
+      title: 'Benefit Heading',
       type: 'string',
+    }),
+    defineField({
+      title: 'Benefit Points',
+      name: 'benefitPoints',
+      type: 'array',
+      of: [{type: 'string'}]
     }),
     defineField({
       name: 'benefitDescription',
       title: 'Benefit Description',
-      type: 'blockContent',
+      type: 'string',
     }),
     defineField({
       name: 'benefitImageSection',

@@ -23,7 +23,9 @@ export async function getPost(
 export const postSlugsQuery = groq`
 *[_type == "post" && defined(slug.current)][].slug.current
 `
-export async function metaDataQuery(client: SanityClient): Promise<SiteSettings> {
+export async function metaDataQuery(
+  client: SanityClient,
+): Promise<SiteSettings> {
   const query = groq` 
     *[_type == "siteSettings"][0]{
       ogTitle,
@@ -32,29 +34,30 @@ export async function metaDataQuery(client: SanityClient): Promise<SiteSettings>
       ogUrl,
       ogDescription
     }
-  `;
-  return await client.fetch(query);
-}
-
-export async function fetchIntegrationList(client: SanityClient): Promise<any>  {
-  const query = groq`*[_type == "integration" ]{integrationProductImage}`
+  `
   return await client.fetch(query)
 }
 
-export async function heroSectionQuery(client: SanityClient): Promise<HomeSettings | null> {
+export async function fetchIntegrationList(client: SanityClient): Promise<any> {
+  const query = groq`*[_type == "integration" ]{integrationProductImage}`
+  return await client.fetch(query)
+}
+export async function featureSection(client: SanityClient): Promise<any> {
+  const query = groq`    *[_type == "featureCategories"]{...,"imageUrl":featureSubCategoriesImage.asset->url, 
+      "features":features[]->}`
+  return await client.fetch(query)
+}
+
+export async function heroSectionQuery(
+  client: SanityClient,
+): Promise<HomeSettings | null> {
   const query = groq`
     *[_type == "siteSettings"][0]{
       homeSettings[0]
     }
-  `;
-  return await client.fetch(query);
+  `
+  return await client.fetch(query)
 }
-
-
-
-
-
-
 
 export interface Post {
   _type: 'post'
@@ -68,16 +71,16 @@ export interface Post {
 }
 
 export interface SiteSettings {
-  ogTitle: string;
-  ogFavicon: ImageAsset;
-  ogImage: ImageAsset;
-  ogUrl: string;
-  ogDescription: string;
+  ogTitle: string
+  ogFavicon: ImageAsset
+  ogImage: ImageAsset
+  ogUrl: string
+  ogDescription: string
 }
 
 export interface HomeSettings {
-  buttonText?: string;
-  heroSectionHeader?: string;
-  heroDescription?: string;
-  heroSubHeading?: string;
+  buttonText?: string
+  heroSectionHeader?: string
+  heroDescription?: string
+  heroSubHeading?: string
 }
