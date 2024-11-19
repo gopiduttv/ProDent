@@ -25,7 +25,7 @@ function IntegrationSection({ OsDentalIntegration }) {
               return (
                 <IntegrationCloud
                   className="p-3"
-                  images={e.integrationProductImage}
+                  images={e.image}
                   imagesCount={16}
                   key={i}
                 />

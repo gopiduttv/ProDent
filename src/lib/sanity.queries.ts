@@ -38,20 +38,46 @@ export async function metaDataQuery(
   return await client.fetch(query)
 }
 
-const imageFragment = ` "image": image.asset-> { _id, url, metadata { dimensions { width, height, aspectRatio } } }, "altText": image.altText, "title": image.title `;
+const imageFragment = `
+  "image": integrationProductImages.asset-> {
+    _id,
+    url,
+    metadata {
+      dimensions {
+        width,
+        height,
+        aspectRatio
+      }
+    }
+  },
+  "altText": image.altText,
+  "title": image.title
+`;
 
 
 
 export async function fetchIntegrationList(client: SanityClient): Promise<any> {
-  const query = groq`
-    *[_type == "integration"]{
-      ...,
-      ${imageFragment}
-    }
-  `;
-  return await client.fetch(query);
+  const query = groq`*[_type == "integration" ]{
+  "image": integrationProductImage.asset-> {
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height,
+            aspectRatio
+          }
+        }
+      },
+      "altText": image.altText,
+      "title": image.title,
+      _createdAt,
+      _id
+    
+   
+  }`
+  return await client.fetch(query)
 }
-
 export async function featureSection(client: SanityClient): Promise<any> {
   const query = groq`    *[_type == "featureCategories"]{...,"imageUrl":featureSubCategoriesImage.asset->url, 
       "features":features[]->}`

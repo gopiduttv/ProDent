@@ -1,10 +1,8 @@
 import Image from 'next/image'
 import React, { useEffect, useState, useRef } from 'react'
 import { urlForImage } from '~/lib/sanity.image'
-import useBoundingWidth from '../../utils/UseBoundingWidthHook'
+import useBoundingWidth from '~/components/utils/UseBoundingWidthHook'
 import { DeviceType } from '~/components/utils/boundingWidthHook'
-import { average } from '../../utils/color'
-import { rgbToHsl } from '../../utils/common'
 
 interface ImageLoaderProps {
   width?: number
@@ -46,9 +44,6 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({
     ratio: 0,
   })
 
-  console.log(image);
-  
-
   const deviceObtained = useBoundingWidth() as DeviceType
 
   useEffect(() => {
@@ -81,13 +76,17 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({
         }
 
         const newHeight = newProposedWidth / imageRatio
+        const imageID = image._id
+          ? image._id
+          : image.asset
+            ? image.asset._id
+            : image._id || image.asset?._id || image
 
-        const url = urlForImage(image._id || image, {
+        const url = urlForImage(imageID, {
           width: newProposedWidth,
           height: newHeight,
           quality: 90,
         })
-
         setImageData({
           url: url || '',
           width: newProposedWidth,

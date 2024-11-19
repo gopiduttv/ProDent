@@ -19,7 +19,7 @@ export const urlForImage = (source: any, dimensions?: ImageDimensions) => {
     return source; 
   }
 
-  if (typeof source === 'object' && source?.asset?._ref) {
+  if (typeof source === 'object' && source?.asset?._ref ) {
     let urlBuilder = imageBuilder.image(source).auto('format');
 
     if (dimensions) {
@@ -35,7 +35,7 @@ export const urlForImage = (source: any, dimensions?: ImageDimensions) => {
     return urlBuilder.url();
   }
 
-  if (typeof source === 'string' && source.startsWith('image-')) {
+  // if (typeof source === 'string' && source.startsWith('image-')) {
     const imageRef = {
       asset: {
         _ref: source,
@@ -56,8 +56,8 @@ export const urlForImage = (source: any, dimensions?: ImageDimensions) => {
       urlBuilder = urlBuilder.quality(dimensions.quality || 90);
     }
 
-    return urlBuilder.url();
-  }
+    return urlBuilder?.url();
+  // }
 
   return undefined;
 };
