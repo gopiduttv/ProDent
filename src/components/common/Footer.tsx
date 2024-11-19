@@ -1,5 +1,6 @@
 import Container from '../structure/Container'
 import Section from '../structure/Section'
+import CTAButton from './CTAbutton'
 
 const TopSection = () => {
   return (
@@ -8,7 +9,7 @@ const TopSection = () => {
         <div className="md:w-1/2 text-white text-5xl font-semibold">
           Centralize your data. Supercharge your DSO.
         </div>
-        <div className="md:w-1/2  flex-col justify-start items-start gap-4 md:gap-2 inline-flex">
+        <div className="md:w-1/2  flex-col justify-start items-start gap-4 inline-flex">
           <div className="self-stretch  flex-col justify-start items-start gap-3 flex">
             <div className="self-stretch text-white/80 text-lg font-medium leading-[29.25px]">
               Without cross-platform compatibility, what good is your data? Our
@@ -16,15 +17,10 @@ const TopSection = () => {
               five months from now.
             </div>
           </div>
-          <div className="px-4 py-2.5 bg-[#8639f8] rounded-md justify-center items-center gap-2.5 inline-flex">
-            <a
-              href="/cta"
-              className="text-white text-sm font-semibold leading-snug"
-            >
-              Book Free Demo
-            </a>
-          </div>
+          <CTAButton className="px-6 py-3" name={"Book Free Demo"}/>
         </div>
+
+
       </div>
       <div className="self-stretch h-[0px] border border-white/20"></div>
     </div>

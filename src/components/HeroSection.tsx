@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from 'lucide-react'
-import CTAButton from './common/JoinwaitList'
+import CTAButton from './common/CTAbutton'
 import Section from './structure/Section'
 import H1 from './typography/H1'
 import Paragraph from './typography/Paragraph'
@@ -70,7 +70,7 @@ const HeroContent = () => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <CTAButton name={heroData.ctaName} />
+          <CTAButton className="px-6 py-3" name={heroData.ctaName} />
         </div>
       </div>
     </div>

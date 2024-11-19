@@ -38,7 +38,7 @@ const BenefitsSection = () => {
         <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Benefits</Subtext>
           <div className="max-w-2xl w-full flex justify-center">
-            <H2>Data for Dentistry. Done Right.</H2>
+            <H2>Do More With Your Data</H2>
           </div>
         </div>
         <div className="flex flex-col gap-16">

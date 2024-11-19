@@ -19,7 +19,7 @@ const AboutUsSection = () => {
     >
       <Container className="flex md:flex-row flex-col-reverse items-center gap-24 w-full">
         <div className="flex flex-col md:w-1/2 w-full">
-          <H2 className=" text-white">{aboutUS.heading}</H2>
+          <H2 className="!text-left text-white">{aboutUS.heading}</H2>
           <Paragraph className="font-light">{aboutUS.description}</Paragraph>
         </div>
 
