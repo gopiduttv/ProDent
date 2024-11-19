@@ -3,12 +3,12 @@ import BenefitsSection from './BenefitsSection'
 import FeatureSection from './FeatureSection'
 import TestimonialSection from './TestimonialSection'
 import IntegrationSection from './IntegrationSection'
-import AboutUsSection from './AboutUsSeciton'
+import AboutUsSection from './AboutUsSection'
 
 const Content = (props: any) => {
   return (
     <div className="flex flex-col overflow-hidden">
-      <HeroSection props={props.heroSectionData}/>
+      <HeroSection data={props.heroSectionData}/>
       <FeatureSection features={props.featureSectionDetails} />
       <IntegrationSection OsDentalIntegration={props?.OsDentalIntegration} />
       <BenefitsSection />

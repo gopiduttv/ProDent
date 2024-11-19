@@ -73,7 +73,11 @@ module.exports = {
   					'background-position': 'calc(100% + var(--shiny-width)) 0'
   				}
   			}
-  		}
+  		},
+		backgroundImage: {
+		'hero-pattern': "url('/hero-pattern.png')",
+		}
+
   	}
   },
   plugins: [require("tailwindcss-animate")],

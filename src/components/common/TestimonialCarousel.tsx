@@ -54,7 +54,7 @@ const TestimonialCarousel = ({ props }) => {
   }
 
   return (
-    <div className="max-w-7xl h-[350px] ">
+    <div className="max-w-full h-[350px] ">
       <Slider {...settings}>
         {props?.map((e, i) => {
           return (
