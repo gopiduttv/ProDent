@@ -23,7 +23,9 @@ const TestimonialCard = ({props}) => {
           tenant={props.authordesignation}
         />
         <div>
-          <p style={{ fontSize: windowWidth < 750 ? 11 : undefined }} className=" text-gray-900">{props.infoString}</p>
+          <p style={{ fontSize: windowWidth < 750 ? 11 : undefined }} className="text-gray-900">
+            {`${props.numberOflocation} Locations, ${props.location}`}
+          </p>
         </div>
       </div>
     </div>
