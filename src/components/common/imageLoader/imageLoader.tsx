@@ -31,6 +31,7 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({
   maxWidth = 1200,
   onColorExtracted,
   fixed = true,
+  radius = 0,
   ...props
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -129,6 +130,7 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({
           title={title || (image?.title ?? '') || ''}
           className={`object-cover object-center ${imageClassName}`}
           fill
+          style={{borderRadius:radius+'px'}}
         />
       </div>
     )
@@ -146,6 +148,7 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({
         title={title || (image?.title ?? '') || ''}
         width={imageData.width || clientWidth}
         height={imageData.height || clientHeight}
+        style={{borderRadius:radius+'px'}}
       />
     </div>
   )
