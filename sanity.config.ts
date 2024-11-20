@@ -11,6 +11,7 @@ import {
   IframeOptions,
 } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
+import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 
 // see https://www.sanity.io/docs/api-versioning for how versioning works
 import {
@@ -102,6 +103,7 @@ export default defineConfig({
               S.documentTypeListItem('feature').title('Feature'),
               S.documentTypeListItem('integration').title('Integration'),
               S.documentTypeListItem('benefit').title('Benefit'),
+              S.documentTypeListItem('person').title('Person'),
 
           ])
     }),

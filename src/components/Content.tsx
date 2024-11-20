@@ -11,7 +11,7 @@ const Content = (props: any) => {
       <HeroSection data={props.heroSectionData}/>
       <FeatureSection features={props.featureSectionDetails} />
       <IntegrationSection OsDentalIntegration={props?.OsDentalIntegration} />
-      <BenefitsSection />
+      <BenefitsSection data={props.BenefitSectionData} />
       <TestimonialSection testimonials={props?.testimonialData} />
       <AboutUsSection about={props?.heroSectionContent?.about} />
     </div>

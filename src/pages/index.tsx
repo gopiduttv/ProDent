@@ -14,6 +14,7 @@ import {
   postsQuery,
   SiteSettings,
   fetchHeroSectionData,
+  fetchBenefitSectionData,
 } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 import Layout from '../components/Layout'
@@ -33,6 +34,7 @@ export const getStaticProps: GetStaticProps<
   const featureSectionDetails = await featureSection(client)
   const testimonialData = await fetchTestimonial(client)
   const heroSectionData = await fetchHeroSectionData(client)
+  const BenefitSectionData = await fetchBenefitSectionData(client)
 
   return {
     props: {
@@ -44,7 +46,8 @@ export const getStaticProps: GetStaticProps<
       OsDentalIntegration,
       featureSectionDetails,
       testimonialData,
-      heroSectionData
+      heroSectionData,
+      BenefitSectionData
     },
   }
 }

@@ -52,9 +52,7 @@ const imageFragment = `
   },
   "altText": image.altText,
   "title": image.title
-`;
-
-
+`
 
 export async function fetchIntegrationList(client: SanityClient): Promise<any> {
   const query = groq`*[_type == "integration" ]{
@@ -131,6 +129,27 @@ export async function fetchHeroSectionData(client: SanityClient): Promise<any> {
     "heroTitleStatic":heroTitleStatic,
     "heroTitleDynamic":heroTitleStaticDynamic,
     "aboutSectionImage":aboutSectionImage.asset->url
+  }`
+  return await client.fetch(query)
+}
+export async function fetchBenefitSectionData(
+  client: SanityClient,
+): Promise<any> {
+  const query = groq` *[_type == "benefit"]{
+    'benefitHeading':benefitHeading,
+     'benifitSectionImage':benefitImageSection.asset->{
+         _id,
+         url,
+         metadata {
+           dimensions {
+             width,
+             height,
+             aspectRatio
+           }
+         }
+       },
+ 'benefitPoints':benefitPoints
+      
   }`
   return await client.fetch(query)
 }

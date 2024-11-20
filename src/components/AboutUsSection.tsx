@@ -4,6 +4,7 @@ import Container from './structure/Container'
 import { Picture } from './common/RichImage'
 import H2 from './typography/H2'
 import Paragraph from './typography/Paragraph'
+import ImageLoader from './common/imageLoader/imageLoader'
 
 const AboutUsSection = ({about}) => {
   const aboutUS = {
@@ -23,7 +24,7 @@ const AboutUsSection = ({about}) => {
           <Paragraph className="font-light">{aboutUS.description}</Paragraph>
         </div>
 
-        <Picture image={aboutUS.image} height={450}></Picture>
+        <ImageLoader image={aboutUS.image}/>
       </Container>
     </Section>
   )
