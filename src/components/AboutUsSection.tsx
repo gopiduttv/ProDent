@@ -35,24 +35,34 @@ const AboutUsSection = ({about,founderDetails}) => {
   // const founders =founderDetails
 
   return (
-    <Section
-      id="about-us-section"
-      className="py-24 bg-gradient-to-r from-[#8639F8] to-[#F768D1]"
-    >
-      <Container className="flex  flex-col items-center gap-24 w-full">
-        <div className="flex justify-center w-full">
-          <H2 className="!text-left text-white">{aboutUS.heading}</H2>
-        </div>
-
-        <div className="w-full flex md:flex-row md:justify-between">
-          {founderDetails?.map((founder: any, index: number) => {
-            return <PeopleCard {...founder}/>
+    <div className="bg-grid-pattern">
+      <Section
+        id="about-us-section"
+        className="py-24  bg-[#8639F8] bg-grid-pattern bg-contain"
+      >
+        <Container className="flex  flex-col items-center gap-10 w-full ">
+          <div>
+            <div className="flex justify-center w-full">
+              <H2 className="!text-left text-white">{aboutUS.heading}</H2>
+            </div>
+            <Paragraph className="text-center">
+              OSDental was conceived by a team of CPAs at ProDent Partners. With
+              our decades of experience working with dental offices, we realized
+              that a consolidated data platform is vital for ambitious dental
+              offices to manage growth and efficiency at the same time. OSDental
+              was built to solve this need, not just for DSOs but also for any
+              dental practice looking to have better monitoring of their dental
+              business as a whole.
+            </Paragraph>
+          </div>
+          <div className="w-full flex md:flex-row md:justify-between">
+            {founderDetails?.map((founder: any, index: number) => {
+            return <PeopleCard key ={index} {...founder}/>
           })}
-          {/* <PeopleCard {...founderOne} />
-          <PeopleCard {...founderTwo}/> */}
-        </div>
-      </Container>
-    </Section>
+          </div>
+        </Container>
+      </Section>
+    </div>
   )
 }
 

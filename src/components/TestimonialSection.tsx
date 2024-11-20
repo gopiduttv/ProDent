@@ -18,7 +18,7 @@ const TestimonialSection = ({testimonials}) => {
             <H2>{data?.heroSectionData?.testimonialHeader            }</H2>
           </div>
         </div>
-        <TestimonialCarousel props={testimonials} />
+        <TestimonialCarousel testimonials={testimonials} />
       </Container>
     </Section>
   )
