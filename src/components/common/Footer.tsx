@@ -1,3 +1,8 @@
+import Facebook from '../icons/Facebook'
+import Instagram from '../icons/Instagram'
+import LinkedIn from '../icons/LinkedIn'
+import Vimeo from '../icons/Vimeo'
+import Youtube from '../icons/Youtube'
 import Container from '../structure/Container'
 import Section from '../structure/Section'
 import CTAButton from './CTAbutton'
@@ -5,22 +10,12 @@ import CTAButton from './CTAbutton'
 const TopSection = () => {
   return (
     <div className="self-stretch flex-col justify-start items-start gap-14 flex">
-      <div className="w-full justify-start items-start gap-24 inline-flex flex-col md:flex-row">
+      <div className="w-full gap-24 inline-flex flex-col md:flex-row">
         <div className="md:w-1/2 text-white text-5xl font-semibold">
           Centralize your data. Supercharge your DSO.
         </div>
-        <div className="md:w-1/2  flex-col justify-start items-start gap-4 inline-flex">
-          <div className="self-stretch  flex-col justify-start items-start gap-3 flex">
-            <div className="self-stretch text-white/80 text-lg font-medium leading-[29.25px]">
-              Without cross-platform compatibility, what good is your data? Our
-              integrations are numerous, validated, and ready right now. Not
-              five months from now.
-            </div>
-          </div>
-          <CTAButton className="px-6 py-3" name={"Book Free Demo"}/>
-        </div>
 
-
+        <CTAButton className="md:w-1/2 px-6 py-3 text-4xl" name={'Book Free Demo'} />
       </div>
       <div className="self-stretch h-[0px] border border-white/20"></div>
     </div>
@@ -43,21 +38,11 @@ const MiddleSection = () => {
           300 Delaware Avenue <br /> Wilmington, Delaware 19801
         </div>
         <div className="flex justify-center md:justify-start items-start gap-6 ">
-          <div className="w-5 h-5 relative">
-            <img src="/linkedin.svg" />
-          </div>
-          <div className="w-5 h-5 relative">
-            <img src="/facebook.svg" />
-          </div>
-          <div className="w-5 h-5 relative">
-            <img src="/instagram.svg" />
-          </div>
-          <div className="w-5 h-5 relative">
-            <img src="/youtube.svg" />
-          </div>
-          <div className="w-5 h-5 relative">
-            <img src="/vimeo.svg" />
-          </div>
+          <LinkedIn />
+          <Facebook />
+          <Instagram />
+          <Youtube />
+          <Vimeo />
         </div>
       </div>
     </div>
@@ -85,8 +70,8 @@ const Footer = () => {
       <Container className="flex justify-center py-4 text-white ">
         <div className=" pt-24 pb-8 bg-[#02024a] flex-col justify-center items-start gap-12 inline-flex ">
           <TopSection />
-          <MiddleSection />
-          <div className="self-stretch h-[0px] border border-white/20"></div>
+          {/* <MiddleSection />
+          <div className="self-stretch h-[0px] border border-white/20"></div> */}
           <BottomSection />
         </div>
       </Container>

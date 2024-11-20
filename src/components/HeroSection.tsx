@@ -57,7 +57,7 @@ const HeroContent = ({ content }) => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <CTAButton name={content?.ctaName} />
+          <CTAButton className="px-6 py-3" name={content?.ctaName} />
         </div>
       </div>
     </div>
