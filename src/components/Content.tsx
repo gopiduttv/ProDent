@@ -8,12 +8,12 @@ import AboutUsSection from './AboutUsSection'
 const Content = (props: any) => {
   return (
     <div className="flex flex-col overflow-hidden">
-      <HeroSection />
-      <FeatureSection features ={props.featureSectionDetails} />
-      <IntegrationSection OsDentalIntegration ={props?.OsDentalIntegration} />
-      <BenefitsSection />
-      <TestimonialSection />
-      <AboutUsSection />
+      <HeroSection data={props.heroSectionData}/>
+      <FeatureSection features={props.featureSectionDetails} />
+      <IntegrationSection OsDentalIntegration={props?.OsDentalIntegration} />
+      <BenefitsSection data={props.BenefitSectionData} />
+      <TestimonialSection testimonials={props?.testimonialData} />
+      <AboutUsSection about={props?.heroSectionContent?.about} />
     </div>
   )
 }

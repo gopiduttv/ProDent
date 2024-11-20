@@ -43,7 +43,7 @@ const testimonials = [
  
 ]
 
-const TestimonialCarousel = () => {
+const TestimonialCarousel = ({ props }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -56,13 +56,15 @@ const TestimonialCarousel = () => {
   return (
     <div className="max-w-full h-[350px] ">
       <Slider {...settings}>
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="px-4 h-[350px] flex flex-col">
-            <div className="w-full flex justify-center">
-              <TestimonialCard {...testimonial} />
+        {props?.map((e, i) => {
+          return (
+            <div key={i} className="px-4 h-[350px] flex flex-col">
+              <div className="w-full flex justify-center">
+                <TestimonialCard props={e} />
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </Slider>
     </div>
   )

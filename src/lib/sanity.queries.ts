@@ -29,8 +29,8 @@ export async function metaDataQuery(
   const query = groq` 
     *[_type == "siteSettings"][0]{
       ogTitle,
-      ogFavicon,
-      ogImage,
+      "ogFavicon":ogFavicon.asset->url,
+      "ogImage" :ogImage.asset->url,
       ogUrl,
       ogDescription
     }
@@ -38,13 +38,69 @@ export async function metaDataQuery(
   return await client.fetch(query)
 }
 
+const imageFragment = `
+  "image": integrationProductImages.asset-> {
+    _id,
+    url,
+    metadata {
+      dimensions {
+        width,
+        height,
+        aspectRatio
+      }
+    }
+  },
+  "altText": image.altText,
+  "title": image.title
+`
+
 export async function fetchIntegrationList(client: SanityClient): Promise<any> {
-  const query = groq`*[_type == "integration" ]{integrationProductImage}`
+  const query = groq`*[_type == "integration" ]{
+  "image": integrationProductImage.asset-> {
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height,
+            aspectRatio
+          }
+        }
+      },
+      "altText": image.altText,
+      "title": image.title,
+      _createdAt,
+      _id
+    
+   
+  }`
   return await client.fetch(query)
 }
 export async function featureSection(client: SanityClient): Promise<any> {
-  const query = groq`    *[_type == "featureCategories"]{...,"imageUrl":featureSubCategoriesImage.asset->url, 
-      "features":features[]->}`
+  const query = groq`
+    *[_type == "featureCategory" && !(_id in path('drafts.**'))] {
+      ..., 
+      "imageUrl": categoryImage.asset->{
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height,
+            aspectRatio
+          }
+        }
+      },
+      "altText": image.altText,
+      "title": image.title,
+      "features": features[]->
+    }
+  `
+  return await client.fetch(query)
+}
+
+export async function fetchTestimonial(client: SanityClient): Promise<any> {
+  const query = groq`*[_type == "testimonial"]{...,"AuthorImage":authorimage.asset->url}`
   return await client.fetch(query)
 }
 
@@ -53,9 +109,48 @@ export async function heroSectionQuery(
 ): Promise<HomeSettings | null> {
   const query = groq`
     *[_type == "siteSettings"][0]{
-      homeSettings[0]
+      homeSettings[0],
+      "about":ogDescription
     }
   `
+  return await client.fetch(query)
+}
+
+export async function fetchAboutSection(client: SanityClient): Promise<any> {
+  const query = groq`*[_type == "siteSettings"]{"about":ogDescription}`
+  return await client.fetch(query)
+}
+
+export async function fetchHeroSectionData(client: SanityClient): Promise<any> {
+  const query = groq` *[_type == "homeSettings"][0]{
+    "heroDescription":heroDescription,
+    "ctaName":bookBtnContent,
+    "heroStrip":heroStrip,
+    "heroTitleStatic":heroTitleStatic,
+    "heroTitleDynamic":heroTitleStaticDynamic,
+    "aboutSectionImage":aboutSectionImage.asset->url
+  }`
+  return await client.fetch(query)
+}
+export async function fetchBenefitSectionData(
+  client: SanityClient,
+): Promise<any> {
+  const query = groq` *[_type == "benefit"]{
+    'benefitHeading':benefitHeading,
+     'benifitSectionImage':benefitImageSection.asset->{
+         _id,
+         url,
+         metadata {
+           dimensions {
+             width,
+             height,
+             aspectRatio
+           }
+         }
+       },
+ 'benefitPoints':benefitPoints
+      
+  }`
   return await client.fetch(query)
 }
 
@@ -72,8 +167,8 @@ export interface Post {
 
 export interface SiteSettings {
   ogTitle: string
-  ogFavicon: ImageAsset
-  ogImage: ImageAsset
+  ogFavicon: string
+  ogImage: string
   ogUrl: string
   ogDescription: string
 }

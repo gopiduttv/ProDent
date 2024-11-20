@@ -35,5 +35,10 @@ export default defineType({
       title: 'Og Type',
       type: 'string',
     }),
+    defineField({
+      name: 'copyRightText',
+      title: 'Copyright Text',
+      type: 'string',
+    }),
   ],
 })

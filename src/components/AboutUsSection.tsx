@@ -4,8 +4,9 @@ import Container from './structure/Container'
 import { Picture } from './common/RichImage'
 import H2 from './typography/H2'
 import Paragraph from './typography/Paragraph'
+import ImageLoader from './common/imageLoader/imageLoader'
 
-const AboutUsSection = () => {
+const AboutUsSection = ({about}) => {
   const aboutUS = {
     heading: 'About Us',
     description: 'OSDental was conceived by a team of CPAs at ProDent Partners. With our decades of experience working with dental offices, we realized that ambitious dental offices struggle to manage growth and efficiency at the same time, due to the lack of a consolidated data platform. OSDental was built to solve this gap, not just for DSOs but also for any dental practice looking to have better monitoring of their dental business as a whole.',
@@ -23,7 +24,7 @@ const AboutUsSection = () => {
           <Paragraph className="font-light">{aboutUS.description}</Paragraph>
         </div>
 
-        <Picture image={aboutUS.image} height={450}></Picture>
+        <ImageLoader image={aboutUS.image}/>
       </Container>
     </Section>
   )

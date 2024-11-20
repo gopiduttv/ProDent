@@ -7,7 +7,7 @@ const List = (props) => {
       {props.items.map((item, index) => (
         <li key={index}>
           <span className="flex flex-row items-start gap-3 font-light text-lg">
-            <Image src="/point.svg" width={20} height={20} alt="->" />
+            <Image src="/point.svg" width={20} height={20} alt="points" />
             {item}
           </span>
         </li>

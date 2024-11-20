@@ -28,39 +28,26 @@ const AnimatedShinyTextDemo = (props) => {
   )
 }
 
-const HeroContent = () => {
-  const heroData = {
-    heroSpan: 'Data-Driven Dentistry for Growing Practices',
-    heroHeading: 'Aggregate Your Clinical & Non-clinical Data For',
-    heroHeadingList: [
-      'Better Business Decisions',
-      'Identifying Opportunities',
-      'Ana Staff Performance',
-      'Defining Practice Culture',
-    ],
-    heroDescription:
-      'OS Dental is a custom analytics solution that’s fundamentally built differently, seamlessly connecting and validating all sources of DSO data to yield powerful, reliable insights.',
-    ctaName: 'Book Free Demo',
-  }
+const HeroContent = ({ content }) => {
   return (
     <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:pt-56 md:pb-32 z-10">
       <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
           className="text-xs md:text-sm font-light"
-          content={heroData.heroSpan}
+          content={content?.heroStrip}
         />
         <H1 className="text-center text-white font-medium">
-          {heroData.heroHeading}
+          {content?.heroTitleStatic}
         </H1>
         <WordRotate
           className="md:text-6xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
-          words={heroData.heroHeadingList}
+          words={content?.heroTitleDynamic}
         />
 
         {/* Description */}
         <Paragraph className="text-center">
-          {heroData.heroDescription}
+          {content?.heroDescription}
         </Paragraph>
 
         {/* Buttons */}
@@ -70,15 +57,14 @@ const HeroContent = () => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <CTAButton className="px-6 py-3" name={heroData.ctaName} />
+          <CTAButton name={content?.ctaName} />
         </div>
       </div>
     </div>
   )
 }
-const HeroSection = () => {
+const HeroSection = ({data}) => {
   const { width: windowWidth } = useWindowSize()
-
   return (
     <Section
       id="hero-section"
@@ -94,8 +80,8 @@ const HeroSection = () => {
           />
         </div>
       )}
-      <HeroContent />
-      {windowWidth > 1280 && (
+      {data && <HeroContent content={data}/>}
+      { windowWidth > 1280 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
             width={windowWidth > 1800 ? 600 : 300}
