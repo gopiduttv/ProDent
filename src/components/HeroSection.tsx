@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from 'lucide-react'
-import CTAButton from './common/JoinwaitList'
+import CTAButton from './common/CTAbutton'
 import Section from './structure/Section'
 import H1 from './typography/H1'
 import Paragraph from './typography/Paragraph'

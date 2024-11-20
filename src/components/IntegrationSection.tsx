@@ -14,7 +14,7 @@ function IntegrationSection({ OsDentalIntegration }) {
         <div className="flex flex-col w-full items-center gap-4">
           <Subtext>More than 125 available integrations</Subtext>
           <div className="w-full flex justify-center">
-            <p className="text-lg md:text-2xl w-2/3 font-semibold text-center text-[#02024a] leading-8">
+            <p className="text-lg md:text-2xl md:w-2/3 font-semibold text-center text-[#02024a] leading-8">
               We integrate with all major practice management systems, marketing
               platforms, finance and accounting systems, and enterprise
               reporting suites.

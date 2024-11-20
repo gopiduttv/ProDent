@@ -1,5 +1,5 @@
 import LoginButton from './Login'
-import CTAButton from './JoinwaitList'
+import CTAButton from './CTAbutton'
 import { useContext } from 'react'
 import { NavigationContext } from '~/providers/NavigationContextProvider'
 
@@ -38,7 +38,7 @@ function MobileNavBar(props) {
   if (!isMobileMenuOpen) return
 
   return (
-    <div className="md:hidden flex flex-col items-center gap-6 bg-[#02024a] p-4 text-white">
+    <div className="md:hidden h-screen flex flex-col items-center gap-10 bg-[#02024a] bg-hero-pattern bg-cover px-4 py-14 text-white from-transparent to-">
       {navigationLinks.map((link, index) => (
         <a
           key={index}
