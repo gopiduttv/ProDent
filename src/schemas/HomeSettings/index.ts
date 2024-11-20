@@ -19,7 +19,7 @@ export default defineType({
       name: 'heroTitleStaticDynamic',
       title: 'Hero Title Dynamic',
       type: 'array',
-      of: [{type: 'string'}]
+      of: [{ type: 'string' }],
     }),
     defineField({
       name: 'bookBtnContent',
@@ -38,29 +38,29 @@ export default defineType({
       title: 'About Section Image',
       type: 'image',
     }),
+    defineField({
+      name: 'featureHeader',
+      title: 'Feature Header',
+      type: 'string',
+    }),
 
     defineField({
-      name: 'benefits',
-      title: 'Add Benefits',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'benefit' }],
-        },
-      ],
+      name: 'benefitHeader',
+      title: 'Benefit Header',
+      type: 'string',
     }),
     defineField({
-      name: 'testimonials',
-      title: 'Add Testimonials',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'testimonial' }],
-        },
-      ],
+      name: 'testimonialHeader',
+      title: 'Testimonial Header',
+      type: 'string',
     }),
+
+    defineField({
+      name: 'integrationHeader',
+      title: 'Integration Header',
+      type: 'string',
+    }),
+
     defineField({
       name: 'integration',
       title: 'Add Integration',

@@ -96,6 +96,13 @@ export default defineConfig({
                   .schemaType('siteSettings')
                   .documentId('siteSettings'),
               ),
+              S.listItem()
+              .title('Legal Information')
+              .child(
+                S.document()
+                  .schemaType('legal')
+                  .documentId('legal'),
+              ),
         
               // S.documentTypeListItem('homeSettings').title('homeSettings'),
               S.documentTypeListItem('testimonial').title('Testimonial'),
@@ -104,6 +111,7 @@ export default defineConfig({
               S.documentTypeListItem('integration').title('Integration'),
               S.documentTypeListItem('benefit').title('Benefit'),
               S.documentTypeListItem('person').title('Person'),
+              S.documentTypeListItem('legal').title('Legal')
 
           ])
     }),

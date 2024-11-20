@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Facebook from '../icons/Facebook'
 import Instagram from '../icons/Instagram'
 import LinkedIn from '../icons/LinkedIn'
@@ -15,7 +16,10 @@ const TopSection = () => {
           Centralize your data. Supercharge your DSO.
         </div>
 
-        <CTAButton className="md:w-1/2 px-6 py-3 text-4xl" name={'Book Free Demo'} />
+        <CTAButton
+          className="md:w-1/2 px-6 py-3 text-4xl"
+          name={'Book Free Demo'}
+        />
       </div>
       <div className="self-stretch h-[0px] border border-white/20"></div>
     </div>
@@ -53,12 +57,18 @@ const BottomSection = () => {
   return (
     <div className="w-full flex flex-col-reverse md:flex-row justify-center md:justify-between gap-6">
       <div className="text-white/50 text-center">
-      © 2024 OS Dental inc. All rights reserved.
+        Copyright © 2024. OSDental.
       </div>
       <div className="flex flex-col md:flex-row gap-8 md:gap text-center">
-        <div className=" text-white/50 ">Terms of use</div>
-        <div className=" text-white/50 ">Privacy policy</div>
-        <div className=" text-white/50 ">Contact Us</div>
+        <Link className=" text-white/50 " href={'/TermsofUse'}>
+          Terms of use
+        </Link>
+        <Link className=" text-white/50 " href={'/PrivacyPolicy'}>
+          Privacy policy
+        </Link>
+        <Link className=" text-white/50" href={'/BusinessAssociateAgreement'}>
+          Business Associate Agreement
+        </Link>
       </div>
     </div>
   )
