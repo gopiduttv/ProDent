@@ -128,7 +128,11 @@ export async function fetchHeroSectionData(client: SanityClient): Promise<any> {
     "heroStrip":heroStrip,
     "heroTitleStatic":heroTitleStatic,
     "heroTitleDynamic":heroTitleStaticDynamic,
-    "aboutSectionImage":aboutSectionImage.asset->url
+    "aboutSectionImage":aboutSectionImage.asset->url,
+    "integrationHeader":integrationHeader,
+    "benefitHeader":benefitHeader,
+    "testimonialHeader":testimonialHeader,
+    "featureHeader":featureHeader
   }`
   return await client.fetch(query)
 }
