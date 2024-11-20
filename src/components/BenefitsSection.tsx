@@ -5,7 +5,7 @@ import RichImage from './common/RichImage'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 
-const BenefitsSection = ({ data }) => { debugger
+const BenefitsSection = ({ data }) => {
   return (
     <Section id="benefits-section" className="py-24 bg-purple-50">
       <Container className="flex flex-col items-center gap-16">
