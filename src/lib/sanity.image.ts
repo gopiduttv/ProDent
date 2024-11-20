@@ -12,9 +12,7 @@ interface ImageDimensions {
   quality?: number;
 }
 
-export const urlForImage = (source: any, dimensions?: ImageDimensions) => {
-  console.log(source);
-  
+export const urlForImage = (source: any, dimensions?: ImageDimensions) => {  
   if (typeof source === 'string' && source.startsWith('http')) {
     return source; 
   }

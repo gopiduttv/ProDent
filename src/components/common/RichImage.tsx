@@ -25,7 +25,7 @@ export const Picture = (props) => {
   )
 }
 
-const RichImage = (props:any) => { debugger
+const RichImage = (props:any) => {
 
     if (props.index % 2 == 0) {
     return (
