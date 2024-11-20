@@ -5,7 +5,7 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'personnName',
+      name: 'personName',
       title: 'Person Name',
       type: 'string',
     }),
@@ -13,6 +13,11 @@ export default defineType({
       name: 'personDesignation',
       title: 'Person Designation',
       type: 'string',
+    }),
+    defineField({
+      name: 'personDescription',
+      title: 'Person Description',
+      type: 'text',
     }),
 
     defineField({

@@ -2,19 +2,17 @@ import React from 'react'
 import Picture from './Picture'
 import LinkedIn from '../icons/LinkedIn'
 
-function PeopleCard({ name, designation, description, profile, socials }) {
+function PeopleCard( props:any ) {
   return (
     <div>
-      <Picture url={profile} />
-      <div>{name}</div>
-      <div>{designation}</div>
-      <div>{description}</div>
+      <Picture url={props} />
+      <div>{props?.name}</div>
+      <div>{props?.designation}</div>
+      <div>{props?.description}</div>
       <div>
-        {socials.map((link) => (
-          <a href={link}>
+      <a href={props?.socialMediaLinks?.Linkedin}>
             <LinkedIn />
           </a>
-        ))}
       </div>
     </div>
   )

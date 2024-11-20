@@ -7,7 +7,7 @@ import Paragraph from './typography/Paragraph'
 import ImageLoader from './common/imageLoader/imageLoader'
 import PeopleCard from './common/PeopleCard'
 
-const AboutUsSection = ({about}) => {
+const AboutUsSection = ({about,founderDetails}) => {
   const aboutUS = {
     heading: 'About Us',
     description:
@@ -15,23 +15,24 @@ const AboutUsSection = ({about}) => {
     image: '/about-us.png',
   }
 
-  const founderOne = {
-    profile: 'imageURLPic 1',
-    name: 'Emily Ryba',
-    designation: 'Co-Founder',
-    description:
-      'Emily has been in the Dental/DSO space for 10 years. During her time in the industry, she has worked with over 50 DSO’s in public accounting. Most recently, she was Vice President of Accounting for a DSO with over $ 100 million in revenue.',
-    socials: [{ linkedIn: '' }],
-  }
+  // const founderOne = {
+  //   profile: 'imageURLPic 1',
+  //   name: 'Emily Ryba',
+  //   designation: 'Co-Founder',
+  //   description:
+  //     'Emily has been in the Dental/DSO space for 10 years. During her time in the industry, she has worked with over 50 DSO’s in public accounting. Most recently, she was Vice President of Accounting for a DSO with over $ 100 million in revenue.',
+  //   socials: [{ linkedIn: '' }],
+  // }
 
-  const founderTwo = {
-    profile: 'imageURLPic 1',
-    name: 'Daniel Chavarra',
-    designation: 'Co-Founder',
-    description:
-      'Daniel has been in the finance industry for over 10 years with his most recent job in dental. Daniel was previously the CFO at a DSO doing business in 9 states. He is adept at using his technical and financial expertise to create customized financials for doctors, investors, banks and audits.',
-    socials: [{ linkedIn: '' }],
-  }
+  // const founderTwo = {
+  //   profile: 'imageURLPic 1',
+  //   name: 'Daniel Chavarra',
+  //   designation: 'Co-Founder',
+  //   description:
+  //     'Daniel has been in the finance industry for over 10 years with his most recent job in dental. Daniel was previously the CFO at a DSO doing business in 9 states. He is adept at using his technical and financial expertise to create customized financials for doctors, investors, banks and audits.',
+  //   socials: [{ linkedIn: '' }],
+  // }
+  // const founders =founderDetails
 
   return (
     <Section
@@ -44,8 +45,11 @@ const AboutUsSection = ({about}) => {
         </div>
 
         <div className="w-full flex md:flex-row md:justify-between">
-          <PeopleCard {...founderOne} />
-          <PeopleCard {...founderTwo}/>
+          {founderDetails?.map((founder: any, index: number) => {
+            return <PeopleCard {...founder}/>
+          })}
+          {/* <PeopleCard {...founderOne} />
+          <PeopleCard {...founderTwo}/> */}
         </div>
       </Container>
     </Section>

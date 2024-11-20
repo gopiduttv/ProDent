@@ -9,13 +9,16 @@ import { HomeSettings } from './context/homeSettings'
 const Content = (props: any) => {
   return (
     <div className="flex flex-col overflow-hidden">
-      <HomeSettings homeSettings={props} >
+      <HomeSettings homeSettings={props}>
         <HeroSection data={props.heroSectionData} />
         <FeatureSection features={props.featureSectionDetails} />
         <IntegrationSection OsDentalIntegration={props?.OsDentalIntegration} />
         <BenefitsSection data={props.BenefitSectionData} />
         <TestimonialSection testimonials={props?.testimonialData} />
-        <AboutUsSection about={props?.heroSectionContent?.about} />
+        <AboutUsSection
+          about={props?.heroSectionContent?.about}
+          founderDetails={props?.founderDetails}
+        />
       </HomeSettings>
     </div>
   )
