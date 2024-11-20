@@ -1,11 +1,12 @@
 import React from 'react'
+import { cn } from '~/lib/utils'
 
-function LinkedIn(po) {
+function LinkedIn(props) {
   return (
-    <div className="text-red-600">
+    <div className={cn("text-white", props.className)}>
       <svg
-        width="20"
-        height="21"
+        width="24"
+        height="24"
         viewBox="0 0 20 21"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -17,16 +18,7 @@ function LinkedIn(po) {
             fill="currentColor"
           />
         </g>
-        <defs>
-          <clipPath id="clip0_100_1037">
-            <rect
-              width="20"
-              height="20"
-              fill="white"
-              transform="translate(0 0.902344)"
-            />
-          </clipPath>
-        </defs>
+
       </svg>
     </div>
   )
