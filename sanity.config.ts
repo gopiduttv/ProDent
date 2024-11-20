@@ -76,6 +76,34 @@ export default defineConfig({
           S.view.component(Iframe).options(iframeOptions).title('Preview'),
         ])
       },
+      structure: (S) =>
+        S.list()
+          .title('Base')
+          .items([
+            S.listItem()
+              .title('Home Page')
+              .child(
+                S.document()
+                  .schemaType('homeSettings')
+                  .documentId('homeSettings'),
+              ),
+        
+              S.listItem()
+              .title('Site Configuration')
+              .child(
+                S.document()
+                  .schemaType('siteSettings')
+                  .documentId('siteSettings'),
+              ),
+        
+              // S.documentTypeListItem('homeSettings').title('homeSettings'),
+              S.documentTypeListItem('testimonial').title('Testimonial'),
+              S.documentTypeListItem('featureCategory').title('FeatureCategory'),
+              S.documentTypeListItem('feature').title('Feature'),
+              S.documentTypeListItem('integration').title('Integration'),
+              S.documentTypeListItem('benefit').title('Benefit'),
+
+          ])
     }),
 
     media({

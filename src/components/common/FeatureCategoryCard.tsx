@@ -1,12 +1,12 @@
 import React from 'react'
 import H3 from '../typography/H3'
 import List from './List'
-import Image from 'next/image'
+import ImageLoader from './imageLoader/imageLoader'
 
 const FeatureCategoryCard = ({ imageUrl, heading, features }) => {
   return (
     <div className="flex flex-col w-full gap-4 bg-[#f9f6fe] p-8 rounded-3xl">
-      <Image src={imageUrl} width={50} height={50} alt="location-icon" />
+      <ImageLoader image={imageUrl} className='w-12 h-12'/>
       <H3>{heading}</H3>
       <List
         className="flex flex-col gap-4"

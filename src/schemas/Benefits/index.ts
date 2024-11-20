@@ -18,7 +18,7 @@ export default defineType({
     defineField({
       name: 'benefitDescription',
       title: 'Benefit Description',
-      type: 'string',
+      type: 'blockContent',
     }),
     defineField({
       name: 'benefitImageSection',

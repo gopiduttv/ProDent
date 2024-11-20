@@ -19,12 +19,7 @@ export default defineType({
       name: 'heroTitleStaticDynamic',
       title: 'Hero Title Dynamic',
       type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'multipleString' }],
-        },
-      ],
+      of: [{type: 'string'}]
     }),
     defineField({
       name: 'bookBtnContent',

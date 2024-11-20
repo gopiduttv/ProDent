@@ -16,7 +16,7 @@ export default function CustomHead({
       <meta
         property="og:image"
         content={
-          'https://cdn.sanity.io/images/d25cvgl0/production/edc86160ec49c628644c9cf76a16f1168391ac9b-1800x945.png'
+          siteSettings?.ogImage
         }
       />
     </Head>

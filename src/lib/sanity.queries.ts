@@ -29,8 +29,8 @@ export async function metaDataQuery(
   const query = groq` 
     *[_type == "siteSettings"][0]{
       ogTitle,
-      ogFavicon,
-      ogImage,
+      "ogFavicon":ogFavicon.asset->url,
+      "ogImage" :ogImage.asset->url,
       ogUrl,
       ogDescription
     }
@@ -79,8 +79,25 @@ export async function fetchIntegrationList(client: SanityClient): Promise<any> {
   return await client.fetch(query)
 }
 export async function featureSection(client: SanityClient): Promise<any> {
-  const query = groq`    *[_type == "featureCategories"]{...,"imageUrl":featureSubCategoriesImage.asset->url, 
-      "features":features[]->}`
+  const query = groq`
+    *[_type == "featureCategory" && !(_id in path('drafts.**'))] {
+      ..., 
+      "imageUrl": categoryImage.asset->{
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height,
+            aspectRatio
+          }
+        }
+      },
+      "altText": image.altText,
+      "title": image.title,
+      "features": features[]->
+    }
+  `
   return await client.fetch(query)
 }
 
@@ -112,7 +129,7 @@ export async function fetchHeroSectionData(client: SanityClient): Promise<any> {
     "ctaName":bookBtnContent,
     "heroStrip":heroStrip,
     "heroTitleStatic":heroTitleStatic,
-    "heroTitleDynamic":heroTitleStaticDynamic[]->multipleString,
+    "heroTitleDynamic":heroTitleStaticDynamic,
     "aboutSectionImage":aboutSectionImage.asset->url
   }`
   return await client.fetch(query)
@@ -131,8 +148,8 @@ export interface Post {
 
 export interface SiteSettings {
   ogTitle: string
-  ogFavicon: ImageAsset
-  ogImage: ImageAsset
+  ogFavicon: string
+  ogImage: string
   ogUrl: string
   ogDescription: string
 }

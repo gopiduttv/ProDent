@@ -24,7 +24,7 @@ const FeatureSection = ({ features }) => {
               <FeatureCategoryCard
                 key={index}
                 imageUrl={featureCategory.imageUrl}
-                heading={featureCategory.featureSubCategoriesHeading}
+                heading={featureCategory.categoryHeading}
                 features={featureCategory.features}
               />
             )

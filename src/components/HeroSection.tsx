@@ -28,26 +28,26 @@ const AnimatedShinyTextDemo = (props) => {
   )
 }
 
-const HeroContent = ({ props }) => {
+const HeroContent = ({ content }) => {
   return (
     <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:pt-56 md:pb-32 z-10">
       <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
           className="text-xs md:text-sm font-light"
-          content={props?.heroStrip}
+          content={content?.heroStrip}
         />
         <H1 className="text-center text-white font-medium">
-          {props?.heroTitleStatic}
+          {content?.heroTitleStatic}
         </H1>
         <WordRotate
           className="md:text-6xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
-          words={props?.heroTitleDynamic}
+          words={content?.heroTitleDynamic}
         />
 
         {/* Description */}
         <Paragraph className="text-center">
-          {props?.heroDescription}
+          {content?.heroDescription}
         </Paragraph>
 
         {/* Buttons */}
@@ -57,13 +57,13 @@ const HeroContent = ({ props }) => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <CTAButton name={props?.ctaName} />
+          <CTAButton name={content?.ctaName} />
         </div>
       </div>
     </div>
   )
 }
-const HeroSection = ({ props }) => {
+const HeroSection = ({data}) => {
   const { width: windowWidth } = useWindowSize()
   return (
     <Section
@@ -80,7 +80,7 @@ const HeroSection = ({ props }) => {
           />
         </div>
       )}
-      {props ? <HeroContent props={props} /> : null}
+      {data && <HeroContent content={data}/>}
       { windowWidth > 1280 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
