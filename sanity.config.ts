@@ -111,7 +111,8 @@ export default defineConfig({
               S.documentTypeListItem('integration').title('Integration'),
               S.documentTypeListItem('benefit').title('Benefit'),
               S.documentTypeListItem('person').title('Person'),
-              S.documentTypeListItem('legal').title('Legal')
+              S.documentTypeListItem('legal').title('Legal'),
+              S.documentTypeListItem('partner').title('Partner')
 
           ])
     }),

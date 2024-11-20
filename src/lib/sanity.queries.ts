@@ -195,6 +195,27 @@ export async function fetchFounderDetails(client: SanityClient): Promise<any> {
   return await client.fetch(query)
 }
 
+
+
+
+export async function fetchPartners(client: SanityClient): Promise<any> {
+  const query = groq`  *[_type == "partner"]{
+    partnerName,
+    'image':partnerLogo.asset->{
+         _id,
+         url,
+         metadata {
+           dimensions {
+             width,
+             height,
+             aspectRatio
+           }
+         }
+       }
+  }`
+  return await client.fetch(query)
+}
+
 export interface Post {
   _type: 'post'
   _id: string

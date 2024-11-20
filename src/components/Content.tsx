@@ -5,6 +5,7 @@ import TestimonialSection from './TestimonialSection'
 import IntegrationSection from './IntegrationSection'
 import AboutUsSection from './AboutUsSection'
 import { HomeSettings } from './context/homeSettings'
+import PartnerSection from './PartnerSection'
 
 const Content = (props: any) => {
   return (
@@ -15,6 +16,7 @@ const Content = (props: any) => {
         <IntegrationSection OsDentalIntegration={props?.OsDentalIntegration} />
         <BenefitsSection data={props.BenefitSectionData} />
         <TestimonialSection testimonials={props?.testimonialData} />
+        <PartnerSection partnerList ={props.partnerList}/>
         <AboutUsSection
           about={props?.heroSectionContent?.about}
           founderDetails={props?.founderDetails}
