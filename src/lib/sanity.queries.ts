@@ -158,6 +158,25 @@ export async function fetchBenefitSectionData(
   return await client.fetch(query)
 }
 
+export async function getLegalInformation(
+  client: SanityClient,
+  informationType: string,
+): Promise<LegalInformation> {
+  const information = {
+    businessAgreement: 'businessAgreement',
+    privacyPolicy: 'privacyPolicy',
+    termsAndCondition: 'termsAndCondition',
+  }
+  const informationTypeToFetch = information[informationType]
+  const query = groq` *[_type == "legal"]{
+   ${informationTypeToFetch}
+ }`
+  return await client.fetch(query)
+}
+
+
+
+
 export interface Post {
   _type: 'post'
   _id: string
@@ -182,4 +201,10 @@ export interface HomeSettings {
   heroSectionHeader?: string
   heroDescription?: string
   heroSubHeading?: string
+}
+
+export interface LegalInformation {
+  businessAgreement:string
+  privacyPolicy:string
+  termsAndCondition:string
 }
