@@ -40,10 +40,22 @@ const testimonials = [
     feedback:
       "OSDental has been a great addition to my practice, and I like the clinical aspect of the software. It's very concise, and everything seems to be in one location. It helps you assimilate information quickly and can present a nice overview to the patient. The clinical note templates are amazing as you can make them very detailed - as detailed as you want them to be.",
   },
- 
 ]
 
-const TestimonialCarousel = ({ props }) => {
+const TestimonialCarousel = ({ testimonials }) => {
+  const testimonialLength = testimonials.length
+
+  if (testimonialLength == 1) {
+    return (
+      <div className="max-w-full h-[350px] ">
+        <div className="px-4 h-[350px] flex flex-col">
+          <div className="w-full flex justify-center">
+            <TestimonialCard props={testimonials[0]} />
+          </div>
+        </div>
+      </div>
+    )
+  }
   const settings = {
     dots: true,
     infinite: true,
@@ -56,11 +68,11 @@ const TestimonialCarousel = ({ props }) => {
   return (
     <div className="max-w-full h-[350px] ">
       <Slider {...settings}>
-        {props?.map((e, i) => {
+        {testimonials?.map((testimonial, index) => {
           return (
-            <div key={i} className="px-4 h-[350px] flex flex-col">
+            <div key={index} className="px-4 h-[350px] flex flex-col">
               <div className="w-full flex justify-center">
-                <TestimonialCard props={e} />
+                <TestimonialCard props={testimonial} />
               </div>
             </div>
           )

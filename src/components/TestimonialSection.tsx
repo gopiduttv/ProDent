@@ -16,7 +16,7 @@ const TestimonialSection = ({testimonials}) => {
             <H2>Our Customers Love Us!</H2>
           </div>
         </div>
-        <TestimonialCarousel props={testimonials} />
+        <TestimonialCarousel testimonials={testimonials} />
       </Container>
     </Section>
   )
