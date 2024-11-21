@@ -13,7 +13,10 @@ const Content = (props: any) => {
   const benefits = data?.benifits?.selectedBenefits
   const testimonial = data?.testimonial?.selectedTestimonial
   const partner = data?.partner
-  const feature = data?.features?.selectedFeatures?.selectedfeatures
+  const feature = data?.features?.selectedFeatures
+
+
+ 
 
   return (
     <div className="flex flex-col overflow-hidden">
