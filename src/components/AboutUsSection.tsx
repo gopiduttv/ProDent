@@ -7,7 +7,7 @@ import Paragraph from './typography/Paragraph'
 import ImageLoader from './common/imageLoader/imageLoader'
 import PeopleCard from './common/PeopleCard'
 
-const AboutUsSection = ({about,founderDetails}) => {
+const AboutUsSection = ({ about, founderDetails }) => {
   const aboutUS = {
     heading: 'About Us',
     description:
@@ -15,31 +15,25 @@ const AboutUsSection = ({about,founderDetails}) => {
     image: '/about-us.png',
   }
 
-
-
   return (
-    <div className="bg-grid-pattern">
-      <Section
-        id="about-us-section"
-        className="py-24  bg-[#8639F8] bg-grid-pattern bg-contain"
-      >
-        <Container className="flex  flex-col items-center gap-10 w-full ">
-          <div>
-            <div className="flex justify-center w-full">
-              <H2 className="!text-left text-white">{aboutUS.heading}</H2>
-            </div>
-            <Paragraph className="text-center">
-             {about}
-            </Paragraph>
+    <Section
+      id="about-us-section"
+      className="py-24  bg-[#8639f8] bg-grid-pattern bg-contain bg-no-repeat bg-right"
+    >
+      <Container className="flex  flex-col items-center gap-10 w-full ">
+        <div>
+          <div className="flex justify-center w-full">
+            <H2 className="!text-left text-white">{aboutUS.heading}</H2>
           </div>
-          <div className="w-full flex md:flex-row md:justify-between">
-            {founderDetails?.map((founder: any, index: number) => {
-            return <PeopleCard key ={index} {...founder}/>
+          <Paragraph className="text-center">{about}</Paragraph>
+        </div>
+        <div className="w-full flex md:flex-row md:justify-between">
+          {founderDetails?.map((founder: any, index: number) => {
+            return <PeopleCard key={index} {...founder} />
           })}
-          </div>
-        </Container>
-      </Section>
-    </div>
+        </div>
+      </Container>
+    </Section>
   )
 }
 

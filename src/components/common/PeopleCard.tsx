@@ -29,8 +29,8 @@ function PeopleCard({
   image,
 }) {
   return (
-    <div className="w-[604px] flex flex-row bg-slate-100 p-8 ">
-      <div className="pr-8 rounded-xl">
+    <div className="w-[604px] flex flex-row bg-slate-100 p-8 rounded-xl">
+      <div className="pr-8">
         <ImageLoader
           radius={12}
           className="!w-[132px] !h-[132px] !rounded-2xl"
