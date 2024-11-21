@@ -73,7 +73,7 @@ const HeroSection = ({data}) => {
       {windowWidth > 1280 && (
         <div className="rounded-2xl flex items-end justify-right z-10">
           <Image
-            width={windowWidth > 1800 ? 600 : 300}
+            width={windowWidth > 1800 ? 500 : 300}
             height={600}
             src={'/hero-left.png'}
             alt="hero-left"
@@ -84,22 +84,13 @@ const HeroSection = ({data}) => {
       { windowWidth > 1280 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
-            width={windowWidth > 1800 ? 600 : 300}
+            width={windowWidth > 1800 ? 500 : 300}
             height={600}
             src={'/hero-right.png'}
             alt="hero-left"
           />
         </div>
       )}
-      <div className="overflow-hidden">
-        <GridPattern
-          className={cn(
-            'z-0',
-            '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] ',
-            'inset-y-[-40%] h-[200%]',
-          )}
-        />
-      </div>
     </Section>
   )
 }

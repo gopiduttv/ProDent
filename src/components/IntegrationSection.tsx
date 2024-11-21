@@ -4,6 +4,7 @@ import Container from './structure/Container'
 import Subtext from './typography/Subtext'
 import IntegrationCloud from './IntegrationCloud'
 import { useHomeContext } from './context/homeSettings'
+import CTAButton from './common/CTAbutton'
 
 
 function IntegrationSection({ OsDentalIntegration }) {
@@ -34,6 +35,7 @@ function IntegrationSection({ OsDentalIntegration }) {
           {/* <IntegrationCloud className="grid grid-cols-8 gap-2" images={images} imagesCount={16} />
           <IntegrationCloud className="grid grid-cols-8 gap-4" images={images} imagesCount={6} columnPaddding />           */}
         </div>
+        <CTAButton className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
       </Container>
     </Section>
   )

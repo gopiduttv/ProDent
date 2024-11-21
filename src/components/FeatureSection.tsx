@@ -5,9 +5,11 @@ import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 import FeatureCategoryCard from './common/FeatureCategoryCard'
 import { useHomeContext } from './context/homeSettings'
+import CTAButton from './common/CTAbutton'
 
 const FeatureSection = ({ features }) => {
   const data = useHomeContext()?.homeSettings  
+  console.log({data})
   return (
     <Section
       id="features-section"
@@ -32,6 +34,7 @@ const FeatureSection = ({ features }) => {
             )
           })}
         </div>
+        <CTAButton className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
       </Container>
     </Section>
   )

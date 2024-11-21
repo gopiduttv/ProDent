@@ -5,6 +5,7 @@ import Container from './structure/Container'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 import { useHomeContext } from './context/homeSettings'
+import CTAButton from './common/CTAbutton'
 
 const TestimonialSection = ({testimonials}) => {
   const data = useHomeContext()?.homeSettings
@@ -19,6 +20,7 @@ const TestimonialSection = ({testimonials}) => {
           </div>
         </div>
         <TestimonialCarousel testimonials={testimonials} />
+        <CTAButton className="px-6 py-3" name={data.heroSectionData?.ctaName ?? ""} />
       </Container>
     </Section>
   )
