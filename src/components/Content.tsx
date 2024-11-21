@@ -16,8 +16,6 @@ const Content = (props: any) => {
   const feature = data?.features?.selectedFeatures
 
 
- 
-
   return (
     <div className="flex flex-col overflow-hidden">
       <HomeSettings homeSettings={props}>
