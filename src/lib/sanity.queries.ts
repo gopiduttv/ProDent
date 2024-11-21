@@ -80,7 +80,8 @@ export const heroSectionQuery_ = groq`
   }
 `
 export const AboutQuery = groq`*[_type == "siteSettings"]{"about":ogDescription}`
-export const heroSection = groq`*[_type == "homeSettings"][0]{
+export const heroSection = groq`
+*[_type == "homeSettings"][0]{
   "heroDescription": heroDescription,
   "ctaName": bookBtnContent,
   "heroStrip": heroStrip,
@@ -91,6 +92,44 @@ export const heroSection = groq`*[_type == "homeSettings"][0]{
   "benefitHeader": benefitHeader,
   "testimonialHeader": testimonialHeader,
   "featureHeader": featureHeader,
+  "integrationList": {
+    "selectedIntegrationList": integration[]->{
+      "image": integrationProductImage.asset->{
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height,
+            aspectRatio
+          }
+        }
+      },
+      "altText": image.altText,
+      "title": image.title,
+      _createdAt,
+      _id
+    }
+  },
+  "features": {
+    "selectedFeatures": selectedfeatures[]->{
+      ...,
+      "imageUrl": categoryImage.asset->{
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height,
+            aspectRatio
+          }
+        }
+      },
+      "altText": image.altText,
+      "title": image.title,
+      "features": features[]->
+    }
+  },
   "testimonial": {
     "selectedTestimonial": selectedTestimonial[]->{
       ...,
@@ -131,6 +170,7 @@ export const heroSection = groq`*[_type == "homeSettings"][0]{
   }
 }
 `
+
 export const benifitQuery = groq` *[_type == "benefit"]{
   'benefitHeading':benefitHeading,
    'benifitSectionImage':benefitImageSection.asset->{

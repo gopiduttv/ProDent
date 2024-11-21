@@ -62,6 +62,18 @@ export default defineType({
     }),
 
     defineField({
+      name: 'selectedfeatures',
+      title: 'Selected Feature',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'featureCategory' }],
+        },
+      ],
+    }),
+
+    defineField({
       name: 'integration',
       title: 'Add Integration',
       type: 'array',
@@ -112,7 +124,7 @@ export default defineType({
   preview: {
     select: {
       title: 'heroStrip',
-      
+      media: 'aboutSectionImage',
     },
   },
 })
