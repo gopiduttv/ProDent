@@ -9,7 +9,6 @@ import CTAButton from './common/CTAbutton'
 
 const FeatureSection = ({ features }) => {
   const data = useHomeContext()?.homeSettings  
-  console.log({data})
   return (
     <Section
       id="features-section"
