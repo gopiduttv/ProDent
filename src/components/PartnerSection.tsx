@@ -10,7 +10,7 @@ export default function PartnerSection({ partnerList }) {
         {partnerList?.map((partner, index) => {
           return (
             <div key={index} className="h-20 px-[17.30px] py-[10.81px] bg-white rounded-[10px] flex-col justify-center items-center gap-[10.81px] inline-flex">
-              <ImageLoader image={partner.image} />
+              <ImageLoader className="!w-20 !h-20"image={partner.image} />
             </div>
           )
         })}

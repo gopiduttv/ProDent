@@ -195,9 +195,6 @@ export async function fetchFounderDetails(client: SanityClient): Promise<any> {
   return await client.fetch(query)
 }
 
-
-
-
 export async function fetchPartners(client: SanityClient): Promise<any> {
   const query = groq`  *[_type == "partner"]{
     partnerName,
@@ -213,6 +210,13 @@ export async function fetchPartners(client: SanityClient): Promise<any> {
          }
        }
   }`
+  return await client.fetch(query)
+}
+
+export async function fetchSeoSettings(client: SanityClient): Promise<any> {
+  const query = groq`*[_type == "siteSettings"]
+  | order(_createdAt desc)[0].seoSettings
+  `
   return await client.fetch(query)
 }
 

@@ -139,3 +139,42 @@ export const mergeAndRemoveDuplicates = (
 }
 
 
+export const formatOrganizationSchema = (props: any) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": `${props?.name}`,
+    "url": `${props?.url}`,
+    "logo": `${props?.logoUrl}`,
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "",
+        "contactType": "Customer Service",
+        "areaServed": `${props?.areaServed}`,
+        "availableLanguage": ["English"]
+      }
+    ],
+    "sameAs": `${props?.socialLinks}`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32801",
+      "addressCountry": "US"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": `${props?.founder}`
+    },
+    "foundingDate": `${props?.foundingDate}`,
+    "numberOfEmployees": 50,
+    "description": `${props?.description}`,
+    "keywords": `${props?.keyWords}`
+  }
+  return schema
+  
+
+}
+

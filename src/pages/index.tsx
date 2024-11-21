@@ -17,6 +17,7 @@ import {
   fetchBenefitSectionData,
   fetchFounderDetails,
   fetchPartners,
+  fetchSeoSettings,
 } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 import Layout from '../components/Layout'
@@ -26,6 +27,7 @@ export const getStaticProps: GetStaticProps<
   SharedPageProps & {
     posts: Post[]
     siteSettings: SiteSettings
+    seoSettings:any
   }
 > = async ({ draftMode = false }) => {
   const client = getClient(draftMode ? { token: readToken } : undefined)
@@ -39,6 +41,7 @@ export const getStaticProps: GetStaticProps<
   const BenefitSectionData = await fetchBenefitSectionData(client)
   const founderDetails = await  fetchFounderDetails(client)
   const partnerList = await fetchPartners(client)
+  const seoSettings = await fetchSeoSettings(client)
 
   return {
     props: {
@@ -53,7 +56,8 @@ export const getStaticProps: GetStaticProps<
       heroSectionData,
       BenefitSectionData,
       founderDetails,
-      partnerList
+      partnerList,
+      seoSettings
     },
   }
 }
@@ -63,10 +67,11 @@ export default function IndexPage(
 ) {
   // const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   const siteSettings: SiteSettings = props?.siteSettings
+  const seoSettings  = props.seoSettings
   return (
     <div>
       <Layout>
-        <CustomHead siteSettings={siteSettings} />
+        <CustomHead siteSettings={siteSettings} seoSettings ={seoSettings} />
         <Content {...props} />
       </Layout>
     </div>
