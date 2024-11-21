@@ -8,15 +8,21 @@ import { HomeSettings } from './context/homeSettings'
 import PartnerSection from './PartnerSection'
 
 const Content = (props: any) => {
+  const data = props?.heroSectionData
+  console.log(data)
+  const benefits = data?.benifits?.selectedBenefits
+  const testimonial = data?.testimonial?.selectedTestimonial
+  const partner = data?.partner
+
   return (
     <div className="flex flex-col overflow-hidden">
       <HomeSettings homeSettings={props}>
         <HeroSection data={props.heroSectionData} />
         <FeatureSection features={props.featureSectionDetails} />
         <IntegrationSection OsDentalIntegration={props?.OsDentalIntegration} />
-        <BenefitsSection data={props.BenefitSectionData} />
-        <TestimonialSection testimonials={props?.testimonialData} />
-        <PartnerSection partnerList ={props.partnerList}/>
+        <BenefitsSection data={benefits} />
+        <TestimonialSection testimonials={testimonial} />
+        <PartnerSection partnerList={partner?.selectedPartner} />
         <AboutUsSection
           about={props?.heroSectionContent?.about}
           founderDetails={props?.founderDetails}
