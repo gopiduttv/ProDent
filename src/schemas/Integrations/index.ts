@@ -1,11 +1,9 @@
 import { defineField, defineType } from 'sanity'
-import { orderRankField,orderRankOrdering } from '@sanity/orderable-document-list'
 
 export default defineType({
   name: 'integration',
   title: 'Integration',
   type: 'document',
-  orderings:[orderRankOrdering],
   fields: [
     defineField({
       name: 'productName',
