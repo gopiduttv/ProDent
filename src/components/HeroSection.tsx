@@ -91,15 +91,6 @@ const HeroSection = ({data}) => {
           />
         </div>
       )}
-      <div className="overflow-hidden">
-        <GridPattern
-          className={cn(
-            'z-0',
-            '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] ',
-            'inset-y-[-40%] h-[200%]',
-          )}
-        />
-      </div>
     </Section>
   )
 }
