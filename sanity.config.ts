@@ -11,7 +11,6 @@ import {
   IframeOptions,
 } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
-import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 
 // see https://www.sanity.io/docs/api-versioning for how versioning works
 import {
