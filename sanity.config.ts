@@ -95,13 +95,13 @@ export default defineConfig({
                   .schemaType('siteSettings')
                   .documentId('siteSettings'),
               ),
-              S.listItem()
-              .title('Legal Information')
-              .child(
-                S.document()
-                  .schemaType('legal')
-                  .documentId('legal'),
-              ),
+              // S.listItem()
+              // .title('Legal Information')
+              // .child(
+              //   S.document()
+              //     .schemaType('legal')
+              //     .documentId('legal'),
+              // ),
         
               // S.documentTypeListItem('homeSettings').title('homeSettings'),
               S.documentTypeListItem('testimonial').title('Testimonial'),
@@ -135,4 +135,5 @@ export default defineConfig({
     }),
     visionTool({ defaultApiVersion: apiVersion }),
   ],
+  
 })

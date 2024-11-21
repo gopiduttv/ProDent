@@ -80,18 +80,57 @@ export const heroSectionQuery_ = groq`
   }
 `
 export const AboutQuery = groq`*[_type == "siteSettings"]{"about":ogDescription}`
-export const heroSection = groq` *[_type == "homeSettings"][0]{
-  "heroDescription":heroDescription,
-  "ctaName":bookBtnContent,
-  "heroStrip":heroStrip,
-  "heroTitleStatic":heroTitleStatic,
-  "heroTitleDynamic":heroTitleStaticDynamic,
-  "aboutSectionImage":aboutSectionImage.asset->url,
-  "integrationHeader":integrationHeader,
-  "benefitHeader":benefitHeader,
-  "testimonialHeader":testimonialHeader,
-  "featureHeader":featureHeader
-}`
+export const heroSection = groq`*[_type == "homeSettings"][0]{
+  "heroDescription": heroDescription,
+  "ctaName": bookBtnContent,
+  "heroStrip": heroStrip,
+  "heroTitleStatic": heroTitleStatic,
+  "heroTitleDynamic": heroTitleStaticDynamic,
+  "aboutSectionImage": aboutSectionImage.asset->url,
+  "integrationHeader": integrationHeader,
+  "benefitHeader": benefitHeader,
+  "testimonialHeader": testimonialHeader,
+  "featureHeader": featureHeader,
+  "testimonial": {
+    "selectedTestimonial": selectedTestimonial[]->{
+      ...,
+      "AuthorImage": authorimage.asset->url
+    }
+  },
+  "partner": {
+    selectedPartner[]->{
+      partnerName,
+      "image": partnerLogo.asset->{
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height,
+            aspectRatio
+          }
+        }
+      }
+    }
+  },
+  "benifits": {
+    selectedBenefits[]->{
+      "benifitSectionImage": benefitImageSection.asset->{
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height,
+            aspectRatio
+          }
+        }
+      },
+      "benefitPoints": benefitPoints
+    }
+  }
+}
+`
 export const benifitQuery = groq` *[_type == "benefit"]{
   'benefitHeading':benefitHeading,
    'benifitSectionImage':benefitImageSection.asset->{

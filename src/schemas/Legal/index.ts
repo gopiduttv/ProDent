@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'lastUpdated',
+      title: 'Last Updated',
+      type: 'date',
+    }),
+    defineField({
       name: 'termsAndCondition',
       title: 'Terms and Conditions',
       type: 'blockContent',
@@ -21,4 +26,10 @@ export default defineType({
       type: 'blockContent',
     }),
   ],
+  preview: {
+    select: {
+      title: 'lastUpdated',
+     
+    }
+  }
 })

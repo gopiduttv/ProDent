@@ -23,7 +23,7 @@ export default defineType({
     }),
     defineField({
       name: 'bookBtnContent',
-      title: 'Book Demo Button Content',
+      title: 'CIA Button',
       type: 'string',
     }),
 
@@ -40,13 +40,13 @@ export default defineType({
     }),
     defineField({
       name: 'featureHeader',
-      title: 'Feature Header',
+      title: 'Feature Section Header',
       type: 'string',
     }),
 
     defineField({
       name: 'benefitHeader',
-      title: 'Benefit Header',
+      title: 'Benefit Section Header',
       type: 'string',
     }),
     defineField({
@@ -57,7 +57,7 @@ export default defineType({
 
     defineField({
       name: 'integrationHeader',
-      title: 'Integration Header',
+      title: 'Integration Section Header',
       type: 'string',
     }),
 
@@ -72,11 +72,47 @@ export default defineType({
         },
       ],
     }),
+
+    defineField({
+      name: 'selectedBenefits',
+      title: 'Selected Benefits',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'benefit' }],
+        },
+      ],
+    }),
+
+    defineField({
+      name: 'selectedPartner',
+      title: 'Selected Partner',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'partner' }],
+        },
+      ],
+    }),
+
+    defineField({
+      name: 'selectedTestimonial',
+      title: 'Selected Testimonial',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'testimonial' }],
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
-      title: 'osDentalSlogan',
-      media: 'aboutSectionImage',
+      title: 'heroStrip',
+      
     },
   },
 })
