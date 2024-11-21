@@ -23,39 +23,18 @@ export async function getPost(
 export const postSlugsQuery = groq`
 *[_type == "post" && defined(slug.current)][].slug.current
 `
-export async function metaDataQuery(
-  client: SanityClient,
-): Promise<SiteSettings> {
-  const query = groq` 
-    *[_type == "siteSettings"][0]{
-      ogTitle,
-      "ogFavicon":ogFavicon.asset->url,
-      "ogImage" :ogImage.asset->url,
-      ogUrl,
-      ogDescription
-    }
-  `
-  return await client.fetch(query)
-}
 
-const imageFragment = `
-  "image": integrationProductImages.asset-> {
-    _id,
-    url,
-    metadata {
-      dimensions {
-        width,
-        height,
-        aspectRatio
-      }
-    }
-  },
-  "altText": image.altText,
-  "title": image.title
-`
+/*########################### QUERIES ##########################*/
+export const metaDataQuery_ = groq` 
+*[_type == "siteSettings"][0]{
+  ogTitle,
+  "ogFavicon":ogFavicon.asset->url,
+  "ogImage" :ogImage.asset->url,
+  ogUrl,
+  ogDescription
+}`
 
-export async function fetchIntegrationList(client: SanityClient): Promise<any> {
-  const query = groq`*[_type == "integration" ]{
+export const integrationListQuery = groq`*[_type == "integration" ]{
   "image": integrationProductImage.asset-> {
         _id,
         url,
@@ -74,10 +53,7 @@ export async function fetchIntegrationList(client: SanityClient): Promise<any> {
     
    
   }`
-  return await client.fetch(query)
-}
-export async function featureSection(client: SanityClient): Promise<any> {
-  const query = groq`
+export const featureSectionQuery = groq`
     *[_type == "featureCategory" && !(_id in path('drafts.**'))] {
       ..., 
       "imageUrl": categoryImage.asset->{
@@ -96,66 +72,114 @@ export async function featureSection(client: SanityClient): Promise<any> {
       "features": features[]->
     }
   `
-  return await client.fetch(query)
+export const testimonialQuery = groq`*[_type == "testimonial"]{...,"AuthorImage":authorimage.asset->url}`
+export const heroSectionQuery_ = groq`
+  *[_type == "siteSettings"][0]{
+    homeSettings[0],
+    "about":ogDescription
+  }
+`
+export const AboutQuery = groq`*[_type == "siteSettings"]{"about":ogDescription}`
+export const heroSection = groq` *[_type == "homeSettings"][0]{
+  "heroDescription":heroDescription,
+  "ctaName":bookBtnContent,
+  "heroStrip":heroStrip,
+  "heroTitleStatic":heroTitleStatic,
+  "heroTitleDynamic":heroTitleStaticDynamic,
+  "aboutSectionImage":aboutSectionImage.asset->url,
+  "integrationHeader":integrationHeader,
+  "benefitHeader":benefitHeader,
+  "testimonialHeader":testimonialHeader,
+  "featureHeader":featureHeader
+}`
+export const benifitQuery = groq` *[_type == "benefit"]{
+  'benefitHeading':benefitHeading,
+   'benifitSectionImage':benefitImageSection.asset->{
+       _id,
+       url,
+       metadata {
+         dimensions {
+           width,
+           height,
+           aspectRatio
+         }
+       }
+     },
+'benefitPoints':benefitPoints
+    
+}`
+export const founderQuery = groq`*[_type == "person"]{
+  'name':personName,
+  'socialMediaLinks':socialMediaLinks,
+  'image': personImage.asset->{
+       _id,
+       url,
+       metadata {
+         dimensions {
+           width,
+           height,
+           aspectRatio
+         }
+       }
+     },
+    'designation':personDesignation,
+    'description':personDescription
+}`
+export const founderQuery_ = groq`  *[_type == "partner"]{
+  partnerName,
+  'image':partnerLogo.asset->{
+       _id,
+       url,
+       metadata {
+         dimensions {
+           width,
+           height,
+           aspectRatio
+         }
+       }
+     }
+}`
+export const SeoQuery = groq`*[_type == "siteSettings"]
+| order(_createdAt desc)[0].seoSettings
+`
+
+/*########################### END  ##########################*/
+
+export async function metaDataQuery(
+  client: SanityClient,
+): Promise<SiteSettings> {
+  return await client.fetch(metaDataQuery_)
+}
+
+export async function fetchIntegrationList(client: SanityClient): Promise<any> {
+  return await client.fetch(integrationListQuery)
+}
+
+export async function featureSection(client: SanityClient): Promise<any> {
+  return await client.fetch(featureSectionQuery)
 }
 
 export async function fetchTestimonial(client: SanityClient): Promise<any> {
-  const query = groq`*[_type == "testimonial"]{...,"AuthorImage":authorimage.asset->url}`
-  return await client.fetch(query)
+  return await client.fetch(testimonialQuery)
 }
 
 export async function heroSectionQuery(
   client: SanityClient,
 ): Promise<HomeSettings | null> {
-  const query = groq`
-    *[_type == "siteSettings"][0]{
-      homeSettings[0],
-      "about":ogDescription
-    }
-  `
-  return await client.fetch(query)
+  return await client.fetch(heroSectionQuery_)
 }
 
 export async function fetchAboutSection(client: SanityClient): Promise<any> {
-  const query = groq`*[_type == "siteSettings"]{"about":ogDescription}`
-  return await client.fetch(query)
+  return await client.fetch(AboutQuery)
 }
 
 export async function fetchHeroSectionData(client: SanityClient): Promise<any> {
-  const query = groq` *[_type == "homeSettings"][0]{
-    "heroDescription":heroDescription,
-    "ctaName":bookBtnContent,
-    "heroStrip":heroStrip,
-    "heroTitleStatic":heroTitleStatic,
-    "heroTitleDynamic":heroTitleStaticDynamic,
-    "aboutSectionImage":aboutSectionImage.asset->url,
-    "integrationHeader":integrationHeader,
-    "benefitHeader":benefitHeader,
-    "testimonialHeader":testimonialHeader,
-    "featureHeader":featureHeader
-  }`
-  return await client.fetch(query)
+  return await client.fetch(heroSection)
 }
 export async function fetchBenefitSectionData(
   client: SanityClient,
 ): Promise<any> {
-  const query = groq` *[_type == "benefit"]{
-    'benefitHeading':benefitHeading,
-     'benifitSectionImage':benefitImageSection.asset->{
-         _id,
-         url,
-         metadata {
-           dimensions {
-             width,
-             height,
-             aspectRatio
-           }
-         }
-       },
- 'benefitPoints':benefitPoints
-      
-  }`
-  return await client.fetch(query)
+  return await client.fetch(benifitQuery)
 }
 
 export async function getLegalInformation(
@@ -175,51 +199,18 @@ export async function getLegalInformation(
 }
 
 export async function fetchFounderDetails(client: SanityClient): Promise<any> {
-  const query = groq`*[_type == "person"]{
-    'name':personName,
-    'socialMediaLinks':socialMediaLinks,
-    'image': personImage.asset->{
-         _id,
-         url,
-         metadata {
-           dimensions {
-             width,
-             height,
-             aspectRatio
-           }
-         }
-       },
-      'designation':personDesignation,
-      'description':personDescription
-  }`
-  return await client.fetch(query)
+  return await client.fetch(founderQuery)
 }
 
 export async function fetchPartners(client: SanityClient): Promise<any> {
-  const query = groq`  *[_type == "partner"]{
-    partnerName,
-    'image':partnerLogo.asset->{
-         _id,
-         url,
-         metadata {
-           dimensions {
-             width,
-             height,
-             aspectRatio
-           }
-         }
-       }
-  }`
-  return await client.fetch(query)
+  return await client.fetch(founderQuery_)
 }
 
 export async function fetchSeoSettings(client: SanityClient): Promise<any> {
-  const query = groq`*[_type == "siteSettings"]
-  | order(_createdAt desc)[0].seoSettings
-  `
-  return await client.fetch(query)
+  return await client.fetch(SeoQuery)
 }
 
+/*####################################### INTERFACES    ###########################*/
 export interface Post {
   _type: 'post'
   _id: string
