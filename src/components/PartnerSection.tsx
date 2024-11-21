@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageLoader from './common/imageLoader/imageLoader'
 
-export default function PartnerSection({partnerList}) { debugger
+export default function PartnerSection({partnerList}) { 
   return (
     <div>{partnerList?.map((e,i)=>{
         return(<div className='flex justify-center align-middle'>
