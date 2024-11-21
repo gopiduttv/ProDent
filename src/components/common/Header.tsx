@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="fixed  top-0 left-0 w-full h-[75px] py-4 md:px-4 2xl:px-80  backdrop-blur-sm  transition-colors duration-300 z-50"
+      className="fixed  top-0 left-0 w-full h-[75px] py-4 px-4 backdrop-blur-sm  transition-colors duration-300 z-50"
       
     >
         <nav className=" flex flex-col md:flex-row md:items-center md:justify-between gap-42 md:px-4">

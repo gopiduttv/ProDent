@@ -7,19 +7,18 @@ import Youtube from '../icons/Youtube'
 import Container from '../structure/Container'
 import Section from '../structure/Section'
 import CTAButton from './CTAbutton'
+import H2 from '../typography/H2'
 
 const TopSection = () => {
   return (
     <div className="self-stretch flex-col justify-start items-start gap-14 flex">
-      <div className="w-full gap-24 inline-flex flex-col md:flex-row">
-        <div className="md:w-1/2 text-white text-5xl font-semibold">
+      <div className="w-full gap-8 inline-flex flex-col ">
+        <H2>
           Centralize your data. Supercharge your DSO.
+          </H2>
+        <div className="flex justify-center">
+          <CTAButton className="px-6 py-3" name={'Book Free Demo'} />
         </div>
-
-        <CTAButton
-          className="md:w-1/2 px-6 py-3 text-4xl"
-          name={'Book Free Demo'}
-        />
       </div>
       <div className="self-stretch h-[0px] border border-white/20"></div>
     </div>
