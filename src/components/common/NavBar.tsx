@@ -15,7 +15,7 @@ const navigationLinks = [
 
 function DesktopNavbar(props) {
   return (
-    <div className="hidden md:flex md:flex-row items-center gap-6">
+    <div className="hidden xl:flex xl:flex-row items-center gap-6">
       {navigationLinks.map((link, index) => (
         <a
           key={index}
@@ -38,7 +38,7 @@ function MobileNavBar(props) {
   if (!isMobileMenuOpen) return
 
   return (
-    <div className="md:hidden h-screen flex flex-col items-center gap-10 bg-[#02024a] bg-hero-pattern bg-cover px-4 py-14 text-white from-transparent to-">
+    <div className="xl:hidden h-screen flex flex-col items-center gap-10 bg-[#02024a]  bg-cover py-14 text-white">
       {navigationLinks.map((link, index) => (
         <a
           key={index}
