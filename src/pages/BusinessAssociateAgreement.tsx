@@ -29,6 +29,8 @@ export const getStaticProps: GetStaticProps<
 
   return {
     props: {
+      draftMode,
+      token: draftMode ? readToken : '',
       legalInformation,
     },
   }

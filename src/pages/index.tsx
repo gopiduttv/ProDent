@@ -27,21 +27,35 @@ export const getStaticProps: GetStaticProps<
   SharedPageProps & {
     posts: Post[]
     siteSettings: SiteSettings
-    seoSettings:any
+    seoSettings: any
   }
 > = async ({ draftMode = false }) => {
   const client = getClient(draftMode ? { token: readToken } : undefined)
-  const posts = await getPosts(client)
-  const siteSettings = await metaDataQuery(client)
-  const heroSectionContent = await heroSectionQuery(client)
-  const OsDentalIntegration = await fetchIntegrationList(client)
-  const featureSectionDetails = await featureSection(client)
-  const testimonialData = await fetchTestimonial(client)
-  const heroSectionData = await fetchHeroSectionData(client)
-  const BenefitSectionData = await fetchBenefitSectionData(client)
-  const founderDetails = await  fetchFounderDetails(client)
-  const partnerList = await fetchPartners(client)
-  const seoSettings = await fetchSeoSettings(client)
+  const [
+    posts,
+    siteSettings,
+    heroSectionContent,
+    OsDentalIntegration,
+    featureSectionDetails,
+    testimonialData,
+    heroSectionData,
+    BenefitSectionData,
+    founderDetails,
+    partnerList,
+    seoSettings,
+  ] = await Promise.all([
+    getPosts(client),
+    metaDataQuery(client),
+    heroSectionQuery(client),
+    fetchIntegrationList(client),
+    featureSection(client),
+    fetchTestimonial(client),
+    fetchHeroSectionData(client),
+    fetchBenefitSectionData(client),
+    fetchFounderDetails(client),
+    fetchPartners(client),
+    fetchSeoSettings(client),
+  ])
 
   return {
     props: {
@@ -57,7 +71,7 @@ export const getStaticProps: GetStaticProps<
       BenefitSectionData,
       founderDetails,
       partnerList,
-      seoSettings
+      seoSettings,
     },
   }
 }
@@ -67,11 +81,11 @@ export default function IndexPage(
 ) {
   // const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   const siteSettings: SiteSettings = props?.siteSettings
-  const seoSettings  = props.seoSettings
+  const seoSettings = props.seoSettings
   return (
     <div>
       <Layout>
-        <CustomHead siteSettings={siteSettings} seoSettings ={seoSettings} />
+        <CustomHead siteSettings={siteSettings} seoSettings={seoSettings} />
         <Content {...props} />
       </Layout>
     </div>
