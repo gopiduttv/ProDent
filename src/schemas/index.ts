@@ -12,6 +12,7 @@ import HomeSettings from './HomeSettings'
 import multipleString from './multipleString'
 import Person from './Person'
 import legal from './Legal'
+import partner from './partner'
 
 export const schemaTypes = [
   layout,
@@ -23,8 +24,8 @@ export const schemaTypes = [
   Benefits,
   HomeSettings,
   Person,
-  legal
-  
+  legal,
+  partner,
 ]
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -40,6 +41,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     HomeSettings,
     multipleString,
     Person,
-    legal
+    legal,
+    partner,
   ],
 }

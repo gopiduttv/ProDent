@@ -174,8 +174,47 @@ export async function getLegalInformation(
   return await client.fetch(query)
 }
 
+export async function fetchFounderDetails(client: SanityClient): Promise<any> {
+  const query = groq`*[_type == "person"]{
+    'name':personName,
+    'socialMediaLinks':socialMediaLinks,
+    'image': personImage.asset->{
+         _id,
+         url,
+         metadata {
+           dimensions {
+             width,
+             height,
+             aspectRatio
+           }
+         }
+       },
+      'designation':personDesignation,
+      'description':personDescription
+  }`
+  return await client.fetch(query)
+}
 
 
+
+
+export async function fetchPartners(client: SanityClient): Promise<any> {
+  const query = groq`  *[_type == "partner"]{
+    partnerName,
+    'image':partnerLogo.asset->{
+         _id,
+         url,
+         metadata {
+           dimensions {
+             width,
+             height,
+             aspectRatio
+           }
+         }
+       }
+  }`
+  return await client.fetch(query)
+}
 
 export interface Post {
   _type: 'post'
@@ -204,7 +243,7 @@ export interface HomeSettings {
 }
 
 export interface LegalInformation {
-  businessAgreement:string
-  privacyPolicy:string
-  termsAndCondition:string
+  businessAgreement: string
+  privacyPolicy: string
+  termsAndCondition: string
 }
