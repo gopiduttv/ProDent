@@ -27,7 +27,7 @@ const AboutUsSection = ({ about, founderDetails }) => {
           </div>
           <Paragraph className="text-center">{about}</Paragraph>
         </div>
-        <div className="w-full flex md:flex-row md:justify-between">
+        <div className="w-full flex flex-col-reverse justify-center items-center gap-8 xl:flex-row xl:items-stretch">
           {founderDetails?.map((founder: any, index: number) => {
             return <PeopleCard key={index} {...founder} />
           })}
