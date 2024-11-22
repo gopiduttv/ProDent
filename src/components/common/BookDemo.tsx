@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef, useContext } from 'react'
-import { BookDemoProvider } from '~/providers/BookDemoProvider' // Make sure the correct path is used
+import React, { useState, useEffect, useRef, useContext, useCallback } from 'react'
+import { BookDemoProvider } from '~/providers/BookDemoProvider'
 
 const BookDemo = () => {
-  const { showPopup, setDemoPopupActive } = useContext(BookDemoProvider) // Access context values
+  const { showPopup, setDemoPopupActive } = useContext(BookDemoProvider)
 
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const scriptRef = useRef(null)
 
-  const loadScript = () => {
+  const loadScript = useCallback(() => {
     if (isScriptLoaded) return
 
     const script = document.createElement('script')
@@ -15,8 +15,8 @@ const BookDemo = () => {
     script.type = 'text/javascript'
     script.async = true
     script.onload = () => {
-      if (window.hbspt) {
-        window.hbspt.forms.create({
+      if ((window as any)?.hbspt) {
+        (window as any).hbspt.forms.create({
           portalId: '4832409',
           formId: '496f73f1-b6f5-4417-90c0-8cc7c36f35e5',
           target: '#hubspot-form',
@@ -26,7 +26,7 @@ const BookDemo = () => {
     }
     document.body.appendChild(script)
     scriptRef.current = script
-  }
+  }, [isScriptLoaded])
 
   useEffect(() => {
     if (showPopup) {
@@ -38,7 +38,7 @@ const BookDemo = () => {
         setIsScriptLoaded(false)
       }
     }
-  }, [showPopup])
+  }, [showPopup, loadScript])
 
   if (!showPopup) return null
 
