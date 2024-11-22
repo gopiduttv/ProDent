@@ -9,6 +9,7 @@ import CTAButton from './common/CTAbutton'
 
 const FeatureSection = ({ features }) => {
   const data = useHomeContext()?.homeSettings  
+   const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
   return (
     <Section
       id="features-section"
@@ -33,7 +34,7 @@ const FeatureSection = ({ features }) => {
             )
           })}
         </div>
-        <CTAButton className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
+        <CTAButton url={demoBtnUrl} className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
       </Container>
     </Section>
   )

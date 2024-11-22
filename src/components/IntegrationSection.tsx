@@ -9,6 +9,7 @@ import CTAButton from './common/CTAbutton'
 
 function IntegrationSection({ OsDentalIntegration }) {
   const data = useHomeContext()?.homeSettings 
+   const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
   return (
     <Section id="integrations-section" className="pt-16 pb-16">
       <Container className="flex flex-col items-center gap-16">
@@ -35,7 +36,7 @@ function IntegrationSection({ OsDentalIntegration }) {
           {/* <IntegrationCloud className="grid grid-cols-8 gap-2" images={images} imagesCount={16} />
           <IntegrationCloud className="grid grid-cols-8 gap-4" images={images} imagesCount={6} columnPaddding />           */}
         </div>
-        <CTAButton className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
+        <CTAButton url={demoBtnUrl} className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
       </Container>
     </Section>
   )

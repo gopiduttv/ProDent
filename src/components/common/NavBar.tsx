@@ -25,8 +25,8 @@ function DesktopNavbar(props) {
           {link.name}
         </a>
       ))}
-      <LoginButton />
-      <CTAButton name={props.ctaName} />
+      <LoginButton url={props?.loginUrl} />
+      <CTAButton  url={props?.ctaUrl} name={props.ctaName} />
     </div>
   )
 }
@@ -49,8 +49,8 @@ function MobileNavBar(props) {
           {link.name}
         </a>
       ))}
-      <LoginButton />
-      <CTAButton name={props.ctaName} />
+      <LoginButton url={props?.loginUrl}/>
+      <CTAButton url={props?.ctaUrl} name={props.ctaName} />
     </div>
   )
 }

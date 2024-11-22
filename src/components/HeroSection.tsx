@@ -28,7 +28,7 @@ const AnimatedShinyTextDemo = (props) => {
   )
 }
 
-const HeroContent = ({ content }) => {
+const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
     <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:pt-56 md:pb-32 z-10">
       <div className="flex flex-col items-center md:items-center">
@@ -57,13 +57,17 @@ const HeroContent = ({ content }) => {
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <CTAButton className="px-6 py-3" name={content?.ctaName} />
+          <CTAButton
+            url={ctaBtnUrl}
+            className="px-6 py-3"
+            name={content?.ctaName}
+          />
         </div>
       </div>
     </div>
   )
 }
-const HeroSection = ({data}) => {
+const HeroSection = ({ data, ctaBtnUrl }) => {
   const { width: windowWidth } = useWindowSize()
   return (
     <Section
@@ -80,8 +84,8 @@ const HeroSection = ({data}) => {
           />
         </div>
       )}
-      {data && <HeroContent content={data}/>}
-      { windowWidth > 1280 && (
+      {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
+      {windowWidth > 1280 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
             width={windowWidth > 1800 ? 500 : 300}

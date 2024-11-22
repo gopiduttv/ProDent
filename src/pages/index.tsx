@@ -84,7 +84,7 @@ export default function IndexPage(
   const seoSettings = props.seoSettings
   return (
     <div>
-      <Layout>
+      <Layout data ={props}>
         <CustomHead siteSettings={siteSettings} seoSettings={seoSettings} />
         <Content {...props} />
       </Layout>
