@@ -15,7 +15,7 @@ const BookDemo = () => {
     script.type = 'text/javascript'
     script.async = true
     script.onload = () => {
-      if (window.hbspt) {
+      if (window['hbspt']) {
         window.hbspt.forms.create({
           portalId: '4832409',
           formId: '496f73f1-b6f5-4417-90c0-8cc7c36f35e5',
@@ -38,7 +38,7 @@ const BookDemo = () => {
         setIsScriptLoaded(false)
       }
     }
-  }, [showPopup,loadScript])
+  }, [showPopup])
 
   if (!showPopup) return null
 
