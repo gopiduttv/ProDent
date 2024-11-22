@@ -5,10 +5,10 @@ import Subtext from './typography/Subtext'
 import IntegrationCloud from './IntegrationCloud'
 import { useHomeContext } from './context/homeSettings'
 import CTAButton from './common/CTAbutton'
-
+import IntegrationLogoCard from './IntegrationCloud'
 
 function IntegrationSection({ OsDentalIntegration }) {
-  const data = useHomeContext()?.homeSettings 
+  const data = useHomeContext()?.homeSettings
   return (
     <Section id="integrations-section" className="pt-16 pb-16">
       <Container className="flex flex-col items-center gap-16">
@@ -19,20 +19,18 @@ function IntegrationSection({ OsDentalIntegration }) {
               {data?.heroSectionData?.integrationHeader}
             </p>
           </div>
-          <div className='flex flex-wrap items-center justify-center'>
-            {OsDentalIntegration?.map((e: any, i: number) => {
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {OsDentalIntegration?.map((integration: any, index: number) => {
               return (
-                <IntegrationCloud
-                  className="p-3"
-                  images={e.image}
-                  imagesCount={16}
-                  key={i}
-                />
+                <IntegrationLogoCard key={index} image={integration.image} />
               )
             })}
           </div>
         </div>
-        <CTAButton className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
+        <CTAButton
+          className="px-6 py-3"
+          name={data.heroSectionData.ctaName ?? ''}
+        />
       </Container>
     </Section>
   )
