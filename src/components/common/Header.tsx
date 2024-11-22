@@ -44,9 +44,9 @@ const Header = ({ data }: any) => {
   return (
     <header
       ref={headerRef}
-      className="fixed  top-0 left-0 w-full h-[75px] py-4 backdrop-blur-sm  transition-colors duration-300 z-50"
+      className="fixed top-0 left-0 w-full h-[75px] py-4 backdrop-blur-sm  transition-colors duration-300 z-50"
     >
-      <nav className=" flex flex-col xl:flex-row xl:items-center xl:justify-between gap-42 xl:px-4">
+      <nav className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-42 xl:px-10">
         <div className="flex flex-row justify-between px-4 xl:px-0">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-bold text-lg">
