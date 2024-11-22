@@ -154,6 +154,7 @@ export const heroSection = groq`
   },
   "benifits": {
     selectedBenefits[]->{
+      "benefitHeading":benefitHeading,
       "benifitSectionImage": benefitImageSection.asset->{
         _id,
         url,
