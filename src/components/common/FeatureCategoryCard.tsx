@@ -10,7 +10,7 @@ const FeatureCategoryCard = ({ imageUrl, heading, features }) => {
       <H3>{heading}</H3>
       <List
         className="flex flex-col gap-4"
-        items={features.map((feature: any) => feature?.featureHeading)}
+        items={features?.map((feature: any) => feature?.featureHeading)}
       />
     </div>
   )
