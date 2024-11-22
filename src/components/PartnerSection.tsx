@@ -15,10 +15,10 @@ export default function PartnerSection({ partnerList }) {
         <div className="w-full flex flex-col xl:flex-row justify-center items-center gap-6 ">
           {partnerList?.map((partner, index) => {
             return (
-              <div key={index} className="h-40">
+              <div key={index} >
                 <ImageLoader
                   className="w-auto rounded-2xl"
-                  imageClassName="!object-contain h-40 w-auto"
+                  imageClassName="!object-contain h-20 w-auto"
                   image={partner.image}
                   fixed={false}
                 />
