@@ -7,9 +7,9 @@ import Subtext from './typography/Subtext'
 import { useHomeContext } from './context/homeSettings'
 import CTAButton from './common/CTAbutton'
 
-const TestimonialSection = ({testimonials}) => {
+const TestimonialSection = ({ testimonials }) => {
   const data = useHomeContext()?.homeSettings
-   const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
+  const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
   return (
     <Section id="testimonials-section" className="py-24">
       <Container className="flex flex-col items-center gap-16 ">
@@ -17,11 +17,15 @@ const TestimonialSection = ({testimonials}) => {
           <Subtext>Testimonials</Subtext>
 
           <div className="max-w-2xl w-full flex justify-center">
-            <H2>{data?.heroSectionData?.testimonialHeader            }</H2>
+            <H2>{data?.heroSectionData?.testimonialHeader}</H2>
           </div>
         </div>
         <TestimonialCarousel testimonials={testimonials} />
-        <CTAButton url={demoBtnUrl} className="px-6 py-3" name={data.heroSectionData?.ctaName ?? ""} />
+        <CTAButton
+          url={demoBtnUrl}
+          className="px-6 py-3"
+          name={data.heroSectionData?.ctaName ?? ''}
+        />
       </Container>
     </Section>
   )

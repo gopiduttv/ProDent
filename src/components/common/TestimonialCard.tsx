@@ -3,27 +3,27 @@ import H3 from '../typography/H3'
 import RichAvatar from './RichAvatar'
 
 const TestimonialCard = ({props}) => {
-  const { width: windowWidth } = useWindowSize();
+  // const { width: windowWidth } = useWindowSize();
   return (
     <div className="rounded-3xl bg-[#f9f6fe] p-10 flex flex-col gap-4 w-[380px] md:w-3/4  ">
       <div className="flex items-center justify-between">
-        <H3 className="text-lg font-semibold text-primary">
+        <H3 className="text-2xl font-semibold text-[#111827]">
           {props?.testimonialheading}
         </H3>
       </div>
       <div>
-        <p className="text-lg text-gray-600 text-ellipsis line-clamp-4">
+        <p className="text-lg text-gray-600 text-ellipsis md:line-clamp-4">
           {props.testimonialDescription}
         </p>
       </div>
-      <div className="flex flex-row justify-between items-end">
+      <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-end">
         <RichAvatar
           AuthorImage={props?.AuthorImage}
           user={props.authorname}
           tenant={props.authordesignation}
         />
         <div>
-          <p style={{ fontSize: windowWidth < 750 ? 11 : undefined }} className="text-gray-900">
+          <p className="text-gray-900 text-xs md:text-sm">
             {`${props.numberOflocation} Locations, ${props.location}`}
           </p>
         </div>
