@@ -47,8 +47,8 @@ const TestimonialCarousel = ({ testimonials }) => {
 
   if (testimonialLength == 1) {
     return (
-      <div className="max-w-full h-[350px] ">
-        <div className="px-4 h-[350px] flex flex-col">
+      <div className="max-w-full">
+        <div className="px-4 flex flex-col">
           <div className="w-full flex justify-center">
             <TestimonialCard props={testimonials[0]} />
           </div>
