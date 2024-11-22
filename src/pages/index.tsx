@@ -22,6 +22,7 @@ import {
 import type { SharedPageProps } from '~/pages/_app'
 import Layout from '../components/Layout'
 import CustomHead from '~/components/common/CustomHead'
+import BookDemoContextProvider from '~/providers/BookDemoProvider'
 
 export const getStaticProps: GetStaticProps<
   SharedPageProps & {
@@ -84,10 +85,12 @@ export default function IndexPage(
   const seoSettings = props.seoSettings
   return (
     <div>
-      <Layout data ={props}>
-        <CustomHead siteSettings={siteSettings} seoSettings={seoSettings} />
-        <Content {...props} />
-      </Layout>
+      <BookDemoContextProvider>
+        <Layout data={props}>
+          <CustomHead siteSettings={siteSettings} seoSettings={seoSettings} />
+          <Content {...props} />
+        </Layout>
+      </BookDemoContextProvider>
     </div>
   )
 }

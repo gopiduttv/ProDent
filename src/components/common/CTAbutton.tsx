@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { cn } from '~/lib/utils'
+import { BookDemoProvider } from '~/providers/BookDemoProvider'
 
 const CTAButton = ({ className = '', name, url = '/' }) => {
+  const { showPopup, setDemoPopupActive } = useContext(BookDemoProvider)
+  const handleClick = () => {
+    setDemoPopupActive(!showPopup)
+  }
   return (
     <div
       className={cn(
-        'px-4 py-2 bg-[#8639f8] rounded-md justify-center items-center gap-2.5 inline-flex text-sm ',
+        'cursor-pointer px-4 py-2 bg-[#8639f8] rounded-md justify-center items-center gap-2.5 inline-flex text-sm ',
         className,
       )}
     >
-      <a href={url} className="text-white font-semibold leading-snug">
+      <a
+        onClick={() => handleClick()}
+        className="text-white font-semibold leading-snug"
+      >
         {name}
       </a>
     </div>

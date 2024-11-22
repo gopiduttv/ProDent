@@ -86,3 +86,112 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);  /* Dimmed effect for background */
+  transition: background-color 0.3s ease;
+}
+
+/* Modal Container */
+.modal-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(0); /* ensures modal is at the center */
+  pointer-events: auto; /* Enable interaction with modal content */
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #555;
+}
+
+/* Modal Content */
+.modal-content {
+  margin-bottom: 1rem;
+}
+
+.modal-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.modal-description {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* HubSpot Form Custom Input Styling */
+#hubspot-form input[type="text"], #hubspot-form input[type="email"], #hubspot-form input[type="tel"], #hubspot-form textarea {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Focus State for Input Fields */
+#hubspot-form input[type="text"]:focus, 
+#hubspot-form input[type="email"]:focus, 
+#hubspot-form input[type="tel"]:focus,
+#hubspot-form textarea:focus {
+  border-color: #8639f8;
+  outline: none;
+}
+
+/* Submit Button */
+#hubspot-form button[type="submit"] {
+  background-color: #8639f8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+}
+
+#hubspot-form button[type="submit"]:hover {
+  background-color: #6c2df7;
+}
+.hs_submit{
+  background: black;
+    color: white;
+    padding: 10px;
+    justify-content: center;
+    display: flex
+;
+}
+
