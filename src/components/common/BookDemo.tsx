@@ -38,7 +38,7 @@ const BookDemo = () => {
         setIsScriptLoaded(false)
       }
     }
-  }, [showPopup])
+  }, [showPopup,loadScript])
 
   if (!showPopup) return null
 
