@@ -37,6 +37,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'loginBtnUrl',
+      title: 'Login Url',
+      type: 'url',
+    }),
+    defineField({
+      name: 'demoBtnUrl',
+      title: 'Book Demo Url',
+      type: 'url',
+    }),
+    defineField({
       name: 'copyRightText',
       title: 'Copyright Text',
       type: 'string',

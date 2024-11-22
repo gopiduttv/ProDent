@@ -9,6 +9,7 @@ import CTAButton from './common/CTAbutton'
 
 const BenefitsSection = ({ data }) => {
   const benefitHeader = useHomeContext()?.homeSettings 
+  const demoBtnUrl = benefitHeader?.siteSettings?.demoBtnUrl ?? '/'
   return (
     <Section id="benefits-section" className="py-24 bg-purple-50">
       <Container className="flex flex-col items-center gap-16">
@@ -23,7 +24,7 @@ const BenefitsSection = ({ data }) => {
             <RichImage key={index} index={index} item={benefit} />
           ))}
         </div>
-        <CTAButton className="px-6 py-3" name={benefitHeader?.heroSectionData?.ctaName ?? ""} />
+        <CTAButton className="px-6 py-3" name={benefitHeader?.heroSectionData?.ctaName ?? ""} url={demoBtnUrl} />
       </Container>
     </Section>
   )

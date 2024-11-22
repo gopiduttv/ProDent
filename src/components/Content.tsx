@@ -6,6 +6,7 @@ import IntegrationSection from './IntegrationSection'
 import AboutUsSection from './AboutUsSection'
 import { HomeSettings } from './context/homeSettings'
 import PartnerSection from './PartnerSection'
+import BookDemo from './common/BookDemo'
 
 const Content = (props: any) => {
   const data = props?.heroSectionData
@@ -14,13 +15,12 @@ const Content = (props: any) => {
   const testimonial = data?.testimonial?.selectedTestimonial
   const partner = data?.partner
   const feature = data?.features?.selectedFeatures
-
-
+  const ctaBtnUrl = props?.siteSettings?.demoBtnUrl
 
   return (
     <div className="flex flex-col overflow-hidden">
       <HomeSettings homeSettings={props}>
-        <HeroSection data={props.heroSectionData} />
+        <HeroSection ctaBtnUrl={ctaBtnUrl} data={props.heroSectionData} />
         <FeatureSection features={feature} />
         <IntegrationSection OsDentalIntegration={integrationList} />
         <BenefitsSection data={benefits} />
@@ -30,6 +30,7 @@ const Content = (props: any) => {
           about={props?.heroSectionContent?.about}
           founderDetails={props?.founderDetails}
         />
+        <BookDemo />
       </HomeSettings>
     </div>
   )

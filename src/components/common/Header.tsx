@@ -5,9 +5,14 @@ import MobileMenuButton from './MobileMenuButton'
 import { useEffect, useRef } from 'react'
 import Container from '../structure/Container'
 
-const Header = () => {
+const Header = ({ data }: any) => {
+  const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? ''
+  const loginUrl  = data?.siteSettings?.loginBtnUrl ?? ''
+  const ctaName = data?.heroSectionData?.ctaName ?? ''
   const headerContent = {
-    ctaName: 'Book Free Demo',
+    ctaName: ctaName,
+    ctaUrl: demoBtnUrl,
+    loginUrl:loginUrl,
   }
 
   const headerRef = useRef(null)
@@ -55,7 +60,11 @@ const Header = () => {
           </Link>
           <MobileMenuButton className="xl:hidden p-2 border-0 focus:outline-none text-white" />
         </div>
-        <Navbar ctaName={headerContent.ctaName} />
+        <Navbar
+          ctaUrl={headerContent?.ctaUrl}
+          ctaName={headerContent?.ctaName}
+          loginUrl={headerContent?.loginUrl}
+        />
       </nav>
     </header>
   )

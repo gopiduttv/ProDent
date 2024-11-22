@@ -26,12 +26,15 @@ export const postSlugsQuery = groq`
 
 /*########################### QUERIES ##########################*/
 export const metaDataQuery_ = groq` 
-*[_type == "siteSettings"][0]{
+*[_type == "siteSettings"] | order(_createdAt desc)[0]{
+  demoBtnUrl,
+  loginBtnUrl,
   ogTitle,
   "ogFavicon":ogFavicon.asset->url,
   "ogImage" :ogImage.asset->url,
   ogUrl,
-  ogDescription
+  ogDescription,
+
 }`
 
 export const integrationListQuery = groq`*[_type == "integration" ]{
@@ -79,7 +82,8 @@ export const heroSectionQuery_ = groq`
     "about":ogDescription
   }
 `
-export const AboutQuery = groq`*[_type == "siteSettings"]{"about":ogDescription}`
+export const AboutQuery = groq`*[_type == "siteSettings"]{"about":ogDescription
+}`
 export const heroSection = groq`
 *[_type == "homeSettings"][0]{
   "heroDescription": heroDescription,
