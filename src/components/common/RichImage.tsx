@@ -29,7 +29,7 @@ export const Picture = (props) => {
 const RichImage = (props: any) => {
   if (props.index % 2 == 0) {
     return (
-      <div className="flex flex-col md:flex-row items-center justify-between gap-20 md:gap-40 w-full">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-40 w-full">
         <ImageLoader
           image={props?.item?.benifitSectionImage}
           className="md:!h-[350px] md:!w-[572px]"
@@ -40,7 +40,7 @@ const RichImage = (props: any) => {
     )
   }
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-20 md:gap-40 w-full">
+    <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-40 w-full">
       <Richness item={props?.item} />
       <ImageLoader
         className="md:!h-[350px] md:!w-[572px]"

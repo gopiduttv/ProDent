@@ -14,15 +14,15 @@ const AnimatedShinyTextDemo = (props) => {
   return (
     <div
       className={cn(
-        'group rounded-full backdrop-blur-sm border-[1px] border-white/15 bg-white/10 text-base  transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 ',
+        'group rounded-full backdrop-blur-sm border-[1px] border-white/15 bg-white/10 text-base ',
         props.className,
       )}
     >
-      <AnimatedShinyText className="inline-flex items-center justify-center px-5 py-2 text-white transition ease-out  hover:text-gray-500   hover:duration-500 ">
+      <AnimatedShinyText className="inline-flex items-center justify-center px-5 py-2 text-white transition ease-out  ">
         <span className="items-center text-ellipsis line-clamp-1">
           {props.content}
         </span>
-        <ArrowRightIcon className="ml-1 size-3 md:size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+        {/* <ArrowRightIcon className="ml-1 size-3 md:size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> */}
       </AnimatedShinyText>
     </div>
   )
@@ -30,7 +30,7 @@ const AnimatedShinyTextDemo = (props) => {
 
 const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
-    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:pt-44 md:pb-36 z-10">
+    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left pt-32 pb-16 md:pt-44 md:pb-36 z-10">
       <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo

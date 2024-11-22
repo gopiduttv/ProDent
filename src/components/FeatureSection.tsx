@@ -13,7 +13,7 @@ const FeatureSection = ({ features }) => {
   return (
     <Section
       id="features-section"
-      className="features-section pt-24 pb-16 z-10 bg-white"
+      className="features-section pt-12 md:pt-24 pb-12 md:pb-16 z-10 bg-white"
     >
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-2">

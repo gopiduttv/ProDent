@@ -8,7 +8,7 @@ const TopSection = ({data,ctaName}) => {
   return (
     <div className="self-stretch flex-col justify-start items-start gap-14 flex">
       <div className="w-full gap-8 inline-flex flex-col ">
-        <H2>
+        <H2 className="text-3xl">
           Centralize your data. Supercharge your DSO.
           </H2>
         <div className="flex justify-center">
@@ -28,7 +28,7 @@ const BottomSection = () => {
       <div className="text-white/50 text-center">
         Copyright © 2024. OSDental.
       </div>
-      <div className="flex flex-col md:flex-row gap-8 md:gap text-center">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
         <Link className=" text-white/50 " href={'/TermsofUse'}>
           Terms of use
         </Link>
@@ -47,7 +47,7 @@ const Footer = ({data}) => {
   return (
     <Section id="footer" className={'bg-[#02024a]'}>
       <Container className="flex justify-center py-4 text-white ">
-        <div className=" pt-24 pb-8 bg-[#02024a] flex-col justify-center items-start gap-12 inline-flex ">
+        <div className=" pt-12 md:pt-24 pb-8 bg-[#02024a] flex-col justify-center items-start gap-12 inline-flex ">
           <TopSection ctaName={data?.heroSectionData?.ctaName} data={data?.siteSettings?.demoBtnUrl} />
           <BottomSection />
         </div>

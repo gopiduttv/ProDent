@@ -9,7 +9,7 @@ const TestimonialCarousel = ({ testimonials }) => {
   if (testimonialLength == 1) {
     return (
       <div className="max-w-full">
-        <div className="px-4 flex flex-col">
+        <div className="w-full flex flex-col">
           <div className="w-full flex justify-center">
             <TestimonialCard props={testimonials[0]} />
           </div>
@@ -31,7 +31,7 @@ const TestimonialCarousel = ({ testimonials }) => {
       <Slider {...settings}>
         {testimonials?.map((testimonial, index) => {
           return (
-            <div key={index} className="px-4 h-[350px] flex flex-col">
+            <div key={index} className="w-full h-[350px] flex flex-col">
               <div className="w-full flex justify-center">
                 <TestimonialCard props={testimonial} />
               </div>
