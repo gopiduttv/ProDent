@@ -5,7 +5,7 @@ import { cn } from '~/lib/utils'
 const IntegrationLogoCard = ({ className = null, image }) => {
   return (
     <div className={cn('', className)}>
-      <ImageLoader image={image} fixed={false} imageClassName="!h-20 w-auto" />
+      <ImageLoader image={image} fixed={false} imageClassName="!h-16 w-auto"/>
     </div>
   )
 }
