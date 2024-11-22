@@ -17,7 +17,7 @@ export default function PartnerSection({ partnerList }) {
             return (
               <div key={index} >
                 <ImageLoader
-                  className="flex justify-center h-20 w-72 bg-white rounded-lg"
+                  className="flex justify-center h-20 w-72 bg-white rounded-lg "
                   imageClassName="!object-contain h-20 w-auto"
                   image={partner.image}
                   fixed={false}
