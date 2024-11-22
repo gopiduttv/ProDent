@@ -30,7 +30,7 @@ const AnimatedShinyTextDemo = (props) => {
 
 const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
-    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:pt-56 md:pb-32 z-10">
+    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left py-28 md:pt-44 md:pb-36 z-10">
       <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
@@ -41,7 +41,7 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
           {content?.heroTitleStatic}
         </H1>
         <WordRotate
-          className="md:text-6xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
+          className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
           words={content?.heroTitleDynamic}
         />
 
@@ -77,7 +77,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       {windowWidth > 1280 && (
         <div className="rounded-2xl flex items-end justify-right z-10">
           <Image
-            width={windowWidth > 1800 ? 500 : 300}
+            width={500}
             height={600}
             src={'/hero-left.png'}
             alt="hero-left"
@@ -88,7 +88,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       {windowWidth > 1280 && (
         <div className="rounded-2xl  flex items-end justify-left z-10">
           <Image
-            width={windowWidth > 1800 ? 500 : 300}
+            width={500}
             height={600}
             src={'/hero-right.png'}
             alt="hero-left"
