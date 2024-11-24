@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { cn } from '~/lib/utils'
-import { BookDemoProvider } from '~/providers/BookDemoProvider'
+import { BookDemoContext } from '~/providers/BookDemoProvider'
 
 const CTAButton = ({ className = '', name, url = '/' }) => {
-  const { isDemoPopUpShown, setIsDemoPopUpShown } = useContext(BookDemoProvider)
+  const { isDemoPopUpShown, setIsDemoPopUpShown } = useContext(BookDemoContext)
   const handleClick = () => {
     setIsDemoPopUpShown(!isDemoPopUpShown)
   }
