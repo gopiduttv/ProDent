@@ -75,8 +75,8 @@ module.exports = {
   			}
   		},
 		backgroundImage: {
-		'hero-pattern': "url('/hero-background.png')",
-		'grid-pattern': "url('/about-us.png')",
+		'hero-pattern': "url('/hero-background.webp')",
+		'grid-pattern': "url('/about-us.webp')",
 		}
 
   	}
