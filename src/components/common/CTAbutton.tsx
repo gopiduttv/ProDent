@@ -3,9 +3,9 @@ import { cn } from '~/lib/utils'
 import { BookDemoProvider } from '~/providers/BookDemoProvider'
 
 const CTAButton = ({ className = '', name, url = '/' }) => {
-  const { showPopup, setDemoPopupActive } = useContext(BookDemoProvider)
+  const { isDemoPopUpShown, setIsDemoPopUpShown } = useContext(BookDemoProvider)
   const handleClick = () => {
-    setDemoPopupActive(!showPopup)
+    setIsDemoPopUpShown(!isDemoPopUpShown)
   }
   return (
     <div

@@ -3,10 +3,10 @@ import { Children, createContext, useState } from 'react'
 export const BookDemoProvider = createContext(null)
 
 export default function BookDemoContextProvider({ children }) {
-  const [showPopup, setDemoPopupActive] = useState(false)
+  const [isDemoPopUpShown, setIsDemoPopUpShown] = useState(false)
 
   return (
-    <BookDemoProvider.Provider value={{ showPopup, setDemoPopupActive }}>
+    <BookDemoProvider.Provider value={{ isDemoPopUpShown, setIsDemoPopUpShown }}>
       {children}
     </BookDemoProvider.Provider>
   )
