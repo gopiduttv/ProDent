@@ -24,8 +24,8 @@ const Content = (props: any) => {
         <FeatureSection features={feature} />
         <IntegrationSection OsDentalIntegration={integrationList} />
         <BenefitsSection data={benefits} />
-        <TestimonialSection testimonials={testimonial} />
-        <PartnerSection partnerList={partner?.selectedPartner} />
+        <TestimonialSection testimonials={testimonial} partners={partner?.selectedPartner} />
+        {/* <PartnerSection partnerList={partner?.selectedPartner} /> */}
         <AboutUsSection
           about={props?.heroSectionContent?.about}
           founderDetails={props?.founderDetails}

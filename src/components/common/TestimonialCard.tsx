@@ -1,4 +1,3 @@
-import useWindowSize from '~/hooks/useWindowSize'
 import H3 from '../typography/H3'
 import RichAvatar from './RichAvatar'
 import Paragraph from '../typography/Paragraph'
