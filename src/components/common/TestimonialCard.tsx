@@ -1,11 +1,10 @@
-import useWindowSize from '~/hooks/useWindowSize';
 import H3 from '../typography/H3'
 import RichAvatar from './RichAvatar'
 
 const TestimonialCard = ({props}) => {
   // const { width: windowWidth } = useWindowSize();
   return (
-    <div className="rounded-3xl bg-[#f9f6fe] p-8 md:p-10 flex flex-col gap-4 w-[380px] md:w-3/4  ">
+    <div className="rounded-3xl bg-[#f9f6fe] p-8 md:p-10 flex flex-col gap-4   ">
       <div className="flex items-center justify-between">
         <H3 className="text-2xl font-semibold text-[#111827]">
           {props?.testimonialheading}
