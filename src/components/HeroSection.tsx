@@ -1,4 +1,3 @@
-import { ArrowRightIcon } from 'lucide-react'
 import CTAButton from './common/CTAbutton'
 import Section from './structure/Section'
 import H1 from './typography/H1'
@@ -7,7 +6,6 @@ import AnimatedShinyText from './ui/animated-shiny-text'
 import { cn } from '~/lib/utils'
 import WordRotate from './ui/word-rotate'
 import Image from 'next/image'
-import GridPattern from './ui/grid-pattern'
 import useWindowSize from '~/hooks/useWindowSize'
 
 const AnimatedShinyTextDemo = (props) => {
@@ -30,8 +28,8 @@ const AnimatedShinyTextDemo = (props) => {
 
 const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
-    <div className="md:w-[900px] w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left pt-32 pb-16 md:pt-44 md:pb-36 z-10">
-      <div className="flex flex-col items-center md:items-center">
+    <div className="w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left pt-32 pb-16 md:pt-36 md:pb-96 z-10">
+      <div className="flex flex-col items-center md:w-1/2">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
           className="text-sm font-light"
@@ -46,7 +44,7 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
         />
 
         {/* Description */}
-        <Paragraph className="text-center">
+        <Paragraph className="px-10 text-center">
           {content?.heroDescription}
         </Paragraph>
 
@@ -75,9 +73,11 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4"
     >
       {windowWidth > 1280 && (
-        <div className="rounded-2xl flex items-end justify-right z-10">
+        <div
+          className={`absolute ${windowWidth > 1800 ? 'top-[35%] left-[12%]' : 'bottom-[-22%] left-[5%]'} rounded-2xl flex items-end justify-right z-15`}
+        >
           <Image
-            width={500}
+            width={550}
             height={600}
             src={'/hero-left.png'}
             alt="hero-left"
@@ -86,9 +86,11 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       )}
       {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
       {windowWidth > 1280 && (
-        <div className="rounded-2xl  flex items-end justify-left z-10">
+        <div
+          className={`absolute ${windowWidth > 1800 ? 'top-[35%] right-[12%]' : 'bottom-[-22%] right-[5%]'} rounded-2xl flex items-end justify-left z-15`}
+        >
           <Image
-            width={500}
+            width={550}
             height={600}
             src={'/hero-right.png'}
             alt="hero-left"

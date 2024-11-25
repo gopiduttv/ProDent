@@ -18,16 +18,16 @@ const AboutUsSection = ({ about, founderDetails }) => {
   return (
     <Section
       id="about-us-section"
-      className="py-12 md:py-24  bg-[#8639f8] bg-grid-pattern bg-contain bg-no-repeat bg-right"
+      className="py-12 md:py-24 bg-[#8639f8] bg-grid-pattern bg-contain bg-no-repeat bg-right"
     >
-      <Container className="flex  flex-col items-center gap-10 w-full ">
+      <Container className="flex flex-col items-center gap-10 w-full ">
         <div>
           <div className="flex justify-center w-full">
             <H2 className="!text-left text-white">{aboutUS.heading}</H2>
           </div>
           <Paragraph className="text-center">{about}</Paragraph>
         </div>
-        <div className="w-full flex flex-col-reverse justify-center items-center gap-8 xl:flex-row xl:items-stretch">
+        <div className="w-full flex flex-col justify-center items-center gap-8 xl:flex-row xl:items-stretch">
           {founderDetails?.map((founder: any, index: number) => {
             return <PeopleCard key={index} {...founder} />
           })}
