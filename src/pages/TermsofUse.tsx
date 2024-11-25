@@ -42,7 +42,7 @@ export default function TermsofUse(
   const termsAndCondition: PortableTextBlock =
     props.legalInformation[0].termsAndCondition
   return (
-    <div className="prose prose-zinc prose-sm m-auto">
+    <div className="md:prose md:prose-zinc md:prose-sm md:m-auto p-9">
       <PortableText value={termsAndCondition} />
     </div>
   )
