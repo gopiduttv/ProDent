@@ -3,7 +3,6 @@ import Container from '../structure/Container'
 import Section from '../structure/Section'
 import CTAButton from './CTAbutton'
 import H2 from '../typography/H2'
-import { LegalSlugsQuery } from '~/lib/sanity.queries'
 
 const TopSection = ({data,ctaName}) => {
   return (
