@@ -15,7 +15,7 @@ function IntegrationSection({ OsDentalIntegration }) {
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-4">
           <Subtext>More than 125 available integrations</Subtext>
-          <div className="w-full flex justify-center pb-4">
+          <div className="w-full flex justify-center pb-8">
             <p className="text-2xl md:w-2/3 font-semibold text-center text-[#02024a] leading-8">
               {data?.heroSectionData?.integrationHeader}
             </p>

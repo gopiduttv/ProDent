@@ -12,7 +12,7 @@ const TestimonialCard = ({props}) => {
         </H3>
       </div>
       <div>
-        <p className="text-lg text-gray-600 text-ellipsis md:line-clamp-4">
+        <p className="text-[16px] text-gray-600 text-ellipsis md:line-clamp-4">
           {props.testimonialDescription}
         </p>
       </div>

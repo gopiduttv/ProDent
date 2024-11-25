@@ -40,7 +40,7 @@ function PeopleCard({
       <div className="flex flex-col gap-3">
         <PeopleCardHeader {...{ name, designation, socialMediaLinks }} />
         <div>
-          <p>{description}</p>
+          <p className="text-gray-600 text-[16px]">{description}</p>
         </div>
       </div>
     </div>
