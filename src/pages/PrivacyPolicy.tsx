@@ -42,7 +42,7 @@ export default function TermsofUse(
   const privacyPolicy: PortableTextBlock =
     props.legalInformation[0].privacyPolicy
   return (
-    <div className="prose prose-zinc prose-sm m-auto">
+    <div className="md:prose md:prose-zinc md:prose-sm md:m-auto p-9">
       <PortableText value={privacyPolicy} />
     </div>
   )
