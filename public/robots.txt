@@ -2,4 +2,4 @@ User-agent: *
 Disallow:
 Disallow: /lp/
 Disallow: /legal/
-Sitemap: https://www.voicestack.com/sitemap.xml
+Sitemap: https://osdental-dev.vercel.app/
