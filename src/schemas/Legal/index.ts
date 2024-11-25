@@ -6,30 +6,31 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'lastUpdated',
-      title: 'Last Updated',
-      type: 'date',
+      name: 'title',
+      title: 'Legal Doc Type',
+      type: 'string',
     }),
+
     defineField({
       name: 'termsAndCondition',
-      title: 'Terms and Conditions',
+      title: 'Legal Content',
       type: 'blockContent',
     }),
+
     defineField({
-      name: 'privacyPolicy',
-      title: 'Privacy Policy',
-      type: 'blockContent',
-    }),
-    defineField({
-      name: 'businessAgreement',
-      title: 'Business Associate Agreement',
-      type: 'blockContent',
+      name: 'slug',
+      title: 'Page Path',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
     }),
   ],
   preview: {
     select: {
-      title: 'lastUpdated',
-     
-    }
-  }
+      title: 'title',
+    },
+  },
 })
