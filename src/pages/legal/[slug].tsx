@@ -20,9 +20,8 @@ export const getStaticProps: GetStaticProps<
 > = async ({ draftMode = false, params }) => {
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const slug = params?.slug
-  console.log(slug, 'cccc')
+
   const legalInformation = await fetchTermsAndCondition(client, slug)
-  console.log(legalInformation, 'legalInformation')
 
   if (!legalInformation || legalInformation.length === 0) {
     return {
