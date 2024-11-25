@@ -13,7 +13,7 @@ const navigationLinks = [
   // { href: '#footer', name: 'Contact' },
 ]
 
-function DesktopNavbar(props) {
+export function DesktopNavbar(props) {
   return (
     <div className="hidden xl:flex xl:flex-row items-center gap-6">
       {navigationLinks.map((link, index) => (
@@ -26,19 +26,19 @@ function DesktopNavbar(props) {
         </a>
       ))}
       <LoginButton url={props?.loginUrl} />
-      <CTAButton  url={props?.ctaUrl} name={props.ctaName} className="text-sm"/>
+      <CTAButton url={props?.ctaUrl} name={props.ctaName} className="text-sm" />
     </div>
   )
 }
 
-function MobileNavBar(props) {
+export function MobileNavBar(props) {
   const { isMobileMenuOpen, setIsMobileMenuOpen } =
     useContext(NavigationContext)
   const handler = () => setIsMobileMenuOpen(!isMobileMenuOpen)
   if (!isMobileMenuOpen) return
 
   return (
-    <div className="xl:hidden h-screen flex flex-col items-center gap-10 bg-[#02024a]  bg-cover py-14 text-white">
+    <div className="xl:hidden w-full h-screen flex flex-col items-center gap-10 bg-[#02024a]  bg-cover py-14 text-white">
       {navigationLinks.map((link, index) => (
         <a
           key={index}
@@ -49,8 +49,8 @@ function MobileNavBar(props) {
           {link.name}
         </a>
       ))}
-      <LoginButton url={props?.loginUrl}/>
-      <CTAButton url={props?.ctaUrl} name={props.ctaName}/>
+      <LoginButton url={props?.loginUrl} />
+      <CTAButton url={props?.ctaUrl} name={props.ctaName} />
     </div>
   )
 }

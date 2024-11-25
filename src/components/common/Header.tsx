@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Navbar from './NavBar'
+import Navbar, { DesktopNavbar, MobileNavBar } from './NavBar'
 import Image from 'next/image'
 import MobileMenuButton from './MobileMenuButton'
 import { useEffect, useRef } from 'react'
@@ -7,12 +7,12 @@ import Container from '../structure/Container'
 
 const Header = ({ data }: any) => {
   const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? ''
-  const loginUrl  = data?.siteSettings?.loginBtnUrl ?? ''
+  const loginUrl = data?.siteSettings?.loginBtnUrl ?? ''
   const ctaName = data?.heroSectionData?.ctaName ?? ''
   const headerContent = {
     ctaName: ctaName,
     ctaUrl: demoBtnUrl,
-    loginUrl:loginUrl,
+    loginUrl: loginUrl,
   }
 
   const headerRef = useRef(null)
@@ -44,10 +44,10 @@ const Header = ({ data }: any) => {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 w-full h-[75px] py-4 backdrop-blur-sm  transition-colors duration-300 z-50"
+      className="fixed top-0 left-0 w-full py-4 backdrop-blur-sm  transition-colors duration-300 z-50 flex flex-col items-center "
     >
-      <nav className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-42 xl:px-10">
-        <div className="flex flex-row justify-between px-4 xl:px-0">
+      <Container className="justify-between">
+        <div className="flex flex-row  xl:px-0">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-bold text-lg">
               <Image
@@ -58,14 +58,19 @@ const Header = ({ data }: any) => {
               />
             </span>
           </Link>
-          <MobileMenuButton className="xl:hidden p-2 border-0 focus:outline-none text-white" />
         </div>
-        <Navbar
+        <MobileMenuButton className="xl:hidden p-2 border-0 focus:outline-none text-white" />
+        <DesktopNavbar
           ctaUrl={headerContent?.ctaUrl}
           ctaName={headerContent?.ctaName}
           loginUrl={headerContent?.loginUrl}
         />
-      </nav>
+      </Container>
+      <MobileNavBar
+        ctaUrl={headerContent?.ctaUrl}
+        ctaName={headerContent?.ctaName}
+        loginUrl={headerContent?.loginUrl}
+      />
     </header>
   )
 }
