@@ -24,6 +24,10 @@ export const postSlugsQuery = groq`
 *[_type == "post" && defined(slug.current)][].slug.current
 `
 
+export const LegalSlugsQuery = groq`
+*[_type == "legal" && defined(slug.current)][].slug.current
+`
+
 /*########################### QUERIES ##########################*/
 export const metaDataQuery_ = groq` 
 *[_type == "siteSettings"] | order(_createdAt desc)[0]{
@@ -292,6 +296,17 @@ export async function fetchPartners(client: SanityClient): Promise<any> {
 
 export async function fetchSeoSettings(client: SanityClient): Promise<any> {
   return await client.fetch(SeoQuery)
+}
+
+export async function fetchTermsAndCondition(
+  client: SanityClient,
+  docType: string,
+): Promise<any> {
+  const query = groq`*[_type == "legal" && slug.current == $docType][0] {
+    termsAndCondition
+  }`;
+
+  return await client.fetch(query, { docType });
 }
 
 /*####################################### INTERFACES    ###########################*/
