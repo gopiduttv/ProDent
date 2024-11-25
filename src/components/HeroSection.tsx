@@ -35,7 +35,7 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
           className="text-sm font-light"
           content={content?.heroStrip}
         />
-        <H1 className="text-center text-white font-medium">
+        <H1 className="text-center text-white font-medium px-20">
           {content?.heroTitleStatic}
         </H1>
         <WordRotate
