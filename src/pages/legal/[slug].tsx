@@ -14,7 +14,7 @@ import { PortableTextBlock } from 'sanity'
 
 export const getStaticProps: GetStaticProps<
   SharedPageProps & {
-    legalInformation: LegalInformation
+    legalInformation: any
   },
   { slug: string }
 > = async ({ draftMode = false, params }) => {
@@ -57,8 +57,6 @@ export default function TermsofUse(
 export const getStaticPaths: GetStaticPaths = async () => {
   const client = getClient()
   const slugs = await client.fetch(LegalSlugsQuery)
-
-  console.log('Fetched slugs:', slugs)
 
   if (!slugs || slugs.length === 0) {
     throw new Error('No slugs found for legal pages.')
