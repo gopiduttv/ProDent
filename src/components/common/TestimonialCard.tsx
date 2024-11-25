@@ -5,7 +5,7 @@ import Paragraph from '../typography/Paragraph'
 const TestimonialCard = ({ props }) => {
   // const { width: windowWidth } = useWindowSize();
   return (
-    <div className="rounded-3xl bg-[#f9f6fe] p-8 md:p-10 flex flex-col gap-4 w-[380px] md:w-3/4  ">
+    <div className="rounded-3xl bg-[#f9f6fe] p-8 md:p-10 flex flex-col gap-4  md:w-3/4  ">
       <div>
         <p className="!text-gray-400 !text-base">
           {`${props.numberOflocation} Locations, ${props.location}`}
