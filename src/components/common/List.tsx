@@ -6,10 +6,10 @@ const List = (props) => {
     <ul className={props.className}>
       {props?.items?.map((item, index) => (
         <li key={index}>
-          <span className="flex flex-row items-start gap-3 font-light text-[16px] md:text-md">
-            <Image src="/point.svg" width={20} height={20} alt="points" />
-            {item}
-          </span>
+          <div className="flex flex-row items-start gap-3 font-light text-[16px] md:text-md">
+            <Image className="w-5 h-5" src="/point.svg" width={20} height={20} alt="points" />
+            <div>{item}</div>
+          </div>
         </li>
       ))}
     </ul>

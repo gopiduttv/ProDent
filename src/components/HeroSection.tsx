@@ -34,7 +34,7 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
       <div className="flex flex-col items-center md:items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
-          className="text-xs md:text-sm font-light"
+          className="text-sm font-light"
           content={content?.heroStrip}
         />
         <H1 className="text-center text-white font-medium">
