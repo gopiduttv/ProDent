@@ -5,7 +5,7 @@ import ImageLoader from './imageLoader/imageLoader'
 
 const FeatureCategoryCard = ({ imageUrl, heading, features }) => {
   return (
-    <div className="flex flex-col w-full gap-4 bg-[#f9f6fe] p-8 rounded-3xl">
+    <div className="flex flex-col w-full gap-4 bg-white p-8 rounded-3xl">
       <ImageLoader image={imageUrl} className="!w-12 !h-12" />
       <H3>{heading}</H3>
       <List
