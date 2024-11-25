@@ -8,7 +8,7 @@ const TopSection = ({data,ctaName}) => {
   return (
     <div className="self-stretch flex-col justify-start items-start gap-14 flex">
       <div className="w-full gap-8 inline-flex flex-col ">
-        <H2 className="text-3xl">
+        <H2 className="text-3xl !whitespace-normal">
           Centralize your data. Supercharge your DSO.
           </H2>
         <div className="flex justify-center">
