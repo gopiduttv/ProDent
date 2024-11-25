@@ -8,8 +8,8 @@ const RichAvatar = (props) => {
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
       <div className="flex flex-col">
-        <p className="text-lg font-medium">{props.user}</p>
-        <p className="text-[#F768D1]">{props.tenant}</p>
+        <p className="text-base font-medium ">{props.user}</p>
+        <p className="text-[#F768D1] font-normal text-base">{props.tenant}</p>
       </div>
     </div>
   )
