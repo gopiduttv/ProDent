@@ -29,13 +29,13 @@ const BottomSection = () => {
         Copyright © 2024. OSDental.
       </div>
       <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
-        <Link className=" text-white/50 " href={'/TermsofUse'}>
+        <Link className=" text-white/50 hover:text-white/90" href={'/TermsofUse'}>
           Terms of use
         </Link>
-        <Link className=" text-white/50 " href={'/PrivacyPolicy'}>
+        <Link className=" text-white/50 hover:text-white/90" href={'/PrivacyPolicy'}>
           Privacy policy
         </Link>
-        <Link className=" text-white/50" href={'/BusinessAssociateAgreement'}>
+        <Link className=" text-white/50 hover:text-white/90" href={'/BusinessAssociateAgreement'}>
           Business Associate Agreement
         </Link>
       </div>
