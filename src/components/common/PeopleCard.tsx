@@ -10,7 +10,7 @@ function PeopleCardHeader({ name, designation, socialMediaLinks }) {
     <div className="flex flex-row justify-between ">
       <div>
         <H3 className="text-md md:text-lg">{name}</H3>
-        <p className="text-xs md:text-sm text-[#F768D1]">{designation}</p>
+        <p className="text-sm text-[#F768D1]">{designation}</p>
       </div>
       <div>
         <a href={socialMediaLinks?.Linkedin}>
