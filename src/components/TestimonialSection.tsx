@@ -6,10 +6,8 @@ import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
 import { useHomeContext } from './context/homeSettings'
 import CTAButton from './common/CTAbutton'
-import PartnersCard from './PartnersCard'
-import TestimonialCard from './common/TestimonialCard'
 
-const TestimonialSection = ({ testimonials, partners }) => {
+const TestimonialSection = ({ testimonials }) => {
   const data = useHomeContext()?.homeSettings
   const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
   return (
