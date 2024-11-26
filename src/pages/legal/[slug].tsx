@@ -46,14 +46,45 @@ export default function TermsofUse(props: any) {
     return <div>No privacy policy found.</div>
   }
 
+  const components:any = {
+    list: ({ type, children }: { type: string; children: React.ReactNode }) => {
+      if (type === 'bullet') {
+        return <ul className="list-disc ml-5 ">{children}</ul>
+      }
+      if (type === 'number') {
+        return <ol className="list-decimal ml-5 ">{children}</ol>
+      }
+      return <div>{children}</div>
+    },
+    listItem: ({ children }: { children: React.ReactNode }) => (
+      <li className="mb-1 prose-sm">{children}</li>
+    ),
+    block: {
+      normal: ({ children }: { children: React.ReactNode }) => (
+        <p className="prose-sm">{children}</p>
+      ),
+
+      h2: ({ children }: { children: React.ReactNode }) => (
+        <h2 className="font-semibold text-2xl py-4">{children}</h2>
+      ),
+    },
+  }
+
   return (
-    <div className="prose prose-md px-4 md:m-auto md:prose-md  lg:prose-md">
-      <CustomHead
-        siteSettings={props?.siteSettings}
-        seoSettings={props?.siteSettings}
-      />
-      <h2 className='text-center'>{privacyPolicy?.title}</h2>
-      <PortableText value={privacyPolicy?.termsAndCondition} />
+    <div className="w-full md:px-64 md:py-20 px-12 py-16">
+      <div className="customClass">
+        <CustomHead
+          siteSettings={props?.siteSettings}
+          seoSettings={props?.siteSettings}
+        />
+        <h2 className="text-center font-bold text-2xl py-4">
+          {privacyPolicy?.title}
+        </h2>
+        <PortableText
+          value={privacyPolicy?.termsAndCondition}
+          components={components}
+        />
+      </div>
     </div>
   )
 }
