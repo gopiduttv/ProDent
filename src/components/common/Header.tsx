@@ -59,7 +59,7 @@ const Header = ({ data }: any) => {
             </span>
           </Link>
         </div>
-        <MobileMenuButton className="xl:hidden p-2 border-0 focus:outline-none text-white" />
+        <MobileMenuButton className="lg:hidden p-2 border-0 focus:outline-none text-white" />
         <DesktopNavbar
           ctaUrl={headerContent?.ctaUrl}
           ctaName={headerContent?.ctaName}
