@@ -48,7 +48,7 @@ export default function TermsofUse(
   }
 
   return (
-    <div className="md:prose md:prose-zinc md:prose-sm md:m-auto p-9">
+    <div className="prose prose-md px-4 md:m-auto md:prose-md  lg:prose-md">
       <PortableText value={privacyPolicy?.termsAndCondition} />
     </div>
   )
