@@ -10,32 +10,32 @@ function PartnersCard({ partners }) {
         </span>
       </div>
       <div className="w-full flex flex-col gap-3 items-center">
+        <ImageLoader
+          className="w-70 h-20 rounded-lg bg-white flex justify-center items-center "
+          imageClassName="!object-contain h-16 w-auto p-5"
+          image={partners[0].image}
+          fixed={false}
+        />
+        <div className="w-full h-16 flex flex-row justify-between gap-3">
           <ImageLoader
-            className="w-70 h-16 rounded-lg bg-white flex justify-center items-center "
-            imageClassName="!object-cover h-16 w-auto"
-            image={partners[0].image}
+            className="w-1/2 h-16 rounded-lg bg-white flex justify-center items-center"
+            imageClassName="!object-contain h-9 w-auto"
+            image={partners[1].image}
             fixed={false}
           />
-        <div className="w-70 h-16 flex flex-row justify-between gap-3">
-            <ImageLoader
-              className="w-1/2 h-16 rounded-lg bg-white flex justify-center items-center"
-              imageClassName="!object-cover h-16 w-auto"
-              image={partners[1].image}
-              fixed={false}
-            />
-            <ImageLoader
-              className="w-1/2 h-16 rounded-lg bg-white flex justify-center items-center "
-              imageClassName="!object-cover h-16 w-auto"
-              image={partners[2].image}
-              fixed={false}
-            />
+          <ImageLoader
+            className="w-1/2 h-16 rounded-lg bg-white flex justify-center items-center "
+            imageClassName="!object-contain h-8 w-auto"
+            image={partners[2].image}
+            fixed={false}
+          />
         </div>
-          <ImageLoader
-            className="w-70 h-16 rounded-lg bg-white flex justify-center items-center "
-            imageClassName="!object-cover h-16 w-auto"
-            image={partners[3].image}
-            fixed={false}
-          />
+        <ImageLoader
+          className="w-70 h-20 rounded-lg bg-white flex justify-center items-center "
+          imageClassName="!object-contain h-16 w-auto p-5"
+          image={partners[3].image}
+          fixed={false}
+        />
       </div>
     </div>
   )
