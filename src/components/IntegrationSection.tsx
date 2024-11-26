@@ -3,53 +3,32 @@ import Section from './structure/Section'
 import Container from './structure/Container'
 import Subtext from './typography/Subtext'
 import IntegrationCloud from './IntegrationCloud'
+import { useHomeContext } from './context/homeSettings'
+import CTAButton from './common/CTAbutton'
+import IntegrationLogoCard from './IntegrationCloud'
 
-function IntegrationSection() {
-
-    const images = [
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-        "/opendental.svg",
-      ]
+function IntegrationSection({ OsDentalIntegration }) {
+  const data = useHomeContext()?.homeSettings 
+   const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
   return (
-    <Section id="integrations-section" className="pt-16 pb-16">
+    <Section id="integrations-section" className="py-12 md:py-16">
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-4">
           <Subtext>More than 125 available integrations</Subtext>
-          <div className="w-full flex justify-center">
-            <p
-              className="text-2xl w-2/3 font-semibold text-center text-[#02024a] leading-8"
-            >
-              We integrate with all major practice management systems, marketing
-              platforms, finance and accounting systems, and enterprise
-              reporting suites.
+          <div className="w-full flex justify-center pb-8">
+            <p className="text-2xl md:w-2/3 font-semibold text-center text-[#02024a] leading-8">
+              {data?.heroSectionData?.integrationHeader}
             </p>
           </div>
-          <IntegrationCloud className="grid grid-cols-8 gap-2" images={images} imagesCount={16} />
-          <IntegrationCloud className="grid grid-cols-8 gap-4" images={images} imagesCount={6} columnPaddding />          
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 md:gap-x-8 md:gap-y-3">
+            {OsDentalIntegration?.map((integration: any, index: number) => {
+              return (
+                <IntegrationLogoCard key={index} image={integration.image} />
+              )
+            })}
+          </div>
         </div>
+        <CTAButton url={demoBtnUrl} className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
       </Container>
     </Section>
   )

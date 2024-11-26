@@ -1,102 +1,104 @@
-import { ArrowRightIcon } from 'lucide-react'
-import HeroImage from './common/HeroImage'
-import CTAButton from './common/JoinwaitList'
-import Container from './structure/Container'
+import CTAButton from './common/CTAbutton'
 import Section from './structure/Section'
 import H1 from './typography/H1'
 import Paragraph from './typography/Paragraph'
 import AnimatedShinyText from './ui/animated-shiny-text'
 import { cn } from '~/lib/utils'
 import WordRotate from './ui/word-rotate'
-import Picture from './common/Picture'
 import Image from 'next/image'
-import useMediaQuery from '~/hooks/useMediaQuery'
+import useWindowSize from '~/hooks/useWindowSize'
 
 const AnimatedShinyTextDemo = (props) => {
   return (
     <div
       className={cn(
-        'group rounded-full border border-indigo-100 bg-indigo-200 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200',
+        'group rounded-full backdrop-blur-sm border-[1px] border-white/15 bg-white/10 text-base ',
         props.className,
       )}
     >
-      <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+      <AnimatedShinyText className="inline-flex items-center justify-center px-5 py-2 text-white transition ease-out  ">
         <span className="items-center text-ellipsis line-clamp-1">
           {props.content}
         </span>
-        <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+        {/* <ArrowRightIcon className="ml-1 size-3 md:size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> */}
       </AnimatedShinyText>
     </div>
   )
 }
 
-const HeroContent = () => {
-  const heroData = {
-    heroSpan: 'Data-Driven Dentistry for Growing Practices',
-    heroHeading: 'Aggregate Your Clinical & Non-clinical Data For',
-    heroHeadingList: [
-      'Better Business Decisions',
-      'Identifying Opportunities',
-      'Ana Staff Performance',
-      'Defining Practice Culture',
-    ],
-    heroDescription:
-      'OS Dental is a custom analytics solution that’s fundamentally built differently, seamlessly connecting and validating all sources of DSO data to yield powerful, reliable insights.',
-    ctaName: 'Book Free Demo',
-  }
+const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
-    <div className="flex flex-col-reverse md:flex-row justify-center items-center w-full gap-12 text-center md:text-left py-32">
-      <div className="md:w-2/3 w-full flex flex-col items-center md:items-center">
+    <div className="w-full flex justify-center">
+      <div className="flex flex-col items-center gap-3">
         {/* Title and Subtitle */}
-        <AnimatedShinyTextDemo className="w-1/2" content={heroData.heroSpan} />
-        <H1 className="text-center text-white font-medium">
-          {heroData.heroHeading}
-        </H1>
-        <WordRotate
-          className="md:text-6xl text-4xl font-semibold text-[#f768d1] whitespace-nowrap"
-          words={heroData.heroHeadingList}
+        <AnimatedShinyTextDemo
+          className="text-sm font-light"
+          content={content?.heroStrip}
         />
+        <div>
+          <H1 className="text-center text-white font-medium 2xl:px-20">
+            {content?.heroTitleStatic}
+          </H1>
+          <WordRotate
+            className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] text-center "
+            words={content?.heroTitleDynamic}
+          />
+        </div>
 
         {/* Description */}
-        <Paragraph className="text-center font-light">
-          {heroData.heroDescription}
+        <Paragraph className="2xl:px-20 text-center">
+          {content?.heroDescription}
         </Paragraph>
 
         {/* Buttons */}
         <div
-          className="flex justify-center md:justify-start items-center gap-3 mt-4"
+          className="flex justify-center md:justify-start items-center gap-3 mt-12"
           data-aos="fade-up"
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          <CTAButton name={heroData.ctaName} />
+          <CTAButton
+            url={ctaBtnUrl}
+            className="px-6 py-3"
+            name={content?.ctaName}
+          />
         </div>
       </div>
     </div>
   )
 }
-const HeroSection = () => {
-  const isMobile = useMediaQuery(1280)
-
+const HeroSection = ({ data, ctaBtnUrl }) => {
+  const { width: windowWidth } = useWindowSize()
   return (
-    <Section id="hero-section" className="bg-[#02024a] ">
-      {!isMobile && <div className="rounded-2xl flex items-end justify-right w-1/3 ">
-        <Image
-          width={400}
-          height={600}
-          src={'/hero-left.png'}
-          alt="hero-left"
-        />
-      </div>}
-      <HeroContent />
-      {!isMobile &&<div className="rounded-2xl  flex items-end justify-left w-1/3 ">
-       <Image
-          width={400}
-          height={600}
-          src={'/hero-right.png'}
-          alt="hero-left"
-        />
-      </div>}
+    <Section
+      id="hero-section"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-36 xl:pb-96"
+    >
+      {windowWidth > 1280 && (
+        <div
+          className={`absolute top-[350px] ${windowWidth > 1800 ? 'left-60' : 'left-10'} rounded-2xl flex items-end justify-right z-15`}
+        >
+          <Image
+            width={600}
+            height={600}
+            src={'/hero-left.png'}
+            alt="hero-left"
+          />
+        </div>
+      )}
+      {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
+      {windowWidth > 1280 && (
+        <div
+          className={`absolute top-[350px] ${windowWidth > 1800 ? 'right-60' : 'right-10'} rounded-2xl flex items-end justify-left z-15`}
+        >
+          <Image
+            width={600}
+            height={600}
+            src={'/hero-right.png'}
+            alt="hero-left"
+          />
+        </div>
+      )}
     </Section>
   )
 }

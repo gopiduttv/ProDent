@@ -1,39 +1,47 @@
 import { SchemaTypeDefinition } from 'sanity'
 
 import blockContent from './blockContent'
-import faq from './faq'
 import layout from './layout'
-import feature from './feature'
-import featureCategories from './featureCategories'
-import Integration from './Integration'
-import siteSettings from './siteSettings'
-import testimonial from './testimonial'
-import benefit from './benefits'
-import homeSettings from './homeSettings'
+import Features from './Features'
+import FeatureCategories from './FeatureCategories'
+import Integrations from './Integrations'
+import SiteSettings from './SiteSettings'
+import Testimonials from './Testimonials'
+import Benefits from './Benefits'
+import HomeSettings from './HomeSettings'
+import multipleString from './multipleString'
+import Person from './Person'
+import legal from './Legal'
+import partner from './partner'
 
 export const schemaTypes = [
-  faq,
   layout,
-  feature,
-  featureCategories,
-  siteSettings,
-  testimonial,
-  benefit,
-  Integration,
-  homeSettings
+  Features,
+  FeatureCategories,
+  Integrations,
+  SiteSettings,
+  Testimonials,
+  Benefits,
+  HomeSettings,
+  Person,
+  legal,
+  partner,
 ]
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     blockContent,
-    faq,
     layout,
-    feature,
-    featureCategories,
-    Integration,
-    siteSettings,
-    testimonial,
-    benefit,
-    homeSettings
+    Features,
+    FeatureCategories,
+    Integrations,
+    SiteSettings,
+    Testimonials,
+    Benefits,
+    HomeSettings,
+    multipleString,
+    Person,
+    legal,
+    partner,
   ],
 }

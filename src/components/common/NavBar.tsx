@@ -1,35 +1,67 @@
-import Link from 'next/link';
-import LoginButton from './Login';
-import CTAButton from './JoinwaitList';
+import LoginButton from './Login'
+import CTAButton from './CTAbutton'
+import { useContext } from 'react'
+import { NavigationContext } from '~/providers/NavigationContextProvider'
+
+const navigationLinks = [
+  // { href: '#hero-section', name: 'Analytics' },
+  { href: '#features-section', name: 'Features' },
+  { href: '#integrations-section', name: 'Integrations' },
+  { href: '#benefits-section', name: 'Benefits' },
+  { href: '#testimonials-section', name: 'Testimonials' },
+  { href: '#about-us-section', name: 'About Us' },
+  // { href: '#footer', name: 'Contact' },
+]
+
+export function DesktopNavbar(props) {
+  return (
+    <div className="hidden xl:flex xl:flex-row items-center gap-6">
+      {navigationLinks.map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          className="text-sm font-base text-gray-300 hover:text-primary hover:text-white focus:text-white"
+        >
+          {link.name}
+        </a>
+      ))}
+      <LoginButton url={props?.loginUrl} />
+      <CTAButton url={props?.ctaUrl} name={props.ctaName} className="text-sm" />
+    </div>
+  )
+}
+
+export function MobileNavBar(props) {
+  const { isMobileMenuOpen, setIsMobileMenuOpen } =
+    useContext(NavigationContext)
+  const handler = () => setIsMobileMenuOpen(!isMobileMenuOpen)
+  if (!isMobileMenuOpen) return
+
+  return (
+    <div className="xl:hidden w-full h-screen flex flex-col items-center gap-10 bg-[#02024a]  bg-cover py-14 text-white">
+      {navigationLinks.map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          className="text-sm font-base text-gray-300 hover:text-primary hover:text-stone-400 focus:text-white"
+          onClick={handler}
+        >
+          {link.name}
+        </a>
+      ))}
+      <LoginButton url={props?.loginUrl} />
+      <CTAButton url={props?.ctaUrl} name={props.ctaName} />
+    </div>
+  )
+}
 
 function Navbar(props) {
   return (
-    <div className="hidden lg:flex items-center space-x-6">
-      <a href="#hero-section" className="text-sm font-medium text-white hover:text-primary hover:text-stone-400">
-        Analytics
-      </a>
-      <a href="#features-section" className="text-sm font-medium text-white hover:text-primary hover:text-stone-400">
-        Features
-      </a>
-      <a href="#integrations-section" className="text-sm font-medium text-white hover:text-primary hover:text-stone-400">
-        Integrations 
-      </a>
-      <a href="#benefits-section" className="text-sm font-medium text-white hover:text-primary hover:text-stone-400">
-        Benefits 
-      </a>
-      <a href="#testimonials-section" className="text-sm font-medium text-white hover:text-primary hover:text-stone-400">
-        Testimonials
-      </a>
-      <a href="#about-us-section" className="text-sm font-medium text-white hover:text-primary hover:text-stone-400">
-        About Us 
-      </a>
-      <a href="#footer" className="text-sm font-medium text-white hover:text-primary hover:text-stone-400">
-        Contact
-      </a>
-      <LoginButton/>
-      <CTAButton name={props.ctaName}/>
-    </div>
-  );
+    <>
+      <MobileNavBar {...props} />
+      <DesktopNavbar {...props} />
+    </>
+  )
 }
 
-export default Navbar;
+export default Navbar

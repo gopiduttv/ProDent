@@ -21,7 +21,7 @@ export default defineType({
     }),
     defineField({
       name: 'features',
-      title: 'Add Features',
+      title: 'Features Description',
       type: 'blockContent',
     }),
   ],

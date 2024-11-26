@@ -20,6 +20,7 @@ import {
   projectId,
 } from '~/lib/sanity.api'
 import { schema } from '~/schemas'
+import { media } from 'sanity-plugin-media'
 
 const iframeOptions = {
   url: defineUrlResolver({
@@ -75,6 +76,57 @@ export default defineConfig({
           S.view.component(Iframe).options(iframeOptions).title('Preview'),
         ])
       },
+      structure: (S) =>
+        S.list()
+          .title('Base')
+          .items([
+            S.listItem()
+              .title('Home Page')
+              .child(
+                S.document()
+                  .schemaType('homeSettings')
+                  .documentId('homeSettings'),
+              ),
+        
+              S.listItem()
+              .title('Site Configuration')
+              .child(
+                S.document()
+                  .schemaType('siteSettings')
+                  .documentId('siteSettings'),
+              ),
+              // S.listItem()
+              // .title('Legal Information')
+              // .child(
+              //   S.document()
+              //     .schemaType('legal')
+              //     .documentId('legal'),
+              // ),
+        
+              // S.documentTypeListItem('homeSettings').title('homeSettings'),
+              S.documentTypeListItem('testimonial').title('Testimonial'),
+              S.documentTypeListItem('featureCategory').title('FeatureCategory'),
+              S.documentTypeListItem('feature').title('Feature'),
+              S.documentTypeListItem('integration').title('Integration'),
+              S.documentTypeListItem('benefit').title('Benefit'),
+              S.documentTypeListItem('person').title('Person'),
+              S.documentTypeListItem('legal').title('Legal'),
+              S.documentTypeListItem('partner').title('Partner')
+
+          ])
+    }),
+
+    media({
+      creditLine: {
+        enabled: true,
+        // boolean - enables an optional "Credit Line" field in the plugin.
+        // Used to store credits e.g. photographer, licence information
+        excludeSources: ['unsplash'],
+        // string | string[] - when used with 3rd party asset sources, you may
+        // wish to prevent users overwriting the creditLine based on the `source.name`
+      },
+      maximumUploadSize: 10000000
+      // number - maximum file size (in bytes) that can be uploaded through the plugin interface
     }),
     previewUrl({
       base: '/api/draft',
@@ -83,4 +135,5 @@ export default defineConfig({
     }),
     visionTool({ defaultApiVersion: apiVersion }),
   ],
+  
 })

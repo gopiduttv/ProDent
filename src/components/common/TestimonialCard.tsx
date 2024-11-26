@@ -1,25 +1,32 @@
-import testimonial from '~/schemas/testimonial'
 import H3 from '../typography/H3'
 import RichAvatar from './RichAvatar'
+import Paragraph from '../typography/Paragraph'
 
-const TestimonialCard = (props) => {
+const TestimonialCard = ({ props }) => {
+  // const { width: windowWidth } = useWindowSize();
   return (
-      <div className="rounded-3xl bg-[#f9f6fe] p-10 flex flex-col gap-4 w-3/4 ">
-      <div className="flex items-center justify-between">
-        <H3 className="text-lg font-semibold text-primary">{props.title}</H3>
-      </div>
+    <div className="rounded-3xl bg-[#f9f6fe] p-8 md:p-10 flex flex-col gap-4   ">
       <div>
-        <p className="text-lg text-gray-600 text-ellipsis line-clamp-4">
-          {props.feedback}
+        <p className="!text-gray-400 !text-base">
+          {`${props.numberOflocation} Locations, ${props.location}`}
         </p>
       </div>
-      <div className="flex flex-row justify-between items-end">
-        <RichAvatar user={props.user} tenant={props.tenant}  />
-        <div>
-          <p className="text-md text-gray-900">
-            {props.infoString}
-          </p>
-        </div>
+      <div className="flex items-center justify-between">
+        <H3 className="text-2xl font-semibold text-[#111827]">
+          {props?.testimonialheading}
+        </H3>
+      </div>
+      <div>
+        <Paragraph className="text-[16px] text-gray-600 text-ellipsis md:line-clamp-4">
+          {props.testimonialDescription}
+        </Paragraph>
+      </div>
+      <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-end">
+        <RichAvatar
+          AuthorImage={props?.AuthorImage}
+          user={props.authorname}
+          tenant={props.authordesignation}
+        />
       </div>
     </div>
   )

@@ -4,53 +4,27 @@ import Container from './structure/Container'
 import RichImage from './common/RichImage'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
+import { useHomeContext } from './context/homeSettings'
+import CTAButton from './common/CTAbutton'
 
-const BenefitsSection = () => {
-  const benefits = [
-    {
-      heading: 'dfgsdfg',
-      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
-      image: "/benefit-image.png"
-    },
-    {
-      heading: 'Multi-Location Portfolio Performance',
-      points: [
-        'Doctor Wages, Payroll Taxes & Benefits',
-        'Merchant Fees, Marketing & Supply Expenses and more',
-        'Margin & EBITDA Analysis',
-      ],
-      image: "/benefit-image.png"
-    },
-    {
-      heading: 'Practice Performance Analysis',
-      points: [
-        'Gross and Net Production - Hygiene and Non-Hygiene',
-        'Aging and Claim Analyses',
-        'Doctor & Hygienist Performance Dashboards',
-      ],
-      image: "/benefit-image.png"
-    },
-    {
-      heading: 'Opportunity Analysis',
-      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
-      image: "/benefit-image.png"
-    },
-  ]
-
+const BenefitsSection = ({ data }) => {
+  const benefitHeader = useHomeContext()?.homeSettings 
+  const demoBtnUrl = benefitHeader?.siteSettings?.demoBtnUrl ?? '/'
   return (
-    <Section id="benefits-section" className="py-24 bg-purple-50">
+    <Section id="benefits-section" className="py-12 md:py-24 bg-[#F9F6FE]">
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Benefits</Subtext>
-          <div className="w-full flex justify-center">
-            <H2>Data for Dentistry. Done Right.</H2>
+          <div className="max-w-2xl w-full flex justify-center">
+            <H2>{benefitHeader?.heroSectionData?.benefitHeader}</H2>
           </div>
         </div>
-        <div className="flex flex-col gap-16">
-          {benefits.map((benefit, index) => (
+        <div className="flex flex-col gap-16 w-full">
+          {data.map((benefit: any, index: number) => (
             <RichImage key={index} index={index} item={benefit} />
           ))}
         </div>
+        <CTAButton className="px-6 py-3" name={benefitHeader?.heroSectionData?.ctaName ?? ""} url={demoBtnUrl} />
       </Container>
     </Section>
   )

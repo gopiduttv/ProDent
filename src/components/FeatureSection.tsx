@@ -3,42 +3,37 @@ import Section from './structure/Section'
 import Container from './structure/Container'
 import H2 from './typography/H2'
 import Subtext from './typography/Subtext'
-import FeatureCard from './common/FeatureCard'
+import FeatureCategoryCard from './common/FeatureCategoryCard'
+import { useHomeContext } from './context/homeSettings'
+import CTAButton from './common/CTAbutton'
 
-const FeatureSection = (props) => {
-  const features = [
-    {
-      heading: 'dfgsdfg',
-      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
-    },
-    {
-      heading: 'Multi-Location Portfolio Performance',
-      points: ['Doctor Wages, Payroll Taxes & Benefits', 'Merchant Fees, Marketing & Supply Expenses and more', 'Margin & EBITDA Analysis'],
-    },
-    {
-      heading: 'Practice Performance Analysis',
-      points: ['Gross and Net Production - Hygiene and Non-Hygiene', 'Aging and Claim Analyses', 'Doctor & Hygienist Performance Dashboards'],
-    },
-    {
-      heading: 'Opportunity Analysis',
-      points: ['sadfadsf', 'asdfasdf', 'asdfasdfasdf'],
-    },
-  ]
-
+const FeatureSection = ({ features }) => {
+  const data = useHomeContext()?.homeSettings  
+   const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
   return (
-    <Section id="features-section" className="pt-24 pb-16">
+    <Section
+      id="features-section"
+      className="features-section pt-12 md:pt-24 pb-12 md:pb-16 z-10 !bg-[#F9F6FE]">
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Features</Subtext>
           <div className="w-full flex justify-center">
-            <H2>Data for Dentistry. Done Right.</H2>
+            <H2>{data?.heroSectionData?.featureHeader}</H2>
           </div>
         </div>
         <div className="w-full flex flex-col md:flex-row justify-center gap-8">
-          {features.slice(-3).map((feature, index) => (
-            <FeatureCard key={index} feature={feature} />
-          ))}
+          {features?.map((featureCategory: any, index: number) => {
+            return (
+              <FeatureCategoryCard
+                key={index}
+                imageUrl={featureCategory.imageUrl}
+                heading={featureCategory.categoryHeading}
+                features={featureCategory.features}
+              />
+            )
+          })}
         </div>
+        <CTAButton url={demoBtnUrl} className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
       </Container>
     </Section>
   )
