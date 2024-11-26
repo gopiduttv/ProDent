@@ -9,10 +9,10 @@ export default function PartnerSection({ partnerList }) {
   return (
     <Section
       id="partners-section"
-      className="py-20 bg-[#f9f6fe] flex-col justify-start items-center gap-6 "
+      className="pt-16 pb-20 bg-[#f9f6fe] flex-col justify-start items-center gap-6 "
     >
       <Container className="flex flex-col items-center gap-16">
-        <div className="w-full flex flex-col xl:flex-col justify-center items-center gap-12  ">
+        <div className="w-full flex flex-col xl:flex-col justify-center items-center gap-10  ">
           <div className="md:w-1/2 text-center font-semibold">
             Trusted by dental practices across the US.
           </div>
