@@ -303,7 +303,7 @@ export async function fetchTermsAndCondition(
   docType: string,
 ): Promise<any> {
   const query = groq`*[_type == "legal" && slug.current == $docType][0] {
-    termsAndCondition
+    termsAndCondition,title
   }`;
 
   return await client.fetch(query, { docType });
