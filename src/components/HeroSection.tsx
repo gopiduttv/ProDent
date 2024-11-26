@@ -29,7 +29,7 @@ const AnimatedShinyTextDemo = (props) => {
 const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
     <div className="w-full flex justify-center">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center gap-1">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
           className="text-sm font-light"
@@ -39,7 +39,7 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
           {content?.heroTitleStatic}
         </H1>
         <WordRotate
-          className="2xl:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
+          className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] text-center "
           words={content?.heroTitleDynamic}
         />
 
@@ -74,7 +74,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
     >
       {windowWidth > 1280 && (
         <div
-          className={`absolute top-[330px] ${windowWidth > 1800 ? "left-60" : "left-40"} rounded-2xl flex items-end justify-right z-15`}
+          className={`absolute top-[350px] ${windowWidth > 1800 ? "left-60" : "left-40"} rounded-2xl flex items-end justify-right z-15`}
         >
           <Image
             width={550}
@@ -87,7 +87,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
       {windowWidth > 1280 && (
         <div
-          className={`absolute top-[330px] ${windowWidth > 1800 ? "right-60" : "right-40"} rounded-2xl flex items-end justify-left z-15`}
+          className={`absolute top-[350px] ${windowWidth > 1800 ? "right-60" : "right-40"} rounded-2xl flex items-end justify-left z-15`}
         >
           <Image
             width={550}
