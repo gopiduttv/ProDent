@@ -32,7 +32,7 @@ const RichImage = (props: any) => {
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-40 w-full">
         <ImageLoader
           image={props?.item?.benifitSectionImage}
-          className="md:!h-[350px] md:!w-[572px] bg-white rounded-[20px] flex items-center justify-center"
+          className="md:!h-[350px] md:!w-[572px] bg-[#F0E7FF] rounded-[20px] flex items-center justify-center"
           fixed={false}
         />
         <Richness item={props?.item} />
@@ -43,7 +43,7 @@ const RichImage = (props: any) => {
     <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-40 w-full">
       <Richness item={props?.item} />
       <ImageLoader
-        className="md:!h-[350px] md:!w-[572px] bg-white rounded-[20px] flex items-center justify-center "
+        className="md:!h-[350px] md:!w-[572px] bg-[#F0E7FF] rounded-[20px] flex items-center justify-center "
         image={props?.item?.benifitSectionImage}
         fixed={false}
       />

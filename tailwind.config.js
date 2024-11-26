@@ -75,7 +75,7 @@ module.exports = {
   			}
   		},
 		backgroundImage: {
-		'hero-pattern': "url('/hero-background.webp')",
+		'hero-pattern': "url('/prodent-hero-bg.webp')",
 		'grid-pattern': "url('/about-us.webp')",
 		}
 
