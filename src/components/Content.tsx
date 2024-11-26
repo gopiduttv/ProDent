@@ -25,7 +25,7 @@ const Content = (props: any) => {
         <IntegrationSection OsDentalIntegration={integrationList} />
         <BenefitsSection data={benefits} />
         <TestimonialSection testimonials={testimonial} partners={partner?.selectedPartner} />
-        {/* <PartnerSection partnerList={partner?.selectedPartner} /> */}
+        <PartnerSection partnerList={partner?.selectedPartner} />
         <AboutUsSection
           about={props?.heroSectionContent?.about}
           founderDetails={props?.founderDetails}
