@@ -81,7 +81,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
           <Image
             width={600}
             height={600}
-            src={'/hero-left.webp'}
+            src={'/hero-left.png'}
             alt="hero-left"
           />
         </div>
@@ -94,7 +94,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
           <Image
             width={600}
             height={600}
-            src={'/hero-right.webp'}
+            src={'/hero-right.png'}
             alt="hero-left"
           />
         </div>
