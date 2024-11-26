@@ -1,5 +1,5 @@
 import HeroSection from './HeroSection'
-import BenefitsSection from './BenefitsSection'
+import ServicesSection from './ServicesSection'
 import FeatureSection from './FeatureSection'
 import TestimonialSection from './TestimonialSection'
 import IntegrationSection from './IntegrationSection'
@@ -21,9 +21,9 @@ const Content = (props: any) => {
     <div className="flex flex-col overflow-hidden">
       <HomeSettings homeSettings={props}>
         <HeroSection ctaBtnUrl={ctaBtnUrl} data={props.heroSectionData} />
-        <FeatureSection features={feature} />
-        <IntegrationSection OsDentalIntegration={integrationList} />
-        <BenefitsSection data={benefits} />
+        {/* <FeatureSection features={feature} /> */}
+        {/* <IntegrationSection OsDentalIntegration={integrationList} /> */}
+        <ServicesSection data={benefits} />
         <TestimonialSection testimonials={testimonial} />
         <CustomerSection customers={customers} />
         <AboutUsSection

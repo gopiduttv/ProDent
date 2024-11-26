@@ -18,7 +18,7 @@ const AboutUsSection = ({ about, founderDetails }) => {
   return (
     <Section
       id="about-us-section"
-      className="py-12 md:py-24 bg-[#8639f8] bg-grid-pattern bg-contain bg-no-repeat bg-right"
+      className="py-12 md:py-24 bg-[#D83DAF] bg-grid-pattern bg-contain bg-no-repeat bg-right"
     >
       <Container className="flex flex-col items-center gap-10 w-full ">
         <div>
