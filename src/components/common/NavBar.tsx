@@ -15,7 +15,7 @@ const navigationLinks = [
 
 export function DesktopNavbar(props) {
   return (
-    <div className="hidden xl:flex xl:flex-row items-center gap-6">
+    <div className="hidden lg:flex lg:flex-row items-center gap-6">
       {navigationLinks.map((link, index) => (
         <a
           key={index}
