@@ -45,7 +45,7 @@ const BookDemo = () => {
 
         {isFormShown ? (
           <div className="mb-4">
-            <h2 className="text-xl font-semibold text-gray-800">
+            <h2 className="text-xl font-semibold text-gray-800 ">
               Book Free Demo
             </h2>
             <p className="text-sm text-gray-600">

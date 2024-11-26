@@ -28,23 +28,23 @@ const AnimatedShinyTextDemo = (props) => {
 
 const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
-    <div className="w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left pt-32 pb-16 md:pt-36 md:pb-96 z-10">
-      <div className="flex flex-col items-center md:w-1/2">
+    <div className="w-full flex justify-center">
+      <div className="flex flex-col items-center gap-1">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
           className="text-sm font-light"
           content={content?.heroStrip}
         />
-        <H1 className="text-center text-white font-medium px-20">
+        <H1 className="text-center text-white font-medium 2xl:px-20">
           {content?.heroTitleStatic}
         </H1>
         <WordRotate
-          className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
+          className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] text-center "
           words={content?.heroTitleDynamic}
         />
 
         {/* Description */}
-        <Paragraph className="px-10 text-center">
+        <Paragraph className="2xl:px-20 text-center">
           {content?.heroDescription}
         </Paragraph>
 
@@ -70,11 +70,11 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
   return (
     <Section
       id="hero-section"
-      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-36 xl:pb-96"
     >
       {windowWidth > 1280 && (
         <div
-          className={`absolute ${windowWidth > 1800 ? 'top-[35%] left-[12%]' : 'bottom-[-22%] left-[5%]'} rounded-2xl flex items-end justify-right z-15`}
+          className={`absolute top-[350px] ${windowWidth > 1800 ? "left-60" : "left-40"} rounded-2xl flex items-end justify-right z-15`}
         >
           <Image
             width={550}
@@ -87,7 +87,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
       {windowWidth > 1280 && (
         <div
-          className={`absolute ${windowWidth > 1800 ? 'top-[35%] right-[12%]' : 'bottom-[-22%] right-[5%]'} rounded-2xl flex items-end justify-left z-15`}
+          className={`absolute top-[350px] ${windowWidth > 1800 ? "right-60" : "right-40"} rounded-2xl flex items-end justify-left z-15`}
         >
           <Image
             width={550}
