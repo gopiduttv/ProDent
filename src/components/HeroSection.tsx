@@ -72,7 +72,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
   return (
     <Section
       id="hero-section"
-      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-36 xl:pb-96"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-[200px] xl:pb-[328px]"
     >
       {windowWidth > 1280 && (
         <div
