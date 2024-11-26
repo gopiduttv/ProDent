@@ -5,7 +5,7 @@ import TestimonialSection from './TestimonialSection'
 import IntegrationSection from './IntegrationSection'
 import AboutUsSection from './AboutUsSection'
 import { HomeSettings } from './context/homeSettings'
-import PartnerSection from './PartnerSection'
+import CustomerSection from './CustomerSection'
 import BookDemo from './common/BookDemo'
 
 const Content = (props: any) => {
@@ -13,7 +13,7 @@ const Content = (props: any) => {
   const integrationList = data?.integrationList?.selectedIntegrationList
   const benefits = data?.benifits?.selectedBenefits
   const testimonial = data?.testimonial?.selectedTestimonial
-  const partner = data?.partner
+  const customers = data?.partner?.selectedPartner
   const feature = data?.features?.selectedFeatures
   const ctaBtnUrl = props?.siteSettings?.demoBtnUrl
 
@@ -24,8 +24,8 @@ const Content = (props: any) => {
         {/* <FeatureSection features={feature} /> */}
         {/* <IntegrationSection OsDentalIntegration={integrationList} /> */}
         <ServicesSection data={benefits} />
-        <TestimonialSection testimonials={testimonial} partners={partner?.selectedPartner} />
-        <PartnerSection partnerList={partner?.selectedPartner} />
+        <TestimonialSection testimonials={testimonial} />
+        <CustomerSection customers={customers} />
         <AboutUsSection
           about={props?.heroSectionContent?.about}
           founderDetails={props?.founderDetails}
