@@ -28,23 +28,23 @@ const AnimatedShinyTextDemo = (props) => {
 
 const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
-    <div className="w-full flex flex-col-reverse md:flex-row justify-center items-center gap-12 text-center md:text-left  z-10">
-      <div className="flex flex-col items-center md:w-1/2">
+    <div className="w-full flex justify-center">
+      <div className="flex flex-col items-center">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
           className="text-sm font-light"
           content={content?.heroStrip}
         />
-        <H1 className="text-center text-white font-medium md:px-20">
+        <H1 className="text-center text-white font-medium 2xl:px-20">
           {content?.heroTitleStatic}
         </H1>
         <WordRotate
-          className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
+          className="2xl:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] md:whitespace-nowrap"
           words={content?.heroTitleDynamic}
         />
 
         {/* Description */}
-        <Paragraph className="md:px-20 text-center">
+        <Paragraph className="2xl:px-20 text-center">
           {content?.heroDescription}
         </Paragraph>
 
