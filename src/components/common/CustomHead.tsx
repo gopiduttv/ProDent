@@ -15,7 +15,7 @@ export default function CustomHead({
   return (
     <Head>
       <title>Welcome to ProDent Partners</title>
-      <link rel="icon" href={seoSettings?.logoUrl} sizes="any" />
+      <link rel="icon" href={"https://cdn.sanity.io/images/oreukei6/production/3d798c4b5a62440025cae017b2e4884247a85caa-128x128.png"} sizes="any" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={siteSettings?.ogUrl} />
       <meta property="og:title" content={siteSettings?.ogTitle} />
