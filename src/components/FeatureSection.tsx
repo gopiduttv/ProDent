@@ -8,12 +8,13 @@ import { useHomeContext } from './context/homeSettings'
 import CTAButton from './common/CTAbutton'
 
 const FeatureSection = ({ features }) => {
-  const data = useHomeContext()?.homeSettings  
-   const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
+  const data = useHomeContext()?.homeSettings
+  const demoBtnUrl = data?.siteSettings?.demoBtnUrl ?? '/'
   return (
     <Section
       id="features-section"
-      className="features-section pt-12 md:pt-24 pb-12 md:pb-16 z-10 !bg-[#F9F6FE]">
+      className="features-section pt-12 md:pt-24 pb-12 md:pb-16 z-10 !bg-[#F9F6FE]"
+    >
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Features</Subtext>
@@ -21,7 +22,7 @@ const FeatureSection = ({ features }) => {
             <H2>{data?.heroSectionData?.featureHeader}</H2>
           </div>
         </div>
-        <div className="w-full flex flex-col md:flex-row justify-center gap-8">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 justify-center gap-8">
           {features?.map((featureCategory: any, index: number) => {
             return (
               <FeatureCategoryCard
@@ -33,7 +34,11 @@ const FeatureSection = ({ features }) => {
             )
           })}
         </div>
-        <CTAButton url={demoBtnUrl} className="px-6 py-3" name={data.heroSectionData.ctaName ?? ""} />
+        <CTAButton
+          url={demoBtnUrl}
+          className="px-6 py-3"
+          name={data.heroSectionData.ctaName ?? ''}
+        />
       </Container>
     </Section>
   )
