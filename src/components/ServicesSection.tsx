@@ -20,7 +20,7 @@ const ServicesSection = ({ data }) => {
           </div>
         </div>
         <div className="flex flex-col gap-16 w-full">
-          {data.map((benefit: any, index: number) => (
+          {data?.map((benefit: any, index: number) => (
             <RichImage key={index} index={index} item={benefit} />
           ))}
         </div>

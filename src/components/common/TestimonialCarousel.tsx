@@ -4,6 +4,8 @@ import TestimonialCard from './TestimonialCard'
 
 
 const TestimonialCarousel = ({ testimonials }) => {
+
+  if (!testimonials) return null
   const testimonialLength = testimonials.length
 
   if (testimonialLength == 1) {

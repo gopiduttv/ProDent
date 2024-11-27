@@ -39,10 +39,10 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
           <H1 className="text-center text-white font-medium 2xl:px-20">
             {content?.heroTitleStatic}
           </H1>
-          <WordRotate
+          {/* <WordRotate
             className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] text-center "
             words={content?.heroTitleDynamic}
-          />
+          /> */}
         </div>
 
         {/* Description */}
@@ -81,7 +81,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
           <Image
             width={600}
             height={600}
-            src={'/hero-left.png'}
+            src={'/hero-left.webp'}
             alt="hero-left"
           />
         </div>
@@ -94,7 +94,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
           <Image
             width={600}
             height={600}
-            src={'/hero-right.png'}
+            src={'/hero-right.webp'}
             alt="hero-left"
           />
         </div>
