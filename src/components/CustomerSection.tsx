@@ -11,7 +11,10 @@ export default function CustomerSection({ customers }) {
       id="partners-section"
       className="py-16 bg-[#EDE1FE] flex-col justify-start items-center gap-6 "
     >
-      <Container className="flex flex-col items-center gap-16">
+      <Container className="flex flex-col items-center gap-10">
+      <div className="md:w-1/2 text-center font-semibold">
+            Trusted by multi-location DSOs across the US
+          </div>
           <div className="flex flex-wrap justify-center max-w-5xl gap-8">
             {customers?.map((customer, index) => {
               return (

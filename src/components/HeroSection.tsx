@@ -7,6 +7,39 @@ import { cn } from '~/lib/utils'
 import WordRotate from './ui/word-rotate'
 import Image from 'next/image'
 import useWindowSize from '~/hooks/useWindowSize'
+import { PortableText } from '@portabletext/react'
+
+const components: any = {
+  listItem: ({ children }: { children: React.ReactNode }) => (
+    <li className="ame={cn(
+        'text-white/80 !leading-6 text-[16px]  font-light md:max-w-3xl">
+      {children}
+    </li>
+  ),
+  marks: {
+    highlight: ({ children }: { children: React.ReactNode }) => (
+      <span style={{ backgroundColor: 'yellow', fontWeight: 'semibold' }}>
+        {children}
+      </span>
+    ),
+
+    em: ({ children }: { children: React.ReactNode }) => (
+      <em className="text-blue-500">{children}</em>
+    ),
+    strong: ({ children }: { children: React.ReactNode }) => (
+      <strong className="font-bold">{children}</strong>
+    ),
+  },
+  block: {
+    normal: ({ children }: { children: React.ReactNode }) => (
+      <p className="text-white/80">{children}</p>
+    ),
+
+    h2: ({ children }: { children: React.ReactNode }) => (
+      <h2 className="text-2xl py-4">{children}</h2>
+    ),
+  },
+}
 
 const AnimatedShinyTextDemo = (props) => {
   return (
@@ -36,9 +69,10 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
           content={content?.heroStrip}
         />
         <div>
-          <H1 className="text-center text-white font-medium 2xl:px-20">
+          <H1 className="text-center text-white font-medium word">
             {content?.heroTitleStatic}
           </H1>
+          <H1 className="text-center text-[#F768D1]">{content?.heroTitleDynamic}</H1>
           {/* <WordRotate
             className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] text-center "
             words={content?.heroTitleDynamic}
@@ -46,9 +80,10 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
         </div>
 
         {/* Description */}
-        <Paragraph className="2xl:px-20 text-center">
+        {/* <Paragraph className="2xl:px-20 text-center">
           {content?.heroDescription}
-        </Paragraph>
+        </Paragraph> */}
+        <PortableText value={content?.heroDescription} components={components}></PortableText>
 
         {/* Buttons */}
         <div

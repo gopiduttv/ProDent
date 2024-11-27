@@ -14,7 +14,7 @@ export default function CustomHead({
 
   return (
     <Head>
-      <title>Welcome to OSDental</title>
+      <title>Welcome to ProDent Partners</title>
       <link rel="icon" href={seoSettings?.logoUrl} sizes="any" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={siteSettings?.ogUrl} />

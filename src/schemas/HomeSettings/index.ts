@@ -18,7 +18,7 @@ export default defineType({
     defineField({
       name: 'heroTitleStaticDynamic',
       title: 'Hero Title Dynamic',
-      type: 'array',
+      type: 'string',
       of: [{ type: 'string' }],
     }),
     defineField({
@@ -30,7 +30,7 @@ export default defineType({
     defineField({
       name: 'heroDescription',
       title: 'Hero Description',
-      type: 'text',
+      type: 'blockContent',
     }),
 
     defineField({
