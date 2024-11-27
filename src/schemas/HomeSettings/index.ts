@@ -15,12 +15,12 @@ export default defineType({
       title: 'Hero Title Static',
       type: 'string',
     }),
-    defineField({
-      name: 'heroTitleStaticDynamic',
-      title: 'Hero Title Dynamic',
-      type: 'string',
-      of: [{ type: 'string' }],
-    }),
+    // defineField({
+    //   name: 'heroTitleStaticDynamic',
+    //   title: 'Hero Title Dynamic',
+    //   type: 'string',
+    //   of: [{ type: 'string' }],
+    // }),
     defineField({
       name: 'bookBtnContent',
       title: 'CIA Button',
