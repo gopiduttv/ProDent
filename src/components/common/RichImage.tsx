@@ -45,7 +45,6 @@ const RichImage = (props: any) => {
       <ImageLoader
         className="md:!h-[300px] md:!w-1/2 bg-[#F0E7FF] rounded-[20px] flex items-center justify-center overflow-hidden"
         image={props?.item?.benifitSectionImage}
-        className="md:!h-[320px] md:!w-[572px] bg-[#F0E7FF] rounded-[20px] flex items-center justify-center overflow-hidden"
         fixed={false}
       />
     </div>
