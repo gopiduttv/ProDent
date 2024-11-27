@@ -24,11 +24,11 @@ const TopSection = ({data,ctaName}) => {
 
 const BottomSection = () => {
   return (
-    <div className="w-full flex flex-col-reverse md:flex-row justify-center md:justify-between gap-6">
+    <div className="w-full flex flex-col-reverse md:flex-row items-center justify-center  gap-6">
       <div className="text-white/50 text-center">
         Copyright © 2024. ProDent Financial Partners.
       </div>
-      <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
+      {/* <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
         <Link className=" text-white/50 hover:text-white/90" href={'/legal/terms-and-conditions'}>
           Terms of use
         </Link>
@@ -38,7 +38,7 @@ const BottomSection = () => {
         <Link className=" text-white/50 hover:text-white/90" href={'legal/business-agreement'}>
           Business Associate Agreement
         </Link>
-      </div>
+      </div> */}
     </div>
   )
 }
