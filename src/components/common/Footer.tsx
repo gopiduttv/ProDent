@@ -47,8 +47,8 @@ const Footer = ({data}) => {
   return (
     <Section id="footer" className={'bg-[#02024a]'}>
       <Container className="flex justify-center py-4 text-white ">
-        <div className=" pt-12 md:pt-24 pb-8 bg-[#02024a] flex-col justify-center items-start gap-12 inline-flex ">
-          <TopSection ctaName={data?.heroSectionData?.ctaName} data={data?.siteSettings?.demoBtnUrl} />
+        <div className="w-full p-8">
+          {/* <TopSection ctaName={data?.heroSectionData?.ctaName} data={data?.siteSettings?.demoBtnUrl} /> */}
           <BottomSection />
         </div>
       </Container>
