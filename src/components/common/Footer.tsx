@@ -26,7 +26,7 @@ const BottomSection = () => {
   return (
     <div className="w-full flex flex-col-reverse md:flex-row justify-center md:justify-between gap-6">
       <div className="text-white/50 text-center">
-        Copyright © 2024. OSDental.
+        Copyright © 2024. ProDent Financial Partners.
       </div>
       <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
         <Link className=" text-white/50 hover:text-white/90" href={'/legal/terms-and-conditions'}>
