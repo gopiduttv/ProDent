@@ -107,13 +107,13 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
   return (
     <Section
       id="hero-section"
-      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-[200px] xl:pb-[328px]"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-[200px] xl:pb-[400px]"
     >
       {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
       <div className="absolute max-w-7xl flex flex-row gap-44">
         {windowWidth > 1280 && (
           <div
-            className={`relative top-[215px] rounded-2xl flex items-end justify-right z-15`}
+            className={`relative top-[210px] rounded-2xl flex items-end justify-right z-15`}
           >
             <Image
               width={600}
@@ -125,7 +125,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
         )}
         {windowWidth > 1280 && (
           <div
-            className={`relative top-[215px] rounded-2xl flex items-end justify-left z-15`}
+            className={`relative top-[210px] rounded-2xl flex items-end justify-left z-15`}
           >
             <Image
               width={600}
