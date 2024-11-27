@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { NavigationContext } from '~/providers/NavigationContextProvider'
 
 const navigationLinks = [
-  // { href: '#hero-section', name: 'Analytics' },
+  { href: '#hero-section', name: 'Home' },
   // { href: '#features-section', name: 'Features' },
   // { href: '#integrations-section', name: 'Integrations' },
   { href: '#services-section', name: 'Services' },

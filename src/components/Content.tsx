@@ -1,11 +1,9 @@
 import HeroSection from './HeroSection'
 import ServicesSection from './ServicesSection'
-import FeatureSection from './FeatureSection'
 import TestimonialSection from './TestimonialSection'
-import IntegrationSection from './IntegrationSection'
 import AboutUsSection from './AboutUsSection'
 import { HomeSettings } from './context/homeSettings'
-import CustomerSection from './CustomerSection'
+import CustomerSection from "./CustomerSection"
 import BookDemo from './common/BookDemo'
 
 const Content = (props: any) => {
@@ -21,8 +19,6 @@ const Content = (props: any) => {
     <div className="flex flex-col overflow-hidden">
       <HomeSettings homeSettings={props}>
         <HeroSection ctaBtnUrl={ctaBtnUrl} data={props.heroSectionData} />
-        {/* <FeatureSection features={feature} /> */}
-        {/* <IntegrationSection OsDentalIntegration={integrationList} /> */}
         <ServicesSection data={benefits} />
         <TestimonialSection testimonials={testimonial} />
         <CustomerSection customers={customers} />

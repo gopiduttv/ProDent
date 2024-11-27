@@ -51,7 +51,7 @@ const Header = ({ data }: any) => {
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-bold text-lg">
               <Image
-                src="/OSDentalLogo.svg"
+                src="/ProDent-Logo.svg"
                 width={135}
                 height={26}
                 alt="OS Dental Logo"

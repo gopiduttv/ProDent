@@ -72,7 +72,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
   return (
     <Section
       id="hero-section"
-      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-[200px] xl:pb-[328px]"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-[200px] xl:pb-[400px]"
     >
       {windowWidth > 1280 && (
         <div
@@ -81,7 +81,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
           <Image
             width={600}
             height={600}
-            src={'/hero-left.webp'}
+            src={'/hero-left.png'}
             alt="hero-left"
           />
         </div>
@@ -89,12 +89,12 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
       {windowWidth > 1280 && (
         <div
-          className={`absolute top-[350px] ${windowWidth > 1800 ? 'right-60' : 'right-10'} rounded-2xl flex items-end justify-left z-15`}
+          className={`absolute top-96 ${windowWidth > 1800 ? 'right-60' : 'right-10'} rounded-2xl flex items-end justify-left z-15`}
         >
           <Image
-            width={600}
+            width={550}
             height={600}
-            src={'/hero-right.webp'}
+            src={'/hero-right.png'}
             alt="hero-left"
           />
         </div>
