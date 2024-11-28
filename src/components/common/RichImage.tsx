@@ -4,7 +4,7 @@ import H3 from '../typography/H3'
 import List from './List'
 import ImageLoader from './imageLoader/imageLoader'
 
-const Richness = ({ item }: any) => { debugger
+const Richness = ({ item }: any) => {
   return (
     <div className="md:w-1/2 w-full flex flex-col gap-8">
       <H3 className="md:text-4xl">{item.serviceHeading}</H3>
