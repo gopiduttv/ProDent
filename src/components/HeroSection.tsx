@@ -61,7 +61,7 @@ const AnimatedShinyTextDemo = (props) => {
 
 const HeroContent = ({ content, ctaBtnUrl }) => {
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center z-20">
       <div className="flex flex-col items-center gap-3">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
