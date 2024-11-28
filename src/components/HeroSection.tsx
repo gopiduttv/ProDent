@@ -69,7 +69,7 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
           content={content?.heroStrip}
         />
         <div>
-          <H1 className="text-center text-white font-medium word">
+          <H1 className="text-center text-white font-medium word text-[52px]">
             {content?.heroTitleStatic}
           </H1>
           <H1 className="text-center text-[#F768D1]">{content?.heroTitleDynamic}</H1>
@@ -113,7 +113,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       <div className="absolute max-w-7xl flex flex-row gap-44">
         {windowWidth > 1280 && (
           <div
-            className={`relative top-[210px] rounded-2xl flex items-end justify-right z-15`}
+            className={`relative top-[233px] rounded-2xl flex items-end justify-right z-15`}
           >
             <Image
               width={600}
@@ -125,7 +125,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
         )}
         {windowWidth > 1280 && (
           <div
-            className={`relative top-[210px] rounded-2xl flex items-end justify-left z-15`}
+            className={`relative top-[243px] rounded-2xl flex items-end justify-left z-15`}
           >
             <Image
               width={600}

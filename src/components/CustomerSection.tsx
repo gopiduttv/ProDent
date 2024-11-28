@@ -15,7 +15,7 @@ export default function CustomerSection({ customers }) {
       <div className="md:w-1/2 text-center font-semibold">
             Trusted by multi-location DSOs across the US
           </div>
-          <div className="flex flex-wrap justify-center max-w-5xl gap-8">
+          <div className="flex flex-wrap justify-center max-w-9xl gap-8">
             {customers?.map((customer, index) => {
               return (
                 <div key={index} className="w-72 ">
