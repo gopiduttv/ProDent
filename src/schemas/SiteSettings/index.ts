@@ -43,7 +43,7 @@ export default defineType({
     }),
     defineField({
       name: 'demoBtnUrl',
-      title: 'Book Demo Url',
+      title: 'CTA Button Url',
       type: 'url',
     }),
     defineField({

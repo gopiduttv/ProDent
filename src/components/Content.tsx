@@ -4,7 +4,6 @@ import TestimonialSection from './TestimonialSection'
 import AboutUsSection from './AboutUsSection'
 import { HomeSettings } from './context/homeSettings'
 import CustomerSection from "./CustomerSection"
-import BookDemo from './common/BookDemo'
 
 const Content = (props: any) => {
   const data = props?.heroSectionData
@@ -25,7 +24,6 @@ const Content = (props: any) => {
           about={props?.heroSectionContent?.about}
           founderDetails={props?.founderDetails}
         />
-        <BookDemo />
       </HomeSettings>
     </div>
   )

@@ -19,7 +19,7 @@ const ServicesSection = ({ data }) => {
             <H2>{benefitHeader?.heroSectionData?.benefitPoints}</H2>
           </div>
         </div>
-        <div className="flex flex-col gap-16 w-full">
+        <div className="flex flex-col gap-28 w-full">
           {data?.map((benefit: any, index: number) => (
             <RichImage key={index} index={index} item={benefit} />
           ))}

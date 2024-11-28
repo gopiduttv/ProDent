@@ -1,12 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { cn } from '~/lib/utils'
-import { BookDemoContext } from '~/providers/BookDemoProvider'
 
 const CTAButton = ({ className = null, name, url = '/' }) => {
-  const { isDemoPopUpShown, setIsDemoPopUpShown } = useContext(BookDemoContext)
-  const handleClick = () => {
-    setIsDemoPopUpShown(!isDemoPopUpShown)
-  }
   return (
     <div
       className={cn(
@@ -14,12 +9,14 @@ const CTAButton = ({ className = null, name, url = '/' }) => {
         className,
       )}
     >
-      <button
-        onClick={() => handleClick()}
+      <a
         className="text-white font-medium leading-snug"
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {name}
-      </button>
+      </a>
     </div>
   )
 }
