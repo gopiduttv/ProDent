@@ -16,10 +16,10 @@ const ServicesSection = ({ data }) => {
         <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Our Services</Subtext>
           <div className="max-w-2xl w-full flex justify-center">
-            <H2>{benefitHeader?.heroSectionData?.benefitHeader}</H2>
+            <H2>{benefitHeader?.heroSectionData?.benefitPoints}</H2>
           </div>
         </div>
-        <div className="flex flex-col gap-16 w-full">
+        <div className="flex flex-col gap-28 w-full">
           {data?.map((benefit: any, index: number) => (
             <RichImage key={index} index={index} item={benefit} />
           ))}

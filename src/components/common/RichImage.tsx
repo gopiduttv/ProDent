@@ -7,8 +7,8 @@ import ImageLoader from './imageLoader/imageLoader'
 const Richness = ({ item }: any) => {
   return (
     <div className="md:w-1/2 w-full flex flex-col gap-8">
-      <H3 className="md:text-4xl">{item.benefitHeading}</H3>
-      <List className="flex flex-col gap-4" items={item?.benefitPoints} />
+      <H3 className="md:text-4xl">{item.serviceHeading}</H3>
+      <List className="flex flex-col gap-4" items={item?.servicePoints} />
     </div>
   )
 }
@@ -32,7 +32,7 @@ const RichImage = (props: any) => {
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-40 w-full">
         <ImageLoader
           image={props?.item?.benifitSectionImage}
-          className="md:!h-[300px] md:!w-1/2 bg-[#F0E7FF] rounded-[20px] flex items-center justify-center overflow-hidden"
+          className="md:!h-[370px] md:!w-1/2 bg-[#F0E7FF] rounded-[20px] flex items-center justify-center overflow-hidden"
           fixed={false}
         />
         <Richness className="w-1/2" item={props?.item} />
