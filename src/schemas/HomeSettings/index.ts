@@ -38,15 +38,11 @@ export default defineType({
       title: 'About Section Image',
       type: 'image',
     }),
-    defineField({
-      name: 'featureHeader',
-      title: 'Feature Section Header',
-      type: 'string',
-    }),
+
 
     defineField({
-      name: 'benefitHeader',
-      title: 'Benefit Section Header',
+      name: 'ServiceHeader',
+      title: 'Service Section Header',
       type: 'string',
     }),
     defineField({
@@ -86,13 +82,13 @@ export default defineType({
     }),
 
     defineField({
-      name: 'selectedBenefits',
-      title: 'Selected Benefits',
+      name: 'selectedService',
+      title: 'Selected Service',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{ type: 'benefit' }],
+          to: [{ type: 'service' }],
         },
       ],
     }),

@@ -1,17 +1,17 @@
 import { defineField, defineType } from 'sanity'
 export default defineType({
-  name: 'benefit',
-  title: 'Benefit',
+  name: 'service',
+  title: 'Service',
   type: 'document',
   fields: [
     defineField({
-      name: 'benefitHeading',
+      name: 'serviceHeading',
       title: 'Benefit Heading',
       type: 'string',
     }),
     defineField({
       title: 'Benefit Points',
-      name: 'benefitPoints',
+      name: 'servicePoint',
       type: 'array',
       of: [{type: 'string'}]
     }),
