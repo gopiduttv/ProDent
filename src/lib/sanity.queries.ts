@@ -97,9 +97,8 @@ export const heroSection = groq`
   "heroTitleDynamic": heroTitleStaticDynamic,
   "aboutSectionImage": aboutSectionImage.asset->url,
   "integrationHeader": integrationHeader,
-  "benefitHeader": benefitHeader,
+  "ServiceHeader": ServiceHeader,
   "testimonialHeader": testimonialHeader,
-  "featureHeader": featureHeader,
   "integrationList": {
     "selectedIntegrationList": integration[]->{
       "image": integrationProductImage.asset->{
@@ -160,9 +159,9 @@ export const heroSection = groq`
       }
     }
   },
-  "benifits": {
-    selectedBenefits[]->{
-      "benefitHeading":benefitHeading,
+  "service": {
+    selectedService[]->{
+      "serviceHeading":serviceHeading,
       "benifitSectionImage": benefitImageSection.asset->{
         _id,
         url,
@@ -174,14 +173,14 @@ export const heroSection = groq`
           }
         }
       },
-      "benefitPoints": benefitPoints
+      "servicePoints": benefitPoints
     }
   }
 }
 `
 
-export const benifitQuery = groq` *[_type == "benefit"]{
-  'benefitHeading':benefitHeading,
+export const serviceQuery = groq` *[_type == "service"]{
+  'serviceHeading':serviceHeading,
    'benifitSectionImage':benefitImageSection.asset->{
        _id,
        url,
@@ -193,7 +192,7 @@ export const benifitQuery = groq` *[_type == "benefit"]{
          }
        }
      },
-'benefitPoints':benefitPoints
+'servicePoint':servicePoint
     
 }`
 export const founderQuery = groq`*[_type == "person"]{
@@ -264,10 +263,10 @@ export async function fetchAboutSection(client: SanityClient): Promise<any> {
 export async function fetchHeroSectionData(client: SanityClient): Promise<any> {
   return await client.fetch(heroSection)
 }
-export async function fetchBenefitSectionData(
+export async function fetchServicesData(
   client: SanityClient,
 ): Promise<any> {
-  return await client.fetch(benifitQuery)
+  return await client.fetch(serviceQuery)
 }
 
 export async function getLegalInformation(

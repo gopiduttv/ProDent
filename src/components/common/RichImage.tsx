@@ -4,11 +4,11 @@ import H3 from '../typography/H3'
 import List from './List'
 import ImageLoader from './imageLoader/imageLoader'
 
-const Richness = ({ item }: any) => {
+const Richness = ({ item }: any) => { debugger
   return (
     <div className="md:w-1/2 w-full flex flex-col gap-8">
-      <H3 className="md:text-4xl">{item.benefitHeading}</H3>
-      <List className="flex flex-col gap-4" items={item?.benefitPoints} />
+      <H3 className="md:text-4xl">{item.serviceHeading}</H3>
+      <List className="flex flex-col gap-4" items={item?.servicePoints} />
     </div>
   )
 }

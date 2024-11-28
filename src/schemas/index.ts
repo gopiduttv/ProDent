@@ -7,7 +7,7 @@ import FeatureCategories from './FeatureCategories'
 import Integrations from './Integrations'
 import SiteSettings from './SiteSettings'
 import Testimonials from './Testimonials'
-import Benefits from './Benefits'
+import service from './Service'
 import HomeSettings from './HomeSettings'
 import multipleString from './multipleString'
 import Person from './Person'
@@ -21,7 +21,7 @@ export const schemaTypes = [
   Integrations,
   SiteSettings,
   Testimonials,
-  Benefits,
+  service,
   HomeSettings,
   Person,
   legal,
@@ -37,7 +37,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     Integrations,
     SiteSettings,
     Testimonials,
-    Benefits,
+    service,
     HomeSettings,
     multipleString,
     Person,

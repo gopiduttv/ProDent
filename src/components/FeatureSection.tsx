@@ -19,7 +19,7 @@ const FeatureSection = ({ features }) => {
         <div className="flex flex-col w-full items-center gap-2">
           <Subtext>Features</Subtext>
           <div className="w-full flex justify-center">
-            <H2>{data?.heroSectionData?.featureHeader}</H2>
+            {/* <H2>{data?.heroSectionData?.featureHeader}</H2> */}
           </div>
         </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 justify-center gap-8">

@@ -95,20 +95,8 @@ export default defineConfig({
                   .schemaType('siteSettings')
                   .documentId('siteSettings'),
               ),
-              // S.listItem()
-              // .title('Legal Information')
-              // .child(
-              //   S.document()
-              //     .schemaType('legal')
-              //     .documentId('legal'),
-              // ),
-        
-              // S.documentTypeListItem('homeSettings').title('homeSettings'),
               S.documentTypeListItem('testimonial').title('Testimonial'),
-              S.documentTypeListItem('featureCategory').title('FeatureCategory'),
-              S.documentTypeListItem('feature').title('Feature'),
-              S.documentTypeListItem('integration').title('Integration'),
-              S.documentTypeListItem('benefit').title('Benefit'),
+              S.documentTypeListItem('service').title('Service'),
               S.documentTypeListItem('person').title('Person'),
               S.documentTypeListItem('legal').title('Legal'),
               S.documentTypeListItem('partner').title('Partner')
