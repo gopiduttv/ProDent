@@ -8,8 +8,6 @@ import BookDemo from './common/BookDemo'
 
 const Content = (props: any) => {
   const data = props?.heroSectionData
-  // const integrationList = data?.integrationList?.selectedIntegrationList
-  console.log(data,'ff')
   const service = data?.service?.selectedService
   const testimonial = data?.testimonial?.selectedTestimonial
   const customers = data?.partner?.selectedPartner
