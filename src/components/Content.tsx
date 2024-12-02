@@ -5,9 +5,9 @@ import AboutUsSection from './AboutUsSection'
 import { HomeSettings } from './context/homeSettings'
 import CustomerSection from "./CustomerSection"
 
-const Content = (props: any) => {
+const Content = (props: any) => { debugger
   const data = props?.heroSectionData
-  const service = data?.service?.selectedService
+  const service = props?.ServicesData
   const testimonial = data?.testimonial?.selectedTestimonial
   const customers = data?.partner?.selectedPartner
   const feature = data?.features?.selectedFeatures

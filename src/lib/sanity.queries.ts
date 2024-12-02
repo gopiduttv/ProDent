@@ -192,7 +192,7 @@ export const serviceQuery = groq` *[_type == "service"]{
          }
        }
      },
-'servicePoint':servicePoint
+'servicePoint':benefitDescription
     
 }`
 export const founderQuery = groq`*[_type == "person"]{
