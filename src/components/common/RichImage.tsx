@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import H3 from '../typography/H3'
 import List from './List'
 import ImageLoader from './imageLoader/imageLoader'
@@ -8,7 +7,7 @@ const Richness = ({ item }: any) => {
   return (
     <div className="md:w-1/2 w-full flex flex-col gap-8">
       <H3 className="md:text-4xl">{item.serviceHeading}</H3>
-      <List className="flex flex-col gap-4" items={item?.servicePoints} />
+      <List className="flex flex-col gap-4" items={item?.servicePoint} />
     </div>
   )
 }
@@ -27,6 +26,7 @@ export const Picture = (props) => {
 }
 
 const RichImage = (props: any) => {
+  debugger
   if (props.index % 2 == 0) {
     return (
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-40 w-full">

@@ -69,7 +69,7 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
           content={content?.heroStrip}
         />
         <div>
-          <H1 className="text-center text-white font-medium word text-[52px]">
+          <H1 className="text-center text-white font-medium word text-[64px]">
             {content?.heroTitleStatic}
           </H1>
           <H1 className="text-center text-[#F768D1]">{content?.heroTitleDynamic}</H1>
@@ -113,24 +113,24 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       <div className="absolute max-w-7xl flex flex-row gap-44">
         {windowWidth > 1280 && (
           <div
-            className={`relative top-[233px] rounded-2xl flex items-end justify-right z-15`}
+            className={`relative top-[350px] rounded-2xl flex items-end justify-right z-15`}
           >
             <Image
-              width={600}
-              height={600}
-              src={'/hero-left.png'}
+              width={450}
+              height={450}
+              src={'/hero-left.svg'}
               alt="hero-left"
             />
           </div>
         )}
         {windowWidth > 1280 && (
           <div
-            className={`relative top-[243px] rounded-2xl flex items-end justify-left z-15`}
+            className={`relative top-[350px] rounded-2xl flex items-end justify-left z-15`}
           >
             <Image
-              width={600}
-              height={600}
-              src={'/hero-right.png'}
+              width={450}
+              height={450}
+              src={'/hero-right.svg'}
               alt="hero-left"
             />
           </div>

@@ -20,8 +20,8 @@ const ServicesSection = ({ data }) => {
           </div>
         </div>
         <div className="flex flex-col gap-28 w-full">
-          {data?.map((benefit: any, index: number) => (
-            <RichImage key={index} index={index} item={benefit} />
+          {data?.map((service: any, index: number) => (
+            <RichImage key={index} index={index} item={service} />
           ))}
         </div>
         <CTAButton className="px-6 py-3" name={benefitHeader?.heroSectionData?.ctaName ?? ""} url={demoBtnUrl} />
