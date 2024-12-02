@@ -22,8 +22,6 @@ const TestimonialSection = ({ testimonials }) => {
         </div>
         {/* <div className="w-full flex flex-col md:flex-row gap-6 md:gap-8"> */}
           <TestimonialCarousel testimonials={testimonials} />
-          {/* <TestimonialCard props={testimonials[0]} /> */}
-          {/* <PartnersCard partners={partners} /> */}
         {/* </div> */}
         <CTAButton
           url={demoBtnUrl}

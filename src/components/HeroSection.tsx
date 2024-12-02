@@ -69,20 +69,13 @@ const HeroContent = ({ content, ctaBtnUrl }) => {
           content={content?.heroStrip}
         />
         <div>
-          <H1 className="text-center text-white font-medium word text-[64px]">
+          <H1 className="text-center text-white font-semibold word text-[64px]">
             {content?.heroTitleStatic}
           </H1>
           <H1 className="text-center text-[#F768D1]">{content?.heroTitleDynamic}</H1>
-          {/* <WordRotate
-            className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] text-center "
-            words={content?.heroTitleDynamic}
-          /> */}
+
         </div>
 
-        {/* Description */}
-        {/* <Paragraph className="2xl:px-20 text-center">
-          {content?.heroDescription}
-        </Paragraph> */}
         <PortableText value={content?.heroDescription} components={components}></PortableText>
 
         {/* Buttons */}
@@ -113,7 +106,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       <div className="absolute max-w-7xl flex flex-row gap-44">
         {windowWidth > 1280 && (
           <div
-            className={`relative top-[350px] rounded-2xl flex items-end justify-right z-15`}
+            className={`relative top-[368px] rounded-2xl flex items-end justify-right z-15`}
           >
             <Image
               width={450}
@@ -125,7 +118,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
         )}
         {windowWidth > 1280 && (
           <div
-            className={`relative top-[350px] rounded-2xl flex items-end justify-left z-15`}
+            className={`relative top-[368px] rounded-2xl flex items-end justify-left z-15`}
           >
             <Image
               width={450}
