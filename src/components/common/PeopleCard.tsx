@@ -33,7 +33,7 @@ function PeopleCard({
       <div className="xl:pr-8 flex justify-start">
         <ImageLoader
           radius={12}
-          className="w-72 h-72 md:w-[132px] md:h-[132px] !rounded-2xl"
+          className="!w-72 !h-72 md:w-[132px] md:h-[132px] !rounded-2xl"
           image={image}
         />
       </div>
