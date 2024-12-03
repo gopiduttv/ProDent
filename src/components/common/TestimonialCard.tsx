@@ -9,7 +9,7 @@ const TestimonialCard = ({ props }) => {
       <div className="flex flex-col items-center md:flex-row gap-8 pt-1 md:pt-0">
         <ImageLoader
           radius={12}
-          className="w-60 h-60 !rounded-2xl"
+          className="!w-60 !h-60 !rounded-2xl"
           image={props.AuthorImage}
         />
         <div className="flex flex-col gap-8">
