@@ -43,7 +43,7 @@ const RichImage = (props: any) => {
     <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-16 md:gap-40 w-full">
       <Richness className="w-1/2" item={props?.item} />
       <ImageLoader
-        className="md:!h-[300px] md:!w-1/2 rounded-[20px] flex items-center justify-center overflow-hidden"
+        className="md:!h-[370px] md:!w-1/2 rounded-[20px] flex items-center justify-center overflow-hidden"
         image={props?.item?.benifitSectionImage}
         fixed={false}
         radius={15}

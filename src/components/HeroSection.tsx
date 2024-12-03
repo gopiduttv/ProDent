@@ -1,13 +1,12 @@
 import CTAButton from './common/CTAbutton'
 import Section from './structure/Section'
 import H1 from './typography/H1'
-import Paragraph from './typography/Paragraph'
 import AnimatedShinyText from './ui/animated-shiny-text'
 import { cn } from '~/lib/utils'
-import WordRotate from './ui/word-rotate'
 import Image from 'next/image'
 import useWindowSize from '~/hooks/useWindowSize'
 import { PortableText } from '@portabletext/react'
+import Container from './structure/Container'
 
 const components: any = {
   listItem: ({ children }: { children: React.ReactNode }) => (
@@ -59,9 +58,9 @@ const AnimatedShinyTextDemo = (props) => {
   )
 }
 
-const HeroContent = ({ content, ctaBtnUrl }) => {
+const HeroContent = ({ className = null, content, ctaBtnUrl }) => {
   return (
-    <div className="w-full flex justify-center z-20">
+    <div className={cn(className)}>
       <div className="flex flex-col items-center gap-3">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
@@ -100,35 +99,38 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
   return (
     <Section
       id="hero-section"
-      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-[200px] xl:pb-[400px]"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover"
     >
-      {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
-      <div className="absolute max-w-7xl flex flex-row gap-44">
+      <Container className="relative h-[768px] lg:h-[1024px]">
+
+        {data && (
+          <HeroContent
+            className="absolute lg:top-56 left-0 w-full h-full lg:h-auto bg-transparent flex justify-center items-center z-20 px-4"
+            content={data}
+            ctaBtnUrl={ctaBtnUrl}
+          />
+        )}
         {windowWidth > 1280 && (
-          <div
-            className={`relative top-[368px] rounded-2xl flex items-end justify-right z-15`}
-          >
+          <div className={`absolute bottom-0 left-[-240px]  z-15`}>
             <Image
-              width={450}
-              height={450}
-              src={'/hero-left.svg'}
+              width={600}
+              height={600}
+              src={'/hero-left.png'}
               alt="hero-left"
             />
           </div>
         )}
         {windowWidth > 1280 && (
-          <div
-            className={`relative top-[368px] rounded-2xl flex items-end justify-left z-15`}
-          >
+          <div className={`absolute bottom-0 right-[-240px] z-15`}>
             <Image
-              width={450}
-              height={450}
-              src={'/hero-right.svg'}
+              width={600}
+              height={600}
+              src={'/hero-right.png'}
               alt="hero-left"
             />
           </div>
         )}
-      </div>
+      </Container>
     </Section>
   )
 }
