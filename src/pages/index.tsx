@@ -83,6 +83,7 @@ export default function IndexPage(
   // const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   const siteSettings: SiteSettings = props?.siteSettings
   const seoSettings = props.seoSettings
+  // console.log(props)
   return (
     <div>
       <BookDemoContextProvider>

@@ -1,18 +1,17 @@
 import CTAButton from './common/CTAbutton'
 import Section from './structure/Section'
 import H1 from './typography/H1'
-import Paragraph from './typography/Paragraph'
 import AnimatedShinyText from './ui/animated-shiny-text'
 import { cn } from '~/lib/utils'
-import WordRotate from './ui/word-rotate'
 import Image from 'next/image'
 import useWindowSize from '~/hooks/useWindowSize'
 import { PortableText } from '@portabletext/react'
+import Container from './structure/Container'
 
 const components: any = {
   listItem: ({ children }: { children: React.ReactNode }) => (
     <li className="ame={cn(
-        'text-white/80 !leading-6 text-[16px]  font-light md:max-w-3xl">
+        'text-white/80 !leading-6 text-[16px]  text-center  font-light md:max-w-3xl">
       {children}
     </li>
   ),
@@ -32,7 +31,7 @@ const components: any = {
   },
   block: {
     normal: ({ children }: { children: React.ReactNode }) => (
-      <p className="text-white/80">{children}</p>
+      <p className="text-white/80 text-center leading-tight">{children}</p>
     ),
 
     h2: ({ children }: { children: React.ReactNode }) => (
@@ -59,30 +58,23 @@ const AnimatedShinyTextDemo = (props) => {
   )
 }
 
-const HeroContent = ({ content, ctaBtnUrl }) => {
+const HeroContent = ({ className = null, content, ctaBtnUrl }) => {
   return (
-    <div className="w-full flex justify-center z-20">
+    <div className={cn(className)}>
       <div className="flex flex-col items-center gap-3">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
-          className="text-sm font-light"
+          className="text-xs md:text-sm font-light"
           content={content?.heroStrip}
         />
         <div>
-          <H1 className="text-center text-white font-medium word text-[52px]">
+          <H1 className="text-center text-white font-semibold md:text-[64px] leading-snug">
             {content?.heroTitleStatic}
           </H1>
           <H1 className="text-center text-[#F768D1]">{content?.heroTitleDynamic}</H1>
-          {/* <WordRotate
-            className="md:text-5xl text-4xl text-ellipsis font-semibold text-[#f768d1] text-center "
-            words={content?.heroTitleDynamic}
-          /> */}
+
         </div>
 
-        {/* Description */}
-        {/* <Paragraph className="2xl:px-20 text-center">
-          {content?.heroDescription}
-        </Paragraph> */}
         <PortableText value={content?.heroDescription} components={components}></PortableText>
 
         {/* Buttons */}
@@ -107,35 +99,38 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
   return (
     <Section
       id="hero-section"
-      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover px-4 pt-32 pb-16 xl:pt-[200px] xl:pb-[400px]"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover bg-center"
     >
-      {data && <HeroContent ctaBtnUrl={ctaBtnUrl} content={data} />}
-      <div className="absolute max-w-7xl flex flex-row gap-44">
+      <Container className="relative h-[768px] lg:h-[900px]">
+
+        {data && (
+          <HeroContent
+            className="absolute lg:top-56 left-0 w-full h-full lg:h-auto bg-transparent flex justify-center items-center z-20 px-4"
+            content={data}
+            ctaBtnUrl={ctaBtnUrl}
+          />
+        )}
         {windowWidth > 1280 && (
-          <div
-            className={`relative top-[233px] rounded-2xl flex items-end justify-right z-15`}
-          >
+          <div className={`absolute bottom-0 left-[-100px]  z-15`}>
             <Image
-              width={600}
-              height={600}
+              width={450}
+              height={450}
               src={'/hero-left.png'}
               alt="hero-left"
             />
           </div>
         )}
         {windowWidth > 1280 && (
-          <div
-            className={`relative top-[243px] rounded-2xl flex items-end justify-left z-15`}
-          >
+          <div className={`absolute bottom-0 right-[-100px] z-15`}>
             <Image
-              width={600}
-              height={600}
+              width={450}
+              height={450}
               src={'/hero-right.png'}
               alt="hero-left"
             />
           </div>
         )}
-      </div>
+      </Container>
     </Section>
   )
 }
