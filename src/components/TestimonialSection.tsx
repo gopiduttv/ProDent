@@ -15,14 +15,11 @@ const TestimonialSection = ({ testimonials }) => {
       <Container className="flex flex-col items-center gap-16 ">
         <div className="flex flex-col w-full items-center">
           <Subtext>Testimonials</Subtext>
-
           <div className="max-w-2xl w-full flex justify-center">
             <H2>{data?.heroSectionData?.testimonialHeader}</H2>
           </div>
         </div>
-        {/* <div className="w-full flex flex-col md:flex-row gap-6 md:gap-8"> */}
-          <TestimonialCarousel testimonials={testimonials} />
-        {/* </div> */}
+        <TestimonialCarousel testimonials={testimonials} />
         <CTAButton
           url={demoBtnUrl}
           className="px-6 py-3"
