@@ -7,9 +7,10 @@ import Subtext from './typography/Subtext'
 import { useHomeContext } from './context/homeSettings'
 import CTAButton from './common/CTAbutton'
 
-const ServicesSection = ({ data }) => { debugger
+const ServicesSection = ({ data }) => {
   const benefitHeader = useHomeContext().homeSettings?.heroSectionData?.ServiceHeader
-
+  const bookBtlUrl = useHomeContext()?.homeSettings?.heroSectionData.ctaName;
+  const bookDemoUrl = useHomeContext()?.homeSettings?.siteSettings?.demoBtnUrl;
   const demoBtnUrl = benefitHeader?.siteSettings?.demoBtnUrl ?? '/'
   return (
     <Section id="services-section" className="py-12 md:py-24 bg-[#F9F6FE] z-10">
@@ -25,7 +26,7 @@ const ServicesSection = ({ data }) => { debugger
             <RichImage key={index} index={index} item={service} />
           ))}
         </div>
-        <CTAButton className="px-6 py-3" name={benefitHeader?.heroSectionData?.ctaName ?? ""} url={demoBtnUrl} />
+        <CTAButton className="px-6 py-3" name={bookBtlUrl} url={bookDemoUrl} />
       </Container>
     </Section>
   )

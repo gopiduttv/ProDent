@@ -11,7 +11,7 @@ import Container from './structure/Container'
 const components: any = {
   listItem: ({ children }: { children: React.ReactNode }) => (
     <li className="ame={cn(
-        'text-white/80 !leading-6 text-[16px]  font-light md:max-w-3xl">
+        'text-white/80 !leading-6 text-[16px]  text-center  font-light md:max-w-3xl">
       {children}
     </li>
   ),
@@ -31,7 +31,7 @@ const components: any = {
   },
   block: {
     normal: ({ children }: { children: React.ReactNode }) => (
-      <p className="text-white/80">{children}</p>
+      <p className="text-white/80 text-center">{children}</p>
     ),
 
     h2: ({ children }: { children: React.ReactNode }) => (
@@ -68,7 +68,7 @@ const HeroContent = ({ className = null, content, ctaBtnUrl }) => {
           content={content?.heroStrip}
         />
         <div>
-          <H1 className="text-center text-white font-semibold word text-[64px]">
+          <H1 className="text-center text-white font-semibold word md:text-[64px]">
             {content?.heroTitleStatic}
           </H1>
           <H1 className="text-center text-[#F768D1]">{content?.heroTitleDynamic}</H1>
@@ -101,7 +101,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
       id="hero-section"
       className="hero-section bg-[#02024a] bg-hero-pattern bg-cover"
     >
-      <Container className="relative h-[768px] lg:h-[1024px]">
+      <Container className="relative h-[768px] lg:h-[900px]">
 
         {data && (
           <HeroContent
@@ -111,20 +111,20 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
           />
         )}
         {windowWidth > 1280 && (
-          <div className={`absolute bottom-0 left-[-240px]  z-15`}>
+          <div className={`absolute bottom-0 left-[-100px]  z-15`}>
             <Image
-              width={600}
-              height={600}
+              width={450}
+              height={450}
               src={'/hero-left.png'}
               alt="hero-left"
             />
           </div>
         )}
         {windowWidth > 1280 && (
-          <div className={`absolute bottom-0 right-[-240px] z-15`}>
+          <div className={`absolute bottom-0 right-[-100px] z-15`}>
             <Image
-              width={600}
-              height={600}
+              width={450}
+              height={450}
               src={'/hero-right.png'}
               alt="hero-left"
             />
