@@ -17,7 +17,7 @@ const components: any = {
   ),
   marks: {
     highlight: ({ children }: { children: React.ReactNode }) => (
-      <span style={{ backgroundColor: 'yellow', fontWeight: 'semibold' }}>
+      <span className="font-semibold bg-yellow">
         {children}
       </span>
     ),
