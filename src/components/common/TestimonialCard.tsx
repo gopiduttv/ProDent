@@ -6,7 +6,7 @@ import ImageLoader from './imageLoader/imageLoader'
 const TestimonialCard = ({ props }) => {
   return (
     <div
-      className="rounded-3xl p-8 md:p-10 bg-gradient-to-r from-purple-500 to-pink-500"
+      className="rounded-3xl p-8 md:p-10 bg-gradient-to-tr from-[#8639f8] via-[#8f3cf4] to-[#f768d1]"
     >
       <div className="flex flex-col items-center md:flex-row gap-8">
         <ImageLoader

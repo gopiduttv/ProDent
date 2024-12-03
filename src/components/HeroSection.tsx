@@ -31,7 +31,7 @@ const components: any = {
   },
   block: {
     normal: ({ children }: { children: React.ReactNode }) => (
-      <p className="text-white/80 text-center">{children}</p>
+      <p className="text-white/80 text-center leading-tight">{children}</p>
     ),
 
     h2: ({ children }: { children: React.ReactNode }) => (
@@ -64,11 +64,11 @@ const HeroContent = ({ className = null, content, ctaBtnUrl }) => {
       <div className="flex flex-col items-center gap-3">
         {/* Title and Subtitle */}
         <AnimatedShinyTextDemo
-          className="text-sm font-light"
+          className="text-xs md:text-sm font-light"
           content={content?.heroStrip}
         />
         <div>
-          <H1 className="text-center text-white font-semibold word md:text-[64px]">
+          <H1 className="text-center text-white font-semibold md:text-[64px] leading-snug">
             {content?.heroTitleStatic}
           </H1>
           <H1 className="text-center text-[#F768D1]">{content?.heroTitleDynamic}</H1>
@@ -99,7 +99,7 @@ const HeroSection = ({ data, ctaBtnUrl }) => {
   return (
     <Section
       id="hero-section"
-      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover"
+      className="hero-section bg-[#02024a] bg-hero-pattern bg-cover bg-center"
     >
       <Container className="relative h-[768px] lg:h-[900px]">
 
